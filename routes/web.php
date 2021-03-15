@@ -16,5 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/admin/dashboard', 'Admin\DashboardController@index');a
+Route::group(
+    ['namespace' => 'Admin', 'prefix' => 'admin'],
+    function(){
+        Route::get('dashboard', 'DashboardController@index');
+    }
+);
