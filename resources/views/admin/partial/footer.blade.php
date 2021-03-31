@@ -1,6 +1,6 @@
 <footer class="footer mt-auto">
     <div class="copyright bg-white">
-      <p class="text-right">
+      <p class="text-center">
         &copy; <span id="copy-year"></span> Copyright 
         <a
           class="text-primary"
