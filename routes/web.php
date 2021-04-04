@@ -22,6 +22,6 @@ Route::group(
         Route::get('dashboard', 'DashboardController@index');
         Route::get('kategori', 'KategoriController@index');
         Route::get('kategori/tambah', 'KategoriController@tambah');
-        Route::post('kategori/store', 'KategoriController@store')->name('posting');
+        Route::post('kategori/store', 'KategoriController@store');
     }
 );

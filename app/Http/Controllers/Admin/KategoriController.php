@@ -15,12 +15,9 @@ class KategoriController extends Controller
     public function tambah(){
         return view('admin.categories.tambah_kategori');
     }
-    public function store(Kategori $request){
-        $request->validate([
-            'nama_kategori'=>'required',
-        ]);
-        $contact = new Kategori([
-            'nama_kategori' => $request->get('nama_kategori'),
+    public function store(Request $request){
+        $kategori = Kategori::create([
+            'nama_kategori' => $request->nama_kategori,
         ]);
         return redirect('admin/kategori');
     }

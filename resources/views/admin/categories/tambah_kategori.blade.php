@@ -8,11 +8,11 @@
                             <h2>Form</h2>
                         </div>
                         <div class="card-body">
-                            <form action="{{route('posting')}}" method="post">
-                                
+                            <form action="store" method="post">
+                                {{ csrf_field() }}
                             <div class="form-group">
                                 <label for="nama_kategori">Nama Kategori</label>
-                                <input type="text" class="form-control" id="nama_kategori" placeholder="Nama Kategori">
+                                <input type="text" class="form-control" id="nama_kategori" name="nama_kategori" placeholder="Nama Kategori">
                             </div>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                             </form>
