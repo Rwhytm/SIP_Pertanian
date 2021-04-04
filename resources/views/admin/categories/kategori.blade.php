@@ -10,7 +10,7 @@
                     <div class="card-body ">
                         <table class="table table-boardered table-striped">
                             <thead>
-                                <th>ID</th>
+                                <th>#</th>
                                 <th>Nama Kategori</th>
                                 <th>Action</th>
                             </thead>
@@ -20,7 +20,12 @@
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$k->nama_kategori}}</td>
                                         <td>
-                                            <a href="{{route('kategori.delete', $k->id)}}" class="btn btn-info">Hapus Data</a>
+                                            <form action="{{route('kategori.hapus', $k->id)}}" method="POST">
+                                                @method('delete')
+                                                @csrf
+                                                <button class="btn btn-primary">Hapus</button>
+                                            </form>
+                                            <a href="{{route('kategori.delete', $k->id)}}" class="btn btn-info" type="csrf">Hapus Data</a>
                                         </td>
                                     </tr>
                                 @empty

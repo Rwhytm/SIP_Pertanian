@@ -23,6 +23,7 @@ Route::group(
         Route::get('kategori', 'KategoriController@index');
         Route::get('kategori/tambah', 'KategoriController@tambah');
         Route::post('kategori/store', 'KategoriController@store');
+        Route::delete('kategori/hapus/{id}', 'KategoriController@hapus')->name('kategori.hapus');
         Route::get('kategori/delete/{id}', 'KategoriController@delete')->name('kategori.delete');
     }
 );

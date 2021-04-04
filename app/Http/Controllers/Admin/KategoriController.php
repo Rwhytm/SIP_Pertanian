@@ -4,6 +4,7 @@ namespace App\Http\Controllers\admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;     
 use App\Models\Kategori;
 
 class KategoriController extends Controller
@@ -16,8 +17,11 @@ class KategoriController extends Controller
         return view('admin.categories.tambah_kategori');
     }
     public function store(Request $request){
+        $this->validate($request,
+            ['nama_kategori' => 'required',]
+        );    
         $kategori = Kategori::create([
-            'nama_kategori' => $request->nama_kategori,
+            'nama_kategori' =>  Str::lower($request->nama_kategori),
         ]);
         return redirect('admin/kategori');
     }
