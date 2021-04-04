@@ -31,7 +31,7 @@
                     </table>
                 </div>
                 <div class="card-footer text-right">
-                    <a href="{{URL('admin/category/create')}}" class="btn btn-primary">Tambah Data</a>
+                    <a href="{{URL('admin/kategori/tambah')}}" class="btn btn-primary">Tambah Data</a>
                 </div>
             </div>
         </div>

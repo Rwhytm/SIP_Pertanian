@@ -20,6 +20,8 @@ Route::group(
     ['namespace' => 'Admin', 'prefix' => 'admin'],
     function(){
         Route::get('dashboard', 'DashboardController@index');
-        Route::resource('category', 'CategoryController');
+        Route::get('kategori', 'KategoriController@index');
+        Route::get('kategori/tambah', 'KategoriController@tambah');
+        Route::post('kategori/store', 'KategoriController@store')->name('posting');
     }
 );
