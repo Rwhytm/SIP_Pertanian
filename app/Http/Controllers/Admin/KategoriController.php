@@ -21,4 +21,12 @@ class KategoriController extends Controller
         ]);
         return redirect('admin/kategori');
     }
+    public function delete($id){
+        $hapus = Kategori::find($id)->delete();
+        return redirect('admin/kategori');
+    }
+    public function hapus($id){
+        $hapus = Kategori::find($id)->delete();
+        return redirect('admin/kategori');
+    }
 }

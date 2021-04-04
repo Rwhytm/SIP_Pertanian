@@ -17,11 +17,10 @@
                             <tbody>
                                 @forelse ($kategori as $k)
                                     <tr>
-                                        <td>{{$k->id}}</td>
+                                        <td>{{$loop->iteration}}</td>
                                         <td>{{$k->nama_kategori}}</td>
                                         <td>
-                                            <button class="btn btn-dark btn-xs">Edit</button>
-                                            <button class="btn btn-danger btn-xs">Hapus</button>
+                                            <a href="{{route('kategori.delete', $k->id)}}" class="btn btn-info">Hapus Data</a>
                                         </td>
                                     </tr>
                                 @empty
