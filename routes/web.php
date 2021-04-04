@@ -24,6 +24,8 @@ Route::group(
         Route::get('kategori/tambah', 'KategoriController@tambah');
         Route::post('kategori/store', 'KategoriController@store');
         Route::delete('kategori/hapus/{id}', 'KategoriController@hapus')->name('kategori.hapus');
-        Route::get('kategori/delete/{id}', 'KategoriController@delete')->name('kategori.delete');
+        
+        Route::get('kategori/edit/{id}', 'KategoriController@edit')->name('kategori.edit');
+        Route::put('kategori/update/{id}', 'KategoriController@update')->name('kategori.update');
     }
 );

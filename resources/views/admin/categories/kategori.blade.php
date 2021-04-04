@@ -25,7 +25,12 @@
                                                 @csrf
                                                 <button class="btn btn-primary">Hapus</button>
                                             </form>
-                                            <a href="{{route('kategori.delete', $k->id)}}" class="btn btn-info" type="csrf">Hapus Data</a>
+                                            <a href="{{ route('kategori.edit', $k->id) }}" class="btn btn-primary">Edit</a>
+                                            {{-- <form action="{{route('kategori.edit', $k->id)}}" method="POST">
+                                                @method('put')
+                                                @csrf
+                                                <button class="btn btn-primary">Edit</button>
+                                            </form> --}}
                                         </td>
                                     </tr>
                                 @empty

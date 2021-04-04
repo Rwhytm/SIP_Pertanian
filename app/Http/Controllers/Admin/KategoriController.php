@@ -33,4 +33,16 @@ class KategoriController extends Controller
         $hapus = Kategori::find($id)->delete();
         return redirect('admin/kategori');
     }
+
+    public function edit($id){
+        $kategori = Kategori::find($id)->first();
+        return view('admin.categories.edit', compact('kategori'));
+    }
+
+    public function update(Request $request, $id){
+        Kategori::where('id', $id)->update([
+            'nama_kategori' => $request->nama_kategori,
+        ]);
+        return redirect ('admin/kategori');
+    }
 }
