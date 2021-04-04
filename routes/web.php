@@ -29,3 +29,7 @@ Route::group(
         Route::put('kategori/update/{id}', 'KategoriController@update')->name('kategori.update');
     }
 );
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
