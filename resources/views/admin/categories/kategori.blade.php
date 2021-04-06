@@ -4,9 +4,14 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="card card-default">
-                    <div class="card-header card-header-berder-bottom">
+                    <div class="card-header card-header-">
                         <h2>Kategori</h2>
                     </div>
+                    <div class="col-md-11">
+                    <div class="text-right">
+                        <a href="{{url('admin/kategori/tambah') }}" class="btn btn-primary">Tambah</a>
+                    </div>
+                     </div>
                     <div class="card-body ">
                         <table class="table table-boardered table-striped">
                             <thead>
@@ -20,17 +25,16 @@
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$k->nama_kategori}}</td>
                                         <td>
+                                            <div class="col-md-6 box">
                                             <form action="{{route('kategori.hapus', $k->id)}}" method="POST">
                                                 @method('delete')
                                                 @csrf
-                                                <button class="btn btn-primary">Hapus</button>
+                                                
+                                                    <button class="btn btn-danger">Hapus</button>
                                             </form>
-                                            <a href="{{ route('kategori.edit', $k->id) }}" class="btn btn-primary">Edit</a>
-                                            {{-- <form action="{{route('kategori.edit', $k->id)}}" method="POST">
-                                                @method('put')
-                                                @csrf
-                                                <button class="btn btn-primary">Edit</button>
-                                            </form> --}}
+                                            <br>
+                                            <a href="{{ route('kategori.edit', $k->id) }}" class="btn btn-info">Ubah</a>
+                                        </div>
                                         </td>
                                     </tr>
                                 @empty
@@ -39,7 +43,7 @@
                             </tbody>
                         </table>
                         <div class="table-footer text-right">
-                            <a href="{{url('admin/kategori/tambah') }}" class="btn btn-primary">Tambah</a>
+                            
                         </div>
                     </div>
                 </div>
