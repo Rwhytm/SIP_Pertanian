@@ -1,7 +1,6 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,6 +28,9 @@ Route::group(
         Route::put('kategori/update/{id}', 'KategoriController@update')->name('kategori.update');
     }
 );
+
+Route::get('login/user', 'Auth\LoginController@showLoginForm')->name('login2');
+Route::post('login/success', 'Auth\LoginController@login');
 
 Auth::routes();
 
