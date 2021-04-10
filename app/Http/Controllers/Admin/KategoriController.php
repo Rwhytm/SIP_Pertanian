@@ -9,6 +9,10 @@ use App\Models\Kategori;
 
 class KategoriController extends Controller
 {
+    public function __construct()
+{
+    $this->middleware(['role:super-admin','permission:publish articles|edit articles']);
+}
     public function index(){
         $this->data['kategori'] = Kategori::orderBy('id', 'ASC')->paginate(10);
         return view('admin.categories.kategori', $this->data);

@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::group(
-    ['namespace' => 'Admin', 'prefix' => 'admin'],
+    [['middleware' => ['role:admin']],'namespace' => 'Admin', 'prefix' => 'admin'],
     function(){
         Route::get('dashboard', 'DashboardController@index');
         Route::get('kategori', 'KategoriController@index');
