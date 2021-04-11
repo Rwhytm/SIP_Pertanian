@@ -28,6 +28,11 @@ Route::group(
         Route::put('kategori/update/{id}', 'KategoriController@update')->name('kategori.update');
     }
 );
+Route::group(
+    [['middleware' => ['role:pembeli']], 'namespace' => 'user', 'prefix' => 'user'], function(){
+
+    }
+);
 
 Route::get('login/user', 'Auth\LoginController@showLoginForm')->name('login2');
 Route::post('login/success', 'Auth\LoginController@login');

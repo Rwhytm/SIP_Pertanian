@@ -11,7 +11,7 @@ class KategoriController extends Controller
 {
     public function __construct()
 {
-    $this->middleware(['role:super-admin','permission:publish articles|edit articles']);
+    $this->middleware(['role:admin',]);
 }
     public function index(){
         $this->data['kategori'] = Kategori::orderBy('id', 'ASC')->paginate(10);

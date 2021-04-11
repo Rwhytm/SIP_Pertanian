@@ -10,7 +10,6 @@
                     <div class="col-md-11">
                     <div class="text-right">
                         <a href="{{url('admin/kategori/tambah') }}" class="btn btn-primary">Tambah</a>
-                        <a  href="{{ url('login/user') }}" class="btn btn-primary">{{ __('inlog') }}</a>
                     </div>
                      </div>
                     <div class="card-body ">
