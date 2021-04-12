@@ -49,8 +49,8 @@
                           
                             
                               <li  class="active" >
-                                <a class="sidenav-item-link" href="index.html">
-                                  <span class="nav-text">Ecommerce</span>
+                                <a class="sidenav-item-link" href="{{route('kategori utama')}}">
+                                  <span class="nav-text">Kategori</span>
                                   
                                 </a>
                               </li>
@@ -62,9 +62,8 @@
                             
                               <li >
                                 <a class="sidenav-item-link" href="analytics.html">
-                                  <span class="nav-text">Analytics</span>
-                                  
-                                  <span class="badge badge-success">new</span>
+                                  <span class="nav-text">Produk</span>
+                                  {{-- <span class="badge badge-success">new</span> --}}
                                   
                                 </a>
                               </li>

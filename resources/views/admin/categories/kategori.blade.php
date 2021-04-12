@@ -25,13 +25,15 @@
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$k->nama_kategori}}</td>
                                         <td>
-                                            <div class="col-md-6 box">
+                                            
+                                            <div class="col-md-6 box ">
                                             <form action="{{route('kategori.hapus', $k->id)}}" method="POST">
                                                 @method('delete')
                                                 @csrf
                                                 
                                                     <button class="btn btn-danger">Hapus</button>
                                             </form>
+                                        
                                             <br>
                                             <a href="{{ route('kategori.edit', $k->id) }}" class="btn btn-info">Ubah</a>
                                         </div>

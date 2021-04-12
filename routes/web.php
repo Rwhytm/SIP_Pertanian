@@ -19,7 +19,7 @@ Route::group(
     [['middleware' => ['role:admin']],'namespace' => 'Admin', 'prefix' => 'admin'],
     function(){
         Route::get('dashboard', 'DashboardController@index');
-        Route::get('kategori', 'KategoriController@index');
+        Route::get('kategori', 'KategoriController@index')->name('kategori utama');
         Route::get('kategori/tambah', 'KategoriController@tambah');
         Route::post('kategori/store', 'KategoriController@store');
         Route::delete('kategori/hapus/{id}', 'KategoriController@hapus')->name('kategori.hapus');
