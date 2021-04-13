@@ -20,10 +20,10 @@ Route::group(
     function(){
         Route::get('dashboard', 'DashboardController@index')->name('dashboard admin');
         Route::get('kategori', 'KategoriController@index')->name('kategori utama');
+        Route::get('produk', 'ProdukController@index')->name('produk admin');
         Route::get('kategori/tambah', 'KategoriController@tambah');
         Route::post('kategori/store', 'KategoriController@store');
         Route::delete('kategori/hapus/{id}', 'KategoriController@hapus')->name('kategori.hapus');
-        
         Route::get('kategori/edit/{id}', 'KategoriController@edit')->name('kategori.edit');
         Route::put('kategori/update/{id}', 'KategoriController@update')->name('kategori.update');
     }

@@ -1,5 +1,6 @@
 @extends('admin.layout')
 @section('content')
+<div class="content">
 <div class="row">
     <div class="col-md-6 col-lg-4 col-xl-3">
         <div class="widget-block rounded bg-primary  d-flex">
@@ -45,5 +46,6 @@
             </div>
         </div>
     </div>
+</div>
 </div>
 @endsection
