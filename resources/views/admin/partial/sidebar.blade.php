@@ -33,9 +33,6 @@
   
                 <!-- sidebar menu -->
                 <ul class="nav sidebar-inner" id="sidebar-menu">
-                  
-  
-                  
                     <li  class="has-sub active expand" >
                       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard"
                         aria-expanded="false" aria-controls="dashboard">
@@ -45,41 +42,30 @@
                       <ul  class="collapse show"  id="dashboard"
                         data-parent="#sidebar-menu">
                         <div class="sub-menu">
+
                           
-                          
-                            
-                              <li  class="active" >
-                                <a class="sidenav-item-link" href="{{route('kategori utama')}}">
-                                  <span class="nav-text">Kategori</span>
-                                  
-                                </a>
-                              </li>
-                            
-                          
-  
-                          
-                          
-                            
-                              <li >
-                                <a class="sidenav-item-link" href="analytics.html">
-                                  <span class="nav-text">Produk</span>
+                          {{-- tombol dashboard --}}
+                          <li class="active" >
+                            <a class="sidenav-item-link" href="{{route('kategori utama')}}">
+                              <span class="nav-text">Dashboard</span>
+                            </a>
+                          </li>
+                          {{-- tombol kategori --}}
+                          <li  class="active" >
+                            <a class="sidenav-item-link" href="{{route('kategori utama')}}">
+                              <span class="nav-text">Kategori</span>
+                            </a>
+                          </li>
+                          <li class="active">
+                            <a class="sidenav-item-link" href="analytics.html">
+                              <span class="nav-text">Produk</span>
                                   {{-- <span class="badge badge-success">new</span> --}}
-                                  
-                                </a>
-                              </li>
-                            
-                          
-  
-                          
-                        </div>
+                            </a>
+                          </li>
                       </ul>
                     </li>
-                  
-  
-                  
-  
-                  
-                    <li  class="has-sub" >
+                    {{-- Tombol APP --}}
+                    {{-- <li  class="has-sub" >
                       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#app"
                         aria-expanded="false" aria-controls="app">
                         <i class="mdi mdi-pencil-box-multiple"></i>
@@ -88,9 +74,6 @@
                       <ul  class="collapse"  id="app"
                         data-parent="#sidebar-menu">
                         <div class="sub-menu">
-                          
-                          
-                            
                               <li >
                                 <a class="sidenav-item-link" href="chat.html">
                                   <span class="nav-text">Chat</span>
@@ -139,13 +122,10 @@
                           
                         </div>
                       </ul>
-                    </li>
-                  
-  
-                  
-  
-                  
-                    <li  class="has-sub" >
+                    </li> --}}
+                    {{-- COMPONENT  --}}
+
+                    {{-- <li  class="has-sub" >
                       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#components"
                         aria-expanded="false" aria-controls="components">
                         <i class="mdi mdi-folder-multiple-outline"></i>
@@ -385,13 +365,11 @@
                           
                         </div>
                       </ul>
-                    </li>
-                  
-  
-                  
-  
-                  
-                    <li  class="has-sub" >
+                    </li> --}}
+
+                    {{-- Tombol Icon --}}
+
+                    {{-- <li  class="has-sub" >
                       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#icons"
                         aria-expanded="false" aria-controls="icons">
                         <i class="mdi mdi-diamond-stone"></i>
@@ -427,13 +405,11 @@
                           
                         </div>
                       </ul>
-                    </li>
-                  
-  
-                  
-  
-                  
-                    <li  class="has-sub" >
+                    </li> --}}
+
+                    {{-- Tombol Form --}}
+
+                    {{-- <li  class="has-sub" >
                       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#forms"
                         aria-expanded="false" aria-controls="forms">
                         <i class="mdi mdi-email-mark-as-unread"></i>
@@ -505,13 +481,10 @@
                           
                         </div>
                       </ul>
-                    </li>
-                  
-  
-                  
-  
-                  
-                    <li  class="has-sub" >
+                    </li> --}}
+
+                    {{-- Tombol Table --}}
+                    {{-- <li  class="has-sub" >
                       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#tables"
                         aria-expanded="false" aria-controls="tables">
                         <i class="mdi mdi-table"></i>
@@ -566,13 +539,10 @@
                           
                         </div>
                       </ul>
-                    </li>
+                    </li> --}}
                   
-  
-                  
-  
-                  
-                    <li  class="has-sub" >
+                    {{-- Tombol  Maps--}}
+                    {{-- <li  class="has-sub" >
                       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#maps"
                         aria-expanded="false" aria-controls="maps">
                         <i class="mdi mdi-google-maps"></i>
@@ -608,13 +578,10 @@
                           
                         </div>
                       </ul>
-                    </li>
-                  
-  
-                  
-  
-                  
-                    <li  class="has-sub" >
+                    </li> --}}
+
+                    {{-- Tombol Widgets --}}
+                    {{-- <li  class="has-sub" >
                       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#widgets"
                         aria-expanded="false" aria-controls="widgets">
                         <i class="mdi mdi-widgets"></i>
@@ -650,13 +617,10 @@
                           
                         </div>
                       </ul>
-                    </li>
-                  
-  
-                  
-  
-                  
-                    <li  class="has-sub" >
+                    </li> --}}
+
+                    {{-- Tombol Charts --}}
+                    {{-- <li  class="has-sub" >
                       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#charts"
                         aria-expanded="false" aria-controls="charts">
                         <i class="mdi mdi-chart-pie"></i>
@@ -680,13 +644,10 @@
                           
                         </div>
                       </ul>
-                    </li>
-                  
-  
-                  
-  
-                  
-                    <li  class="has-sub" >
+                    </li> --}}
+
+                    {{-- Tombol Pages --}}
+                    {{-- <li  class="has-sub" >
                       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#pages"
                         aria-expanded="false" aria-controls="pages">
                         <i class="mdi mdi-image-filter-none"></i>
@@ -756,13 +717,10 @@
                           
                         </div>
                       </ul>
-                    </li>
+                    </li> --}}
                   
-  
-                  
-  
-                  
-                    <li  class="has-sub" >
+                    {{-- Tombol Dokumentasi --}}
+                    {{-- <li  class="has-sub" >
                       <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#documentation"
                         aria-expanded="false" aria-controls="documentation">
                         <i class="mdi mdi-book-open-page-variant"></i>
@@ -922,15 +880,13 @@
                           
                         </div>
                       </ul>
-                    </li>
-                  
-  
-                  
+                    </li> --}}
                 </ul>
   
               </div>
   
-              <div class="sidebar-footer">
+              {{-- Footer --}}
+              {{-- <div class="sidebar-footer">
                 <hr class="separator mb-0" />
                 <div class="sidebar-footer-content">
                   <h6 class="text-uppercase">
@@ -954,6 +910,6 @@
                     ></div>
                   </div>
                 </div>
-              </div>
+              </div> --}}
             </div>
           </aside>

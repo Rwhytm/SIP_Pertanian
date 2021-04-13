@@ -67,24 +67,25 @@
               </li>
             </ul>
           </li>
-          <li class="right-sidebar-in right-sidebar-2-menu">
+          {{-- icon berputar --}}
+          {{-- <li class="right-sidebar-in right-sidebar-2-menu">
             <i class="mdi mdi-settings mdi-spin"></i>
-          </li>
+          </li> --}}
           <!-- User Account -->
           <li class="dropdown user-menu">
             <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
               <img src="assets/img/user/user.png" class="user-image" alt="User Image" />
-              <span class="d-none d-lg-inline-block">Abdus Salam</span>
+              <span class="d-none d-lg-inline-block">{{'Hallo, kak '.Auth::user()->nama }}</span>
             </button>
             <ul class="dropdown-menu dropdown-menu-right">
               <!-- User image -->
               <li class="dropdown-header">
-                <img src="assets/img/user/user.png" class="img-circle" alt="User Image" />
                 <div class="d-inline-block">
-                  Abdus Salam <small class="pt-1">iamabdus@gmail.com</small>
+                  {{ Auth::user()->nama }} 
+                  <small class="pt-1 ">{{Auth::user()->email}}</small>
                 </div>
               </li>
-
+            
               <li>
                 <a href="user-profile.html">
                   <i class="mdi mdi-account"></i> My Profile
@@ -94,12 +95,6 @@
                 <a href="#">
                   <i class="mdi mdi-email"></i> Message
                 </a>
-              </li>
-              <li>
-                <a href="#"> <i class="mdi mdi-diamond-stone"></i> Projects </a>
-              </li>
-              <li class="right-sidebar-in">
-                <a href="javascript:0"> <i class="mdi mdi-settings"></i> Setting </a>
               </li>
 
               <li class="dropdown-footer">

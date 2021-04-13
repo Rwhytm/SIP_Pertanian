@@ -18,7 +18,7 @@ Route::get('/', function () {
 Route::group(
     [['middleware' => ['role:admin']],'namespace' => 'Admin', 'prefix' => 'admin'],
     function(){
-        Route::get('dashboard', 'DashboardController@index');
+        Route::get('dashboard', 'DashboardController@index')->name('dashboard admin');
         Route::get('kategori', 'KategoriController@index')->name('kategori utama');
         Route::get('kategori/tambah', 'KategoriController@tambah');
         Route::post('kategori/store', 'KategoriController@store');
