@@ -25,7 +25,7 @@
                       <path class="logo-fill-white" fill="#FFF" d="M11 4v25l8 4V0z" />
                     </g>
                   </svg>
-                  <span class="brand-name text-truncate">Sleek Dashboard</span>
+                  <span class="brand-name text-truncate">INCUBATOR PERTANIAN</span>
                 </a>
               </div>
               <!-- begin sidebar scrollbar -->
@@ -46,7 +46,7 @@
                           
                           {{-- tombol dashboard --}}
                           <li class="active" >
-                            <a class="sidenav-item-link" href="{{route('kategori utama')}}">
+                            <a class="sidenav-item-link" href="{{route('dashboard admin')}}">
                               <span class="nav-text">Dashboard</span>
                             </a>
                           </li>
