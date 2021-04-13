@@ -8,7 +8,7 @@
                         <h2>Kategori</h2>
                     </div>
                     <div class="col-md-11">
-                    <div class="text-right">
+                    <div class="text-right ">
                         <a href="{{url('admin/kategori/tambah') }}" class="btn btn-primary">Tambah</a>
                     </div>
                      </div>
@@ -26,7 +26,7 @@
                                         <td>{{$k->nama_kategori}}</td>
                                         <td>
                                             
-                                            <div class="col-md-6 box ">
+                                            <div class="col-md-6 flex ">
                                             <form action="{{route('kategori.hapus', $k->id)}}" method="POST">
                                                 @method('delete')
                                                 @csrf
@@ -44,6 +44,7 @@
                                 @endforelse
                             </tbody>
                         </table>
+                        {{ $produk->links() }}
                         <div class="table-footer text-right">
                             
                         </div>

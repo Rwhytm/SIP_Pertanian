@@ -22,9 +22,9 @@ class KategoriController extends Controller
     }
     public function store(Request $request){
         $this->validate($request,
-            ['nama_kategori' => 'required',]
+            []
         );    
-        $kategori = Kategori::create([
+        $produk = Kategori::create([
             'nama_kategori' =>  Str::lower($request->nama_kategori),
         ]);
         return redirect('admin/kategori');

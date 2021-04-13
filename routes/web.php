@@ -21,8 +21,10 @@ Route::group(
         Route::get('dashboard', 'DashboardController@index')->name('dashboard admin');
         Route::get('kategori', 'KategoriController@index')->name('kategori utama');
         Route::get('produk', 'ProdukController@index')->name('produk admin');
+        Route::get('produk/tambah', 'ProdukController@tambah');
+        Route::post('produk/store', 'ProdukController@store')->name('produk store');
         Route::get('kategori/tambah', 'KategoriController@tambah');
-        Route::post('kategori/store', 'KategoriController@store');
+        Route::post('kategori/store', 'KategoriController@store')->name('kategori store');
         Route::delete('kategori/hapus/{id}', 'KategoriController@hapus')->name('kategori.hapus');
         Route::get('kategori/edit/{id}', 'KategoriController@edit')->name('kategori.edit');
         Route::put('kategori/update/{id}', 'KategoriController@update')->name('kategori.update');

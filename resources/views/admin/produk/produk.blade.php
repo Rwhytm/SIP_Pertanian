@@ -9,7 +9,7 @@
                 </div>
                 <div class="col-md-11">
                 <div class="text-right">
-                    <a href="{{url('admin/kategori/tambah') }}" class="btn btn-primary">Tambah</a>
+                    <a href="{{url('admin/produk/tambah') }}" class="btn btn-primary">Tambah</a>
                 </div>
                  </div>
                 <div class="card-body ">
@@ -17,6 +17,9 @@
                         <thead>
                             <th>#</th>
                             <th>Nama Produk</th>
+                            <th>Jumlah</th>
+                            <th>Harga</th>
+                            <th>Deskripsi</th>
                             <th>Action</th>
                         </thead>
                         <tbody>
@@ -24,6 +27,9 @@
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
                                     <td>{{$p->nama_produk}}</td>
+                                    <td>{{$p->jumlah}}</td>
+                                    <td>{{$p->harga}}</td>
+                                    <td>{{$p->deskripsi}}</td>
                                     <td>
                                         
                                         <div class="col-md-6 box ">
@@ -40,10 +46,11 @@
                                     </td>
                                 </tr>
                             @empty
-                                <td colspan="3">Tidak Ada Data</td>
+                                <td colspan="6">Tidak Ada Data</td>
                             @endforelse
                         </tbody>
                     </table>
+                    {{ $produk->links() }}
                     <div class="table-footer text-right">
                         
                     </div>
