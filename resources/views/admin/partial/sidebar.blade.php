@@ -52,8 +52,8 @@
   
                 <!-- sidebar menu -->
                 <ul class="nav sidebar-inner" id="sidebar-menu">
-                    <li  class="has-sub active expand" >
-                      <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#dashboard"
+                    <li  class="has-sub  expand" >
+                      <a class="sidenav-item-link" href="javascript:void(1)" data-toggle="collapse" data-target="#dashboard"
                         aria-expanded="false" aria-controls="dashboard">
                         <i>
                           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -73,19 +73,19 @@
                               <span class="nav-text">Dashboard</span>
                             </a>
                           </li>
-                      </ul>
                     </li>
-                    <li  class="has-sub" >
-                      <a class="sidenav-item-link" href="javascript:void(0)" data-toggle="collapse" data-target="#tables"
+                  </ul>
+                    <li  class="has-sub  expand" >
+                      <a class="sidenav-item-link" href="javascript:void(1)" data-toggle="collapse" data-target="#tables"
                       aria-expanded="false" aria-controls="tables">
                         <i>
                           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M3 14h18m-9-4v8m-7 0h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
                           </svg>
-                      </i>
+                        </i>
                         <span class="nav-text">Tables</span> <b class="caret"></b>
                       </a>
-                      <ul  class="collapse show"  id="tables"
+                      <ul  class="collapse"  id="tables"
                         data-parent="#sidebar-menu">
                         <div class="sub-menu">
                           <li >
@@ -100,7 +100,7 @@
                               
                             </a>
                           </li>
-                </ul>
+                      </ul>
                   
               </div>
   

@@ -16,6 +16,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::group(
+    [['middleware' => ['role:pembeli']],'namespace' => 'User', 'prefix' => 'user'],
+    function(){
+        Route::get('home', 'DashboardController@index')->name('home user');
+    }
+);
+Route::group(
     [['middleware' => ['role:admin']],'namespace' => 'Admin', 'prefix' => 'admin'],
     function(){
         Route::get('dashboard', 'DashboardController@index')->name('dashboard admin');

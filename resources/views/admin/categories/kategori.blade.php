@@ -44,7 +44,7 @@
                                 @endforelse
                             </tbody>
                         </table>
-                        {{ $produk->links() }}
+                        {{ $kategori->links() }}
                         <div class="table-footer text-right">
                             
                         </div>

@@ -18,14 +18,17 @@ class ProdukController extends Controller
     }
     public function store(Request $request){
         $this->validate($request,
-            []
+            ['thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048|unique:posts',]
         );    
+        $image = $request->file('thumbnail');
+        $originalname = $image->getClientOriginalName();
+        Storage::disk('public')->put($originalname, file_get_contents($image));
         $produk = Produk::create([
             'nama_produk' =>  Str::upper($request->nama),
             'jumlah' => $request->jumlah,
             'harga' => $request->harga,
             'deskripsi' => $request->deskripsi,
-            'foto_produk' => $request->deskripsi,
+            'foto_produk' => $originalname,
         ]);
         return redirect('admin/produk');
     }
