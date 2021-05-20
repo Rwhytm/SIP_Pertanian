@@ -26,10 +26,15 @@
                                             <a href="product-details.html">
                                                 <img src={{ URL::asset('users/assets/img/product/fashion-colorful/3.jpg')}} alt="">
                                             </a>
-                                            <span>hot</span>
                                             <div class="product-action">
+                                                <a class="animate-left" title="Wishlist" href="#">
+                                                    <i class="pe-7s-like"></i>
+                                                </a>
                                                 <a class="animate-top" title="Add To Cart" href="#">
                                                     <i class="pe-7s-cart"></i>
+                                                </a>
+                                                <a class="animate-right" title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#">
+                                                    <i class="pe-7s-look"></i>
                                                 </a>
                                             </div>
                                         </div>

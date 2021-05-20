@@ -11,5 +11,10 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
     protected $kategori=[];
+    protected $data=[];
+
+    protected function __constuct(){
+        $this->$data['curentAdminMenu'];
+    }
 }
 

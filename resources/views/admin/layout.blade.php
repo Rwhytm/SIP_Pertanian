@@ -39,7 +39,7 @@
   <link id="sleek-css" rel="stylesheet" href="{{URL::asset('admin/assets/css/sleek.css') }}" />
 
   <!-- FAVICON -->
-  <link href="{{ URL::asset('admin/assets/img/favicon.png') }}" rel="shortcut icon" />
+  <link href="{{ URL::asset('users/assets/img/thumb-300x300.png')}}" rel="shortcut icon" />
 
   
 

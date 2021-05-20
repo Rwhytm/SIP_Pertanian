@@ -15,7 +15,7 @@ class KategoriController extends Controller
 }
     public function index(){
         $this->data['kategori'] = Kategori::orderBy('id', 'ASC')->paginate(10);
-        return view('users.home');
+        return view('admin.categories.kategori', $this->data);
     }
     public function tambah(){
         return view('admin.categories.tambah_kategori');

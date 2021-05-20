@@ -16,9 +16,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::group(
-    [['middleware' => ['role:pembeli']],'namespace' => 'User', 'prefix' => 'user'],
+    [['middleware' => ['role:pembeli']],'namespace' => 'Users', 'prefix' => 'users'],
     function(){
-        Route::get('home', 'DashboardController@index')->name('home user');
+        Route::get('home', 'UserController@index')->name('home user');
     }
 );
 Route::group(
@@ -34,11 +34,6 @@ Route::group(
         Route::delete('kategori/hapus/{id}', 'KategoriController@hapus')->name('kategori.hapus');
         Route::get('kategori/edit/{id}', 'KategoriController@edit')->name('kategori.edit');
         Route::put('kategori/update/{id}', 'KategoriController@update')->name('kategori.update');
-    }
-);
-Route::group(
-    [['middleware' => ['role:pembeli']], 'namespace' => 'user', 'prefix' => 'user'], function(){
-
     }
 );
 

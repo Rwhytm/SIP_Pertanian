@@ -4,11 +4,11 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>Fashion - eCommerce HTML5 Template</title>
+    <title>{{config('app.name')}}</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/thumb-300x300.png">
 
     <!-- all css here -->
     <link rel="stylesheet" href={{ URL::asset('users/assets/css/bootstrap.min.css')}}>
