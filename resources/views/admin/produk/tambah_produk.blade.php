@@ -21,9 +21,33 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label for="Kategori" class="col-md-4 col-form-label text-md-right">{{ __('Kategori') }}</label>
+                    <div class="col-md-6">
+                        <select class="form-control" name="kategori_id" >
+                            <option >--Pilih Kategori--</option>
+                            @foreach ($kategori as $k)
+                               <option value="{{$k->id}}" {{ ($k->id == $k->nama_kategori) ? "selected" : "" }}>{{ $k->nama_kategori }}</option> 
+                            @endforeach
+                            
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="harga" class="col-md-4 col-form-label text-md-right">{{ __('Harga') }}</label>
                     <div class="col-md-6">
                         <input id="harga" type="text" class="form-control" name="harga">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="Kategori" class="col-md-4 col-form-label text-md-right">{{ __('Status') }}</label>
+                    <div class="col-md-6">
+                        <select class="form-control" name="status" >
+                            <option >--Pilih Status--</option>
+                            @foreach ($statuses as $s)
+                               <option value="{{strtolower($s)}}" >{{ $s }}</option> 
+                            @endforeach
+                            
+                        </select>
                     </div>
                 </div>
                 <div class="form-group row">
@@ -37,7 +61,7 @@
                         @enderror
                     </div>
                 </div>
-                <div class="form-group row">
+                {{-- <div class="form-group row">
                     <label for="foto_produk" class="col-md-4 col-form-label text-md-right">{{ __('Foto Produk') }}</label>
                     <div class="col-md-6">
                         <div class="d-flex justify-content-center">
@@ -51,7 +75,7 @@
                             </span>
                         @enderror
                     </div>
-                </div>
+                </div> --}}
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>
             </div>
