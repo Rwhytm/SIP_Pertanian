@@ -35,7 +35,6 @@ class ProdukController extends Controller
             'jumlah' => $request->jumlah,
             'harga' => $request->harga,
             'deskripsi' => $request->deskripsi,
-            // 'foto_produk' => $originalname,
         ]);
         return redirect('admin/produk');
     }

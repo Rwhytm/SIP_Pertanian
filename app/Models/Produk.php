@@ -7,9 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Produk extends Model
 {
     protected $table = 'produk';
-    protected $fillable = ['nama_produk','jumlah','harga','deskripsi','foto_produk'];
+    protected $fillable = ['nama_produk','jumlah','harga','deskripsi'];
     public function kategori(){
-        return $this->belongTo('App\Models\Kategori', 'produk_kategori');
+        return $this->belongTo('App\Models\Kategori', 'tabel_kategori_produk');
     }
     public static function statuses(){
         return [
