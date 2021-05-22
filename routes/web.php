@@ -27,10 +27,13 @@ Route::group(
     [['middleware' => ['role:admin']],'namespace' => 'Admin', 'prefix' => 'admin'],
     function(){
         Route::get('dashboard', 'DashboardController@index')->name('dashboard admin');
-        Route::get('kategori', 'KategoriController@index')->name('kategori utama');
         Route::get('produk', 'ProdukController@index')->name('produk admin');
         Route::get('produk/tambah', 'ProdukController@tambah');
+        Route::get('produk/edit/{id}', 'ProdukController@edit')->name('produk.edit');
+        Route::put('produk/update/{id}', 'ProdukController@update')->name('produk.update');
         Route::post('produk/store', 'ProdukController@store')->name('produk store');
+        Route::delete('produk/hapus/{id}', 'ProdukController@hapus')->name('produk.hapus');
+        Route::get('kategori', 'KategoriController@index')->name('kategori utama');
         Route::get('kategori/tambah', 'KategoriController@tambah');
         Route::post('kategori/store', 'KategoriController@store')->name('kategori store');
         Route::delete('kategori/hapus/{id}', 'KategoriController@hapus')->name('kategori.hapus');

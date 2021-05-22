@@ -20,20 +20,32 @@
                             <th>Jumlah</th>
                             <th>Harga</th>
                             <th>Deskripsi</th>
+                            <th>Kategori</th>
                             <th>Action</th>
                         </thead>
                         <tbody>
                             @forelse ($produk as $p)
                                 <tr>
-                                    <td>{{$loop->iteration}}</td>
+                                    <td>{{$p->id}}</td>
                                     <td>{{$p->nama_produk}}</td>
                                     <td>{{$p->jumlah}}</td>
                                     <td>{{$p->harga}}</td>
                                     <td>{{$p->deskripsi}}</td>
+                                    @forelse ($p->kategori as $p)
+                                    <td>{{$p->nama_kategori}}</td>
+                                    @empty
+                                    <td>
+                                       {{'-'}}
+                                    </td>
+                                    @endforelse
+                                    
+
+                                        
+                                    
                                     <td>
                                         
                                         <div class="col-md-6 box ">
-                                        <form action="{{route('kategori.hapus', $p->id)}}" method="POST">
+                                        <form action="{{route('produk.hapus', $p->id)}}" method="POST">
                                             @method('delete')
                                             @csrf
                                             
@@ -41,12 +53,12 @@
                                         </form>
                                     
                                         <br>
-                                        <a href="{{ route('kategori.edit', $p->id) }}" class="btn btn-info">Ubah</a>
+                                        <a href="{{ route('produk.edit', $p->id) }}" class="btn btn-info">Ubah</a>
                                     </div>
                                     </td>
                                 </tr>
                             @empty
-                                <td colspan="6">Tidak Ada Data</td>
+                                <td colspan="7">Tidak Ada Data</td>
                             @endforelse
                         </tbody>
                     </table>
