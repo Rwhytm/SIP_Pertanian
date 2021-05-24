@@ -4,7 +4,7 @@
             <div class="header-bottom-wrapper">
                 <div class="logo-2 furniture-logo ptb-30">
                     <a href="home.html">
-                        <img src="assets/img/logo/2.png" alt="" style="width: 167px">
+                        <img src="" alt="" style="width: 167px">
                     </a>
                 </div>
                 <div class="menu-style-2 furniture-menu menu-hover">

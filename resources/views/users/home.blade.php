@@ -13,13 +13,14 @@
         <div class="pl-100 pr-100">
             <div class="container-fluid">
                 <div class="section-title text-center mb-60">
-                    <h2>All Products</h2>
+                    <h2>Semua Produk</h2>
                 </div>
                 <div class="product-style">
                     
                     <div class="tab-content">
                         <div class="tab-pane active show fade" id="home1" role="tabpanel">
                             <div class="custom-row">
+                                @forelse ($produk as $p)
                                 <div class="custom-col-5 custom-col-style mb-65">
                                     <div class="product-wrapper">
                                         <div class="product-img">
@@ -27,9 +28,6 @@
                                                 <img src={{ URL::asset('users/assets/img/product/fashion-colorful/3.jpg')}} alt="">
                                             </a>
                                             <div class="product-action">
-                                                <a class="animate-left" title="Wishlist" href="#">
-                                                    <i class="pe-7s-like"></i>
-                                                </a>
                                                 <a class="animate-top" title="Add To Cart" href="#">
                                                     <i class="pe-7s-cart"></i>
                                                 </a>
@@ -39,11 +37,16 @@
                                             </div>
                                         </div>
                                         <div class="product-content">
-                                            <h4><a href="product-details.html">Mini Waffle 5 Pack</a></h4>
-                                            <span>$115.00</span>
+                                            <h4><a href="product-details.html">{{$p->nama_produk}}</a></h4>
+                                            <span>{{'Rp.'.$p->harga}}</span>
+                                            <br>
+                                            <h4>{{'Tersisa : '. $p->jumlah}}</h4>
                                         </div>
                                     </div>
                                 </div>
+                                @empty
+                                    
+                                @endforelse
                             </div>
                         </div>
                     </div>
