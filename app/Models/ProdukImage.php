@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class ProdukImage extends Model
 {
+    protected $table = 'produk_images';
     protected $fillable = [
         'produk_id',
         'path',

@@ -38,10 +38,6 @@
                                        {{'-'}}
                                     </td>
                                     @endforelse
-                                    
-
-                                        
-                                    
                                     <td>
                                         
                                         <div class="col-md-6 box ">
@@ -51,7 +47,6 @@
                                             
                                                 <button class="btn btn-danger">Hapus</button>
                                         </form>
-                                    
                                         <br>
                                         <a href="{{ route('produk.edit', $p->id) }}" class="btn btn-secondary btn-default">Ubah</a>
                                     </div>

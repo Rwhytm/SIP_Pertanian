@@ -74,4 +74,25 @@ class ProdukController extends Controller
 
         return view('admin.produk.image_form',['produk' => $produk]);
     }
+    public function upload_image(Request $request, $id){
+        $produk = Produk::find($id);
+
+        if ($request->file('image')){
+            $image = $request->file('image');
+            $name = Str::slug($produk->name).'_'.time();
+            $filename = $name.'.'.$image->getClientOriginalExtension();
+
+            $folder = '/uploads/images';
+            $filePath = $image->storeAs($produk, $filename,'public');
+
+            $produkimage = ProdukImage::create(
+                [
+                    'produk_id' => $produk->id,
+                    'path' => $filePath,
+                ]
+            );
+
+            return redirect(route('produk.image'));
+        }
+    }
 }
