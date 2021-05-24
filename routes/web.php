@@ -39,6 +39,12 @@ Route::group(
         Route::delete('kategori/hapus/{id}', 'KategoriController@hapus')->name('kategori.hapus');
         Route::get('kategori/edit/{id}', 'KategoriController@edit')->name('kategori.edit');
         Route::put('kategori/update/{id}', 'KategoriController@update')->name('kategori.update');
+
+        // route image produk
+        Route::get('produk/{id}/images', 'ProdukController@images')->name('produk.image');
+        Route::get('produk/{id}/add-image', 'ProdukController@addImage')->name('add.image');
+        Route::post('produk/images/{id}', 'ProdukController@upload_image')->name('upload_image');
+        Route::delete('produk/images/{id}', 'ProdukController@remove_image');
     }
 );
 

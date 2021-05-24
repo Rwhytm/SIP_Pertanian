@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Str;   
 use App\Models\Produk;
 use App\Models\Kategori;
+use App\Models\ProdukImage;
 use DB;
 use Session;
 
@@ -23,7 +24,7 @@ class ProdukController extends Controller
         $this->data['kategori'] = $kategori->toArray();
         $this->data['produk'] = null;
         $this->data['kategori_id'] = [];
-        return view('admin.produk.tambah_produk',[ $this->data, 'kategori'   =>  $kategori]);
+        return view('admin.produk.tambah_produk',['kategori'   =>  $kategori]);
     }
     public function store(Request $request){
         // $this->validate($request,
@@ -43,7 +44,6 @@ class ProdukController extends Controller
     }
     public function edit($id)
     {
-
         $produk = Produk::find($id);
         $kategori = Kategori::orderBy('nama_kategori', 'ASC') -> get();
         return view('admin.produk.edit', ['produk' => $produk,'kategori'   =>  $kategori]);
@@ -62,5 +62,16 @@ class ProdukController extends Controller
     public function hapus($id){
         $hapus = Produk::find($id)->delete();
         return redirect('admin/produk');
+    }
+    public function images($id){
+        $produk = Produk::find($id);
+        $image = $produk->produkImages;
+
+        return  view('admin.produk.images',['produk' => $produk,'image'   =>  $image]);
+    }
+    public function addImage($id){
+        $produk = Produk::find($id);
+
+        return view('admin.produk.image_form',['produk' => $produk]);
     }
 }

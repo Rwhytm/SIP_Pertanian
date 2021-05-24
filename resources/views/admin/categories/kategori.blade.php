@@ -35,7 +35,7 @@
                                             </form>
                                         
                                             <br>
-                                            <a href="{{ route('kategori.edit', $k->id) }}" class="btn btn-info">Ubah</a>
+                                            <a href="{{ route('kategori.edit', $k->id) }}" class="btn btn-secondary btn-default">Ubah</a>
                                         </div>
                                         </td>
                                     </tr>
