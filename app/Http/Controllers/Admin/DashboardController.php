@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
+use App\Models\Produk;
 
 class DashboardController extends Controller
 {
@@ -13,7 +14,9 @@ class DashboardController extends Controller
         $this->middleware(['role:admin']);
     }
     public function index(){
-        return view('admin\dashboard\index');
+        $pelanggan = User::orderBy('id', 'DESC')->role('admin');
+        $produk = Produk::orderBy('id', 'ASC');
+        return view('admin\dashboard\index',['pelanggan' => $pelanggan, 'produk' => $produk]);
     }
 
     public function user(){
