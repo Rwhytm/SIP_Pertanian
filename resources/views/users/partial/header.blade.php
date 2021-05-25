@@ -10,14 +10,15 @@
                 <div class="menu-style-2 furniture-menu menu-hover">
                     <nav>
                         <ul>
-                            <li><a href="#">pages</a>
+                            
+                            <li><a href="#">filter</a>
                                 <ul class="single-dropdown">
-                                    <li><a href="all-items.html">all items</a></li>
-                                    <li><a href="cart.html">cart page</a></li>
-                                    <li><a href="checkout.html">payment</a></li>
-                                    <li><a href="wishlist.html">wishlist</a></li>
-                                    <li><a href="contact.html">contact</a></li>
-                                     <li><a href="about-us.html">about us</a></li>
+                                    <li><a href="cart.html"></a></li>
+                                    <li><a href="{{route('home user')}}">semua produk</a></li>
+                                    <li><a href="{{route('terbaru')}}">produk terbaru</a></li>
+                                    <li><a href="{{route('terlama')}}">produk Terlama</a></li>
+                                    <li><a href="{{route('hargatinggi')}}">Harga Tinggi Ke Rendah</a></li>
+                                     <li><a href="{{route('hargarendah')}}">Harga Rendah Ke Tinggi</a></li>
                                 </ul>
                             </li>
                             <li><a href="shop.html">my orders</a>

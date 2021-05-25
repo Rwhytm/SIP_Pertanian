@@ -26,7 +26,7 @@
                     </g>
                   </svg> --}}
                   <span class="brand-name text-truncate ">
-                    <svg
+                    {{-- <svg
                   class="brand-icon"
                   xmlns="http://www.w3.org/2000/svg"
                   preserveAspectRatio="xMidYMid"
@@ -42,7 +42,7 @@
                     />
                     <path class="logo-fill-white" fill="#FFF" d="M11 4v25l8 4V0z" />
                   </g>
-                </svg>
+                </svg> --}}
                     <small>INCUBATOR PERTANIAN</small>
                   </span>
                 </a>
@@ -62,13 +62,13 @@
                         </i>
                         <span class="nav-text">Dashboard</span> <b class="caret"></b>
                       </a>
-                      <ul  class="collapse show"  id="dashboard"
+                      <ul  class="collapse"  id="dashboard"
                         data-parent="#sidebar-menu">
                         <div class="sub-menu">
 
                           
                           {{-- tombol dashboard --}}
-                          <li class="active" >
+                          <li class="deactive" >
                             <a class="sidenav-item-link" href="{{route('dashboard admin')}}">
                               <span class="nav-text">Dashboard</span>
                             </a>
@@ -100,7 +100,14 @@
                               
                             </a>
                           </li>
+                          <li >
+                            <a class="sidenav-item-link" href="{{route('admin_user')}}">
+                              <span class="nav-text">Tabel Pelanggan</span>
+                              
+                            </a>
+                          </li>
                       </ul>
+                      
                   
               </div>
   

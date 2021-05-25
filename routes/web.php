@@ -20,19 +20,31 @@ Route::group(
     [['middleware' => ['role:pembeli']],'namespace' => 'Users', 'prefix' => 'users'],
     function(){
         Route::get('home', 'UserController@index')->name('home user');
+        Route::get('home/terbaru', 'UserController@terbaru')->name('terbaru');
+        Route::get('home/terlama', 'UserController@terlama')->name('terlama');
+        Route::get('home/dari-tinggi', 'UserController@daritinggi')->name('hargatinggi');
+        Route::get('home/dari-rendah', 'UserController@darirendah')->name('hargarendah');
     }
 );
 Route::group(
     
     [['middleware' => ['role:admin']],'namespace' => 'Admin', 'prefix' => 'admin'],
     function(){
+        // dashboard
         Route::get('dashboard', 'DashboardController@index')->name('dashboard admin');
+
+        // tabel user
+        Route::get('list-users', 'DashboardController@user')->name('admin_user');
+
+        // produk
         Route::get('produk', 'ProdukController@index')->name('produk admin');
         Route::get('produk/tambah', 'ProdukController@tambah');
         Route::get('produk/edit/{id}', 'ProdukController@edit')->name('produk.edit');
         Route::put('produk/update/{id}', 'ProdukController@update')->name('produk.update');
         Route::post('produk/store', 'ProdukController@store')->name('produk store');
         Route::delete('produk/hapus/{id}', 'ProdukController@hapus')->name('produk.hapus');
+
+        // kategori
         Route::get('kategori', 'KategoriController@index')->name('kategori utama');
         Route::get('kategori/tambah', 'KategoriController@tambah');
         Route::post('kategori/store', 'KategoriController@store')->name('kategori store');

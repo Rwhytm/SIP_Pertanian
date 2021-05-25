@@ -12,21 +12,21 @@
       </button>
       <!-- search form -->
       <div class="search-form d-none d-lg-inline-block">
-        <div class="input-group">
+        {{-- <div class="input-group">
           <button type="button" name="search" id="search-btn" class="btn btn-flat">
             <i class="mdi mdi-magnify"></i>
           </button>
           <input type="text" name="query" id="search-input" class="form-control" placeholder="'button', 'chart' etc."
             autofocus autocomplete="off" />
-        </div>
-        <div id="search-results-container">
+        </div> --}}
+        {{-- <div id="search-results-container">
           <ul id="search-results"></ul>
-        </div>
+        </div> --}}
       </div>
 
       <div class="navbar-right ">
         <ul class="nav navbar-nav">
-          <li class="dropdown notifications-menu">
+          {{-- <li class="dropdown notifications-menu">
             <button class="dropdown-toggle" data-toggle="dropdown">
               <i class="mdi mdi-bell-outline"></i>
             </button>
@@ -66,7 +66,7 @@
                 <a class="text-center" href="#"> View All </a>
               </li>
             </ul>
-          </li>
+          </li> --}}
           <li class="dropdown user-menu">
             <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
               <img src="assets/img/user/user.png" class="user-image" alt="User Image" />
