@@ -48,40 +48,9 @@
     </div>
 </div>
 <div class="row">
-        {{-- <div class="col-sm-12 col-lg-6 col-xl-4">
-            <div class="card card-table-border-none" data-scroll-height="580">
-                <div class="card-header justify-content-between">
-                    <h2 class="d-inline-block">Pelanggan Baru</h2>
-                    <div>
-                        <button class="text-black-50 mr-2 font-size-20">
-                            <i class="mdi mdi-cached"></i>
-                        </button>
-                    </div>
-                </div>
-                <div class="card-body pt-0">
-                    <table class="table ">
-                        <tbody>
-                            <tr>
-                                <td >
-                                    <div class="media">
-                                        <div class="media-image mr-3 rounded-circle">
-                                            <a href="profile.html"><img class="rounded-circle w-45" src="assets/img/user/u1.jpg" alt="customer image"></a>
-                                        </div>
-                                        <div class="media-body align-self-center">
-                                            <a href="profile.html">
-                                                <h6 class="mt-0 text-dark font-weight-medium">{{$pelanggan->nama}}</h6>
-                                            </a>
-                                            <small>{{$pelanggan->email}}</small>
-                                        </div>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
 
-        </div> --}}
+
+        </div> 
 </div>
 </div>
 @endsection
