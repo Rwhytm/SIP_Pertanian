@@ -27,12 +27,6 @@ class ProdukController extends Controller
         return view('admin.produk.tambah_produk',['kategori'   =>  $kategori]);
     }
     public function store(Request $request){
-        // $this->validate($request,
-        //     ['thumbnail' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048|unique:posts',]
-        // );    
-        // $image = $request->file('thumbnail');
-        // $originalname = $image->getClientOriginalName();
-        // Storage::disk('public')->put($originalname, file_get_contents($image));
         $produk = Produk::create([
             'nama_produk' =>  Str::upper($request->nama),
             'jumlah' => $request->jumlah,

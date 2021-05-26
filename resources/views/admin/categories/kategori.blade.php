@@ -15,18 +15,18 @@
                     <div class="card-body ">
                         <table class="table table-boardered table-striped">
                             <thead>
-                                <th>#</th>
-                                <th>Nama Kategori</th>
-                                <th>Action</th>
+                                <th class="text-center">#</th>
+                                <th class="text-center">Nama Kategori</th>
+                                <th class="text-center">Action</th>
                             </thead>
                             <tbody>
                                 @forelse ($kategori as $k)
                                     <tr>
-                                        <td>{{$loop->iteration}}</td>
-                                        <td>{{$k->nama_kategori}}</td>
+                                        <td class="text-center">{{$loop->iteration}}</td>
+                                        <td class="text-center">{{$k->nama_kategori}}</td>
                                         <td>
                                             
-                                            <div class="col-md-6 d-flex ">
+                                            <div class="d-flex justify-content-center">
                                             <form action="{{route('kategori.hapus', $k->id)}}" method="POST">
                                                 @method('delete')
                                                 @csrf

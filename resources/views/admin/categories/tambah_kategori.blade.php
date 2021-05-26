@@ -10,9 +10,18 @@
                         <div class="card-body">
                             <form action="store" method="post">
                                 {{ csrf_field() }}
+                                @if ($errors->any())
+                                    <div class="alert alert-danger">
+                                    <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                                    </ul>
+                                     </div>
+                                 @endif
                             <div class="form-group">
                                 <label for="nama_kategori">Nama Kategori</label>
-                                <input type="text" class="form-control" id="nama_kategori" name="nama_kategori" placeholder="Nama Kategori">
+                                <input type="text" class="form-control @error('nama_kategori') is-invalid @enderror" id="nama_kategori" name="nama_kategori" placeholder="Nama Kategori">
                             </div>
                                 <button type="submit" class="btn btn-primary">Simpan</button>
                             </form>
