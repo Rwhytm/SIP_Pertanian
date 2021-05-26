@@ -39,7 +39,7 @@
                     <div class="copyright">
                         <p>
                             Copyright ©
-                            <a href="https://hastech.company/">HasTech</a> 2018 . All Right Reserved.
+                            <a href="http://fp.unib.ac.id/">Fakultas Pertanian</a> 2021 . All Right Reserved.
                         </p>
                     </div>
                 </div>

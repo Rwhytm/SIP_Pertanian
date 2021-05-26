@@ -76,15 +76,18 @@ class ProdukController extends Controller
     }
     public function upload_image(Request $request, $id){
         $produk = Produk::find($id);
-
-        if ($request->file('image')){
+        
+        // if ($request->file('image')){
+        if ($request->hasFile('image')){ 
             $image = $request->file('image');
-            $name = Str::slug($produk->name).'_'.time();
-            $filename = $name.'.'.$image->getClientOriginalExtension();
+            // $name = Str::slug($produk->name).'_'.time();
+            // $name = Str::slug($request->file('image')).'_'.time().$request->file('image')->getClientOriginalName();
+            $name = time().$request->file('image')->getClientOriginalName();
+            // $filename = $name.'.'.$image->getClientOriginalExtension();
 
-            $folder = '/uploads/images';
-            $filePath = $image->storeAs($produk, $filename,'public');
-
+            $folder = 'storage/uploads/images';
+            $filePath = 'storage/uploads/images/'. $name; 
+            $request->file('image')->move('storage/uploads/images', $name);
             $produkimage = ProdukImage::create(
                 [
                     'produk_id' => $produk->id,
@@ -92,7 +95,7 @@ class ProdukController extends Controller
                 ]
             );
 
-            return redirect(route('produk.image'));
+            return redirect(route('produk.image', $produk->id));
         }
     }
 }

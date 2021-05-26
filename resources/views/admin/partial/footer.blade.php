@@ -4,7 +4,7 @@
         &copy; <span id="copy-year"></span> Copyright 
         <a
           class="text-primary"
-          href="http://www.facebook.com"
+          href="http://fp.unib.ac.id/"
           target="_blank"
           >Fakultas Pertanian</a
         >.

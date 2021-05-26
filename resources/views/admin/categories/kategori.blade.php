@@ -26,12 +26,12 @@
                                         <td>{{$k->nama_kategori}}</td>
                                         <td>
                                             
-                                            <div class="col-md-6 flex ">
+                                            <div class="col-md-6 d-flex ">
                                             <form action="{{route('kategori.hapus', $k->id)}}" method="POST">
                                                 @method('delete')
                                                 @csrf
                                                 
-                                                    <button class="btn btn-danger">Hapus</button>
+                                                    <button class="btn btn-danger mr-3">Hapus</button>
                                             </form>
                                         
                                             <br>

@@ -31,7 +31,7 @@
     <!-- header start -->
     @include('users.partial.header')
     @yield('content')
-    @include('admin.partial.footer')
+    @include('users.partial.footer')
       <!-- modal -->
       <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-hidden="true">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">

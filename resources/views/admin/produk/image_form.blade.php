@@ -14,10 +14,10 @@
                 </div>
                 <div class="card-body">
                     {{-- @include('admin.partials.flash', ['$errors' => $errors]) --}}
-                    <form action="{{route('upload_image', $produk->id)}}"  method="post">
+                    <form action="{{route('upload_image', $produk->id)}}"  method="post" enctype="multipart/form-data">
                         {{ csrf_field() }}
                         <label for="formFileMultiple" class="form-label">Upload Gambar</label>
-                        <input class="form-control" type="file" id="image" multiple placeholder="produk image" />
+                        <input class="form-control" name="image" type="file" id="image" multiple placeholder="produk image" />
                     
                         <div class="form-footer pt-5 border-top">
                             <button type="submit" class="btn btn-primary btn-default">Save</button>
