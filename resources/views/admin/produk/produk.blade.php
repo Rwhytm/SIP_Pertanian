@@ -21,6 +21,7 @@
                             <th class="text-center">Harga</th>
                             <th class="text-center">Deskripsi</th>
                             <th class="text-center">Kategori</th>
+                            <th class="text-center">Gambar</th>
                             <th class="text-center">Action</th>
                         </thead>
                         <tbody>
@@ -30,7 +31,7 @@
                                     <td class="text-left">{{$p->nama_produk}}</td>
                                     <td  class="text-center">{{$p->jumlah}}</td>
                                     <td class="text-center">{{$p->harga}}</td>
-                                    <td class="text-left">{{$p->deskripsi}}</td>
+                                    <td class="text-left">{{Str::limit($p->deskripsi, 10)}}</td>
                                     @forelse ($p->kategori as $q)
                                     <td class="text-center">{{$q->nama_kategori}}</td>
                                     @empty
@@ -38,6 +39,7 @@
                                        {{'-'}}
                                     </td>
                                     @endforelse
+                                    <td class="text-center">{{$p->produkImages->count()}}</td>
                                     <td>
                                         <div class="d-flex justify-content-end">
                                         <form action="{{route('produk.hapus', $p->id)}}" method="POST">
@@ -52,7 +54,7 @@
                                     </td>
                                 </tr>
                             @empty
-                                <td colspan="7">Tidak Ada Data</td>
+                                <td colspan="8">Tidak Ada Data</td>
                             @endforelse
                         </tbody>
                     </table>

@@ -49,6 +49,7 @@
                 </div>
                 <div class="card-footer text-right">
                     <a href="{{ url('admin/produk/'.$produk->id.'/add-image') }}" class="btn btn-primary">Tambah Gambar</a>
+                    <a href="{{ route('produk admin', $produk->id) }}" class="btn btn-secondary btn-default">Back</a>
                 </div>
             </div>  
         </div>

@@ -58,6 +58,12 @@
                     </div>
                 </div>
                 <div class="form-group row">
+                    <label for="satuan" class="col-md-4 col-form-label text-md-right">{{ __('Satuan') }}</label>
+                    <div class="col-md-7">
+                        <input id="satuan" type="text" class="form-control" name="satuan">
+                    </div>
+                </div>
+                <div class="form-group row">
                     <label for="alamat" class="col-md-4 col-form-label text-md-right">{{ __('Deskripsi') }}</label>
                     <div class="col-md-7">
                         <textarea name="deskripsi" class="form-control" id="deskripsi" cols="40" rows="5" >{{$produk->deskripsi}}</textarea>

@@ -31,6 +31,7 @@ class ProdukController extends Controller
             'nama_produk' =>  Str::upper($request->nama),
             'jumlah' => $request->jumlah,
             'harga' => $request->harga,
+            'satuan' => Str::upper($request->satuan),
             'deskripsi' => $request->deskripsi,
         ]);
         $produk->kategori()->sync($request['kategori_id']);
@@ -48,6 +49,7 @@ class ProdukController extends Controller
             'nama_produk' =>  Str::upper($request->nama),
             'jumlah' => $request->jumlah,
             'harga' => $request->harga,
+            'satuan' => Str::upper($request->satuan),
             'deskripsi' => $request->deskripsi,
         ]);
         $produk->kategori()->sync($request['kategori_id']);
