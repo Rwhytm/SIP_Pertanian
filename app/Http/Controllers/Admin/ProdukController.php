@@ -107,6 +107,6 @@ class ProdukController extends Controller
             Session::flash('success', 'Image has been deleted');
         }
 
-        return redirect('produk.image',$produk->id );
+        return redirect('admin/produk/'.$image->produk->id.'/images');
     }
 }

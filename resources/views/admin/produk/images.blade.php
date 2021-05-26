@@ -30,7 +30,7 @@
                                     <td class="text-center">{{ $i->created_at }}</td>
                                     <td>
                                         <div class="d-flex justify-content-center">
-                                        <form action="" method="POST">
+                                        <form action="{{route('hapus.image', $i->id)}}" method="POST">
                                             @method('delete')
                                             @csrf
                                             
