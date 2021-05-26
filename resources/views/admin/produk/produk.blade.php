@@ -15,32 +15,31 @@
                 <div class="card-body ">
                     <table class="table table-boardered table-striped">
                         <thead>
-                            <th>#</th>
-                            <th>Nama Produk</th>
-                            <th>Jumlah</th>
-                            <th>Harga</th>
-                            <th>Deskripsi</th>
-                            <th>Kategori</th>
-                            <th>Action</th>
+                            <th class="text-center">#</th>
+                            <th class="text-center">Nama Produk</th>
+                            <th class="text-center">Jumlah</th>
+                            <th class="text-center">Harga</th>
+                            <th class="text-center">Deskripsi</th>
+                            <th class="text-center">Kategori</th>
+                            <th class="text-center">Action</th>
                         </thead>
                         <tbody>
                             @forelse ($produk as $p)
                                 <tr>
-                                    <td>{{$p->id}}</td>
-                                    <td>{{$p->nama_produk}}</td>
-                                    <td>{{$p->jumlah}}</td>
-                                    <td>{{$p->harga}}</td>
-                                    <td>{{$p->deskripsi}}</td>
-                                    @forelse ($p->kategori as $p)
-                                    <td>{{$p->nama_kategori}}</td>
+                                    <td class="text-center">{{$p->id}}</td>
+                                    <td class="text-left">{{$p->nama_produk}}</td>
+                                    <td  class="text-center">{{$p->jumlah}}</td>
+                                    <td class="text-center">{{$p->harga}}</td>
+                                    <td class="text-left">{{$p->deskripsi}}</td>
+                                    @forelse ($p->kategori as $q)
+                                    <td class="text-center">{{$q->nama_kategori}}</td>
                                     @empty
                                     <td>
                                        {{'-'}}
                                     </td>
                                     @endforelse
                                     <td>
-                                        
-                                        <div class="col-md-6 d-flex ">
+                                        <div class="d-flex justify-content-end">
                                         <form action="{{route('produk.hapus', $p->id)}}" method="POST">
                                             @method('delete')
                                             @csrf
@@ -48,7 +47,7 @@
                                                 <button class="btn btn-danger mr-3">Hapus</button>
                                         </form>
                                         <br>
-                                        <a href="{{ route('produk.edit', $p->id) }}" class="btn btn-secondary btn-default">Ubah</a>
+                                        <a href="{{ route('produk.edit', $p->id) }}" class="btn btn-secondary btn-default">Ubah & Tambah Gambar</a>
                                     </div>
                                     </td>
                                 </tr>

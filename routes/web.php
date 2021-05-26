@@ -56,7 +56,7 @@ Route::group(
         Route::get('produk/{id}/images', 'ProdukController@images')->name('produk.image');
         Route::get('produk/{id}/add-image', 'ProdukController@addImage')->name('add.image');
         Route::post('produk/images/{id}', 'ProdukController@upload_image')->name('upload_image');
-        Route::delete('produk/images/{id}', 'ProdukController@remove_image');
+        Route::delete('produk/images/{id}', 'ProdukController@remove_image')->name('hapus.image');
     }
 );
 

@@ -68,7 +68,7 @@
                     </div>
                     <div class="qwick-view-right">
                         <div class="qwick-view-content">
-                            <h3>Handcrafted Supper Mug</h3>
+                            <h3></h3>
                             <div class="price">
                                 <span class="new">$90.00</span>
                                 <span class="old">$120.00  </span>

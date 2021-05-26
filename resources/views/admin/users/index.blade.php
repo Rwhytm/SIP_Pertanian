@@ -12,20 +12,20 @@
                     <div class="card-body ">
                         <table class="table table-boardered table-striped">
                             <thead>
-                                <th>#</th>
-                                <th>Nama Pelanggan</th>
-                                <th>E-mail</th>
-                                <th>Nomor HP</th>
-                                <th>Alamat</th>
+                                <th class="text-center">#</th>
+                                <th class="text-center">Nama Pelanggan</th>
+                                <th class="text-center">E-mail</th>
+                                <th class="text-center">Nomor HP</th>
+                                <th class="text-center">Alamat</th>
                             </thead>
                             <tbody>
                                 @forelse ($user as $u)
                                     <tr>
                                         <td>{{$loop->iteration}}</td>
-                                        <td>{{$u->nama}}</td>
-                                        <td>{{$u->email}}</td>
-                                        <td>{{$u->nomor_hp}}</td>
-                                        <td>{{$u->alamat}}</td>
+                                        <td class="text-center">{{$u->nama}}</td>
+                                        <td class="text-center">{{$u->email}}</td>
+                                        <td class="text-center">{{$u->nomor_hp}}</td>
+                                        <td class="text-left">{{$u->alamat}}</td>
                                         <td></td>
                                     </tr>
                                 @empty

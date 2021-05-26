@@ -23,7 +23,8 @@
                 <h2>Form Produk</h2>
             </div>
             <div class="card-body">
-                <form action="{{route('produk.update',$produk->id)}}" method="post">
+                <form action="{{url('admin/produk/update/'.$produk->id)}}" method="post">
+                    
                     {{ csrf_field() }}
                     @method('PUT')
                 <div class="form-group row">
@@ -67,21 +68,6 @@
                         @enderror
                     </div>
                 </div>
-                {{-- <div class="form-group row">
-                    <label for="foto_produk" class="col-md-4 col-form-label text-md-right">{{ __('Foto Produk') }}</label>
-                    <div class="col-md-6">
-                        <div class="d-flex justify-content-center">
-                            <div class="btn btn-mdb-color btn-rounded float-left">
-                            <input type="file">
-                          </div>
-                        </div>
-                        @error('Foto Produk')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
-                    </div>
-                </div> --}}
                     <button type="submit" class="btn btn-primary">Simpan</button>
                 </form>
             </div>

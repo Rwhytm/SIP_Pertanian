@@ -25,13 +25,17 @@
                                     <div class="product-wrapper">
                                         <div class="product-img">
                                             <a href="product-details.html">
-                                                <img src={{ URL::asset('users/assets/img/product/fashion-colorful/3.jpg')}} alt="">
+                                                @if ($p->produkImages->first())
+					                                <img src="{{ asset($p->produkImages->first()->path) }}" alt="" class="img-thumbnail img-center ">
+				                                @else
+					                                <img src="{{ asset('themes/ezone/assets/img/product/fashion-colorful/1.jpg') }}" alt="">
+				                                @endif
                                             </a>
                                             <div class="product-action">
-                                                <a class="animate-top" title="Add To Cart" href="#">
+                                                <a class="animate-top" title="Tambah ke keranjang" href="#">
                                                     <i class="pe-7s-cart"></i>
                                                 </a>
-                                                <a class="animate-right" title="Quick View" data-toggle="modal" data-target="#exampleModal" href="#">
+                                                <a class="animate-right" title="Tampilkan" data-toggle="modal" data-target="#exampleModal" href="#">
                                                     <i class="pe-7s-look"></i>
                                                 </a>
                                             </div>

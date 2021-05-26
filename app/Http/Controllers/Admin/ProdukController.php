@@ -57,6 +57,9 @@ class ProdukController extends Controller
         $hapus = Produk::find($id)->delete();
         return redirect('admin/produk');
     }
+
+
+    // manajemen  image
     public function images($id){
         $produk = Produk::find($id);
         $image = $produk->produkImages;
@@ -74,6 +77,9 @@ class ProdukController extends Controller
         // if ($request->file('image')){
         if ($request->hasFile('image')){ 
             $image = $request->file('image');
+            $rules = array(
+                'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000' // max 10000kb
+              );
             // $name = Str::slug($produk->name).'_'.time();
             // $name = Str::slug($request->file('image')).'_'.time().$request->file('image')->getClientOriginalName();
             $name = time().$request->file('image')->getClientOriginalName();
@@ -91,5 +97,16 @@ class ProdukController extends Controller
 
             return redirect(route('produk.image', $produk->id));
         }
+    }
+
+    public function remove_image($id)
+    {
+        $image = ProdukImage::findOrFail($id);
+        $produk = Produk::find($id);
+        if ($image->delete()) {
+            Session::flash('success', 'Image has been deleted');
+        }
+
+        return redirect('produk.image',$produk->id );
     }
 }
