@@ -11,7 +11,7 @@ class UserController extends Controller
 {
     public function index(){
         $image =  ProdukImage::orderBy('id', 'ASC');
-        $produk = Produk::orderBy('nama_produk', 'ASC')->paginate(15);
+        $produk = Produk::orderBy('nama_produk', 'ASC')->paginate(20);
         return view('users\home',['produk' => $produk, 'image' => $image]);
     }
     public function terbaru(){
@@ -30,4 +30,5 @@ class UserController extends Controller
         $produk = Produk::orderBy('harga', 'ASC')->paginate(15); 
         return view('users\home',['produk' => $produk]);
     }
+    
 }

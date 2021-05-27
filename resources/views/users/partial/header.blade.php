@@ -1,12 +1,43 @@
 <header>
     <div class="header-top-furniture wrapper-padding-2 res-header-sm">
-        <div class="container-fluid">
-            <div class="header-bottom-wrapper">
-                <div class="logo-2 furniture-logo ptb-30">
-                    <a href="home.html">
-                        <img src="" alt="" style="width: 167px">
+        <nav class="navbar navbar-light bg-white justify-content-between">
+            <!-- Navbar content -->
+            <a class="navbar-brand">{{Str::upper(config('app.name'))}}</a>
+            <form class="form-inline my-2 my-lg-0">
+                @if(Route::has('login'))
+                @auth
+                    
+                
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        {{'Hai, kak '.Auth::user()->nama }} 
                     </a>
-                </div>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                      <a class="dropdown-item" href="#">profil</a>
+                      <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                        </a>
+                    </div>
+                </li>
+                
+                    
+                    @else
+                        <a href="{{ route('login2') }}">Login</a>
+
+                            @if (Route::has('register'))
+                                <a href="{{ route('register') }}">Register</a>
+                            @endif
+                @endauth
+            @endif
+                
+            </form>
+        </nav>
+                    {{-- <a href="home.html">
+                        <img src="" alt="" style="width: 167px">
+                    </a> --}}
+                {{-- </div>
                 <div class="menu-style-2 furniture-menu menu-hover">
                     <nav>
                         <ul>

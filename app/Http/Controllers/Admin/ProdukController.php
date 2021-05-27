@@ -35,6 +35,11 @@ class ProdukController extends Controller
             'deskripsi' => $request->deskripsi,
         ]);
         $produk->kategori()->sync($request['kategori_id']);
+        if($produk){
+            $request->session()->flash('success', 'produk berhasil ditambahkan');
+        }else{
+            $request->session()->flash('error', 'produk gagal disimpan');
+        }
         return redirect('admin/produk');
     }
     public function edit($id)
@@ -75,13 +80,13 @@ class ProdukController extends Controller
     }
     public function upload_image(Request $request, $id){
         $produk = Produk::find($id);
-        
+        $rules = array(
+            'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000' // max 10000kb
+          );
         // if ($request->file('image')){
         if ($request->hasFile('image')){ 
             $image = $request->file('image');
-            $rules = array(
-                'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000' // max 10000kb
-              );
+            
             // $name = Str::slug($produk->name).'_'.time();
             // $name = Str::slug($request->file('image')).'_'.time().$request->file('image')->getClientOriginalName();
             $name = time().$request->file('image')->getClientOriginalName();
