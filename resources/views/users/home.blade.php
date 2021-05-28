@@ -1,6 +1,7 @@
 @extends('users.layout')
 @section('content')
 <div class="slider-area">
+    
     <div class="slider-active owl-carousel">
         <div class="food-slider bg-img slider-height-5" style="background-image: url(assets/img/slider/12.jpg)">
             <div class="container">
@@ -15,7 +16,7 @@
             <div class="container">
                 <div class="food-slider-content text-center fadeinup-animated">
                     {{-- <img class="animated" src="assets/img/slider/6.png" alt=""> --}}
-                    <p class="animated">Lorem Ipsum is simply dummy text of the printing dummy and typesetting industry.</p>
+                    <p class="animated">Belanja Di Fakultas Pertanian</p>
                     <a class="food-slider-btn animated" href="#">Shop Now</a>
                 </div>
             </div>
@@ -27,8 +28,6 @@
             <div class="container-fluid">
                 <div class="section-title text-center mb-60">
                     <h2>Produk</h2>
-                    <br>
-                    {{$produk->links()}}
                 </div>
                 <div class="product-style">
                     
@@ -90,7 +89,7 @@
                                                                 <span>2 Ratting (S)</span>
                                                             </div>
                                                         </div>
-                                                        <p>{{$p}}</p>
+                                                        <p>awdawdwad</p>
                                                         <div class="quick-view-select">
                                                             <div class="select-option-part">
                                                                 <label>Size*</label>
@@ -141,7 +140,7 @@
                                                 <a class="animate-top" title="Tambah ke keranjang" href="#">
                                                     <i class="pe-7s-cart"></i>
                                                 </a>
-                                                <a class="animate-right" title="Tampilkan Produk" data-toggle="modal" data-target="#exampleModal" href="#">
+                                                <a class="animate-right" title="Tampilkan Produk" data-toggle="modal"  href="#">
                                                     <i class="pe-7s-look"></i>
                                                 </a>
                                             </div>
@@ -173,21 +172,21 @@
                 <div class="col-lg-4 col-md-4">
                     <div class="single-food-services text-center food-services-padding1 mb-40">
                         <img src="assets/img/banner/7.png" alt="">
-                        <h4>Choose Resturend</h4>
+                        <h4>Pesan Dari Rumah</h4>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="single-food-services text-center food-services-padding2 mb-40">
                         <img src="assets/img/banner/8.png" alt="">
-                        <h4>Select Your Foods</h4>
+                        <h4>Lakukan Pembayaran</h4>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="single-food-services text-center food-services-padding3 mb-40">
                         <img src="assets/img/banner/9.png" alt="">
-                        <h4>Request for Delevary</h4>
+                        <h4>Barang Akan Diantar</h4>
                         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
                     </div>
                 </div>
