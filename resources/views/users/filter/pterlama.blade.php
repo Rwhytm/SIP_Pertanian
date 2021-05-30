@@ -1,33 +1,10 @@
 @extends('users.layout')
 @section('content')
-<div class="slider-area">
-    
-    <div class="slider-active owl-carousel">
-        <div class="food-slider bg-img slider-height-5" style="background-image: url(assets/img/slider/12.jpg)">
-            <div class="container">
-                <div class="food-slider-content text-center fadeinup-animated">
-                    {{-- <img class="animated" src="assets/img/slider/6.png" alt=""> --}}
-                    <p class="animated">Belanja Di Fakultas Pertanian</p>
-                    <a class="food-slider-btn animated" href="#">Shop Now</a>
-                </div>
-            </div>
-        </div>
-        <div class="food-slider bg-img slider-height-5" style="background-image: url(assets/img/slider/18.jpg)">
-            <div class="container">
-                <div class="food-slider-content text-center fadeinup-animated">
-                    {{-- <img class="animated" src="assets/img/slider/6.png" alt=""> --}}
-                    <p class="animated">Belanja Di Fakultas Pertanian</p>
-                    <a class="food-slider-btn animated" href="#">Shop Now</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
     <div class="all-products-area pt-115 pb-50">
         <div class="pl-100 pr-100">
             <div class="container-fluid">
                 <div class="section-title text-center mb-60">
-                    <h2>Produk</h2>
+                    <h2>Produk Terlama</h2>
                 </div>
                 <div class="product-style">
                     
@@ -87,42 +64,4 @@
             </div>
         </div>
     </div>
-
-    {{-- animasi --}}
-
-    <div class="food-services-area bg-img pt-200 pb-155" style="background-image: url(assets/img/bg/12.jpg)">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4">
-                    <div class="single-food-services text-center food-services-padding1 mb-40">
-                        <img src="assets/img/banner/7.png" alt="">
-                        <h4>Pesan Dari Rumah</h4>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="single-food-services text-center food-services-padding2 mb-40">
-                        <img src="assets/img/banner/8.png" alt="">
-                        <h4>Lakukan Pembayaran</h4>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4">
-                    <div class="single-food-services text-center food-services-padding3 mb-40">
-                        <img src="assets/img/banner/9.png" alt="">
-                        <h4>Barang Akan Diantar</h4>
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- all products area end -->
-    <!-- brand logo area start -->
-    
-    <!-- brand logo area end -->
-    <!-- banner3 area start -->
-    <!-- banner3 area end -->
-    <!-- insta feed start -->
-    <!-- insta feed end -->
 @endsection

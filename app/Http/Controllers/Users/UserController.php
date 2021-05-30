@@ -19,27 +19,27 @@ class UserController extends Controller
     #filter untuk menampilkan produk
     public function terbaru(){
         $produk = Produk::orderBy('id', 'DESC')->paginate(15); 
-        return view('users\home',['produk' => $produk]);
+        return view('users\filter\pterbaru',['produk' => $produk]);
     }
     public function terlama(){
         $produk = Produk::orderBy('id', 'ASC')->paginate(15); 
-        return view('users\home',['produk' => $produk]);
+        return view('users\filter\pterlama',['produk' => $produk]);
     }
     public function daritinggi(){
         $produk = Produk::orderBy('harga', 'DESC')->paginate(15); 
-        return view('users\home',['produk' => $produk]);
+        return view('users\filter\ptermahal',['produk' => $produk]);
     }
     public function darirendah(){
         $produk = Produk::orderBy('harga', 'ASC')->paginate(15); 
-        return view('users\home',['produk' => $produk]);
+        return view('users\filter\ptermurah',['produk' => $produk]);
     }
     public function produk($id){
-        $produk = Produk::where('uploadby', $id)->orderBy('created_at','desc')->paginate(5);
-        return view('users.keranjang', ['produk' => $produk]);
+        $produk = Produk::find($id);
+        return view('users.tampil-produk', ['produk' => $produk]);
     }
 
     public function keranjang(){
-        
+        return view('users.keranjang');
     }
     
 }

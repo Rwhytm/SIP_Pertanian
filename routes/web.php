@@ -24,6 +24,10 @@ Route::group(
         Route::get('home/terlama', 'UserController@terlama')->name('terlama');
         Route::get('home/dari-tinggi', 'UserController@daritinggi')->name('hargatinggi');
         Route::get('home/dari-rendah', 'UserController@darirendah')->name('hargarendah');
+        Route::get('keranjang', 'UserController@keranjang')->name('keranjang');
+
+        // pemesanan produk user
+        Route::get('tampil-produk/{id}', 'UserController@produk')->name('tampil.produk');
     }
 );
 Route::group(
