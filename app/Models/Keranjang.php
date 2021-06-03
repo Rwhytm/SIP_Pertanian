@@ -15,7 +15,7 @@ class Keranjang extends Model
 
     public function produk()
     {
-        return $this->belongsToMany('App\Models\Produk', 'produk');
+        return $this->hasMany('App\Models\Produk', 'id', 'produk_id');
     }
     public function user()
     {

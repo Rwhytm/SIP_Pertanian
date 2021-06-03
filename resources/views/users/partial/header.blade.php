@@ -16,9 +16,9 @@
         <div class="container-fluid">
             <div class="header-bottom-wrapper">
                 <div class="logo-2 furniture-logo ptb-30">
-                    {{-- <a href="index.html">
-                        <img src="assets/img/logo/2.png" alt="" style="width: 167px">
-                    </a> --}}
+                    <a href="{{route('home user')}}">
+                        <img src="assets/img/logo/logo-faperta.png" alt="" style="width: 250px">
+                    </a>
                 </div>
                 <div class="menu-style-2 furniture-menu menu-hover">
                 </div>

@@ -33,8 +33,9 @@
                                     
                                     
                                     </td>
-                                    <td class="product-name"><a href="#">{{$produk->nama_produk}}</a></td>
-                                    <td class="product-price-cart"><span class="amount">{{$produk->harga}}</span></td>
+                                    <td class="product-name"><a href="#">{{$k->produk[0]->nama_produk}}</a></td>
+                                    {{-- <td class="product-price-cart"><span class="amount">{{$produk->harga}}</span></td> --}}
+                                    <td class="product-price-cart"><span class="amount">{{$k->produk[0]->harga}}</span></td>
                                     <td class="product-quantity">
                                         {{$k->jumlah}}
                                         {{-- <input value="1" type="number"> --}}

@@ -69,7 +69,6 @@
           </li> --}}
           <li class="dropdown user-menu">
             <button href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-              <img src="assets/img/user/user.png" class="user-image" alt="User Image" />
               <span class="d-none d-lg-inline-block">{{'Hallo, kak '.Auth::user()->nama }}</span>
             </button>
             <ul class="dropdown-menu dropdown-menu-right">

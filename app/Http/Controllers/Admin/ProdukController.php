@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\UploadImageRequest;
 use Illuminate\Support\Str;   
 use App\Models\Produk;
 use App\Models\Kategori;
@@ -78,11 +79,12 @@ class ProdukController extends Controller
 
         return view('admin.produk.image_form',['produk' => $produk]);
     }
-    public function upload_image(Request $request, $id){
+    public function upload_image(UploadImageRequest $request, $id){
         $produk = Produk::find($id);
-        $rules = array(
-            'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000' // max 10000kb
-          );
+        
+        // $rules = array(
+        //     'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000' // max 10000kb
+        //   );
         // if ($request->file('image')){
         if ($request->hasFile('image')){ 
             $image = $request->file('image');
