@@ -15,4 +15,8 @@ class Produk extends Model
     {
         return $this->hasMany('App\Models\ProdukImage');
     }
+    public function keranjang()
+    {
+        return $this->belongsToMany('App\Models\Keranjang', 'keranjang');
+    }
 }

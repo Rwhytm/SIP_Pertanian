@@ -11,7 +11,6 @@
                             <thead>
                                 <tr>
                                     <th>remove</th>
-                                    <th>Gambar</th>
                                     <th>Produk</th>
                                     <th>Harga</th>
                                     <th>Jumlah</th>
@@ -19,18 +18,35 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td class="product-remove"><a href="#"><i class="pe-7s-close"></i></a></td>
-                                    <td class="product-thumbnail">
-                                        <a href="#"><img src="assets/img/cart/1.jpg" alt=""></a>
+                                
+                                    @forelse ($keranjang as $k)
+                                    <tr>   
+                                    
+                                    <td class="product-remove">
+                                        
+                                        <form action="" method="POST">
+                                        @csrf
+                                        @method('delete')
+                                             <button class="btn btn-danger mr-3">Hapus</button>
+                                        </form>
+                                        {{-- <a href="#"><i class="pe-7s-close"></i></a> --}}
+                                    
+                                    
                                     </td>
-                                    <td class="product-name"><a href="#">Wooden Furniture </a></td>
-                                    <td class="product-price-cart"><span class="amount">$165.00</span></td>
+                                    <td class="product-name"><a href="#">{{$produk->nama_produk}}</a></td>
+                                    <td class="product-price-cart"><span class="amount">{{$produk->harga}}</span></td>
                                     <td class="product-quantity">
-                                        <input value="1" type="number">
+                                        {{$k->jumlah}}
+                                        {{-- <input value="1" type="number"> --}}
                                     </td>
-                                    <td class="product-subtotal">$165.00</td>
-                                </tr>
+                                    <td class="product-subtotal">{{$k->total}}</td>
+                                    </tr>  
+                                    @empty
+                                     <tr>
+                                        <td colspan="5">Tidak Ada Barang</td>
+                                     </tr>
+                                    @endforelse
+                                
                             </tbody>
                         </table>
                     </div>
@@ -39,7 +55,7 @@
                             <div class="cart-page-total">
                                 <h2>Total Belanja</h2>
                                 <ul>
-                                    <li>Total<span>100.00</span></li>
+                                    <li>Total<span>{{$keranjang->sum('total')}}</span></li>
                                 </ul>
                                 <a href="#">Bayar</a>
                             </div>

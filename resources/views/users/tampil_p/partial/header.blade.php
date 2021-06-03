@@ -11,10 +11,14 @@
                                             </div>
                                             <div class="menu-style-2 furniture-menu menu-hover">
                                             </div>
+                                            @php
+                                                use App\Models\Keranjang;
+                                                $keranjang = Keranjang::where('user_id', Auth::user()->id);
+                                            @endphp
                                             <div class="header-cart">
-                                                <a class="icon-cart-furniture" href="#">
+                                                <a class="icon-cart-furniture" href="{{route('tampil keranjang', Auth::user()->id)}}">
                                                     <i class="ti-shopping-cart"></i>
-                                                    <span class="shop-count-furniture green"></span>
+                                                    <span class="shop-count-furniture green">{{$keranjang->count()}}</span>
                                                 </a>
                                             </div>
                                         </div>

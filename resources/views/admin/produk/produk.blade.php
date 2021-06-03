@@ -45,7 +45,6 @@
                                         <form action="{{route('produk.hapus', $p->id)}}" method="POST">
                                             @method('delete')
                                             @csrf
-                                            
                                                 <button class="btn btn-danger mr-3">Hapus</button>
                                         </form>
                                         <br>

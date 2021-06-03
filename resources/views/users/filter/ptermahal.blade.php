@@ -38,9 +38,7 @@
 				                                @endif
                                             </a>
                                             <div class="product-action">
-                                                <a class="animate-top" title="Tambah ke keranjang" href="#">
-                                                    <i class="pe-7s-cart"></i>
-                                                </a>
+                                                
                                                 <a class="animate-right" title="Tampilkan Produk"   href="{{route('tampil.produk', $p->id)}}">
                                                     <i class="pe-7s-look"></i>
                                                 </a>

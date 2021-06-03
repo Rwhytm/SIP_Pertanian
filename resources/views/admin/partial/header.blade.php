@@ -80,10 +80,9 @@
                   <small class="pt-1 ">{{Auth::user()->email}}</small>
                 </div>
               </li>
-            
               <li>
-                <a href="user-profile.html">
-                  <i class="mdi mdi-account"></i> My Profile
+                <a href="{{route('profil admin', Auth::user()->id)}}">
+                  <i class="mdi mdi-account"></i> Profil Saya
                 </a>
               </li>
               <li class="dropdown-footer">

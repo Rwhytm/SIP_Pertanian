@@ -5,7 +5,10 @@ namespace App\Http\Controllers\users;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Produk;
+use App\Models\Keranjang;
+use App\User;
 use App\Models\ProdukImage;
+use DB;
 
 class UserController extends Controller
 {
@@ -38,8 +41,27 @@ class UserController extends Controller
         return view('users.tampil-produk', ['produk' => $produk]);
     }
 
-    public function keranjang(){
-        return view('users.keranjang');
+    public function tambah(Request $request){
+        $keranjang = Keranjang::create([
+            'user_id' => $request->user_id,
+            'produk_id' => $request->id_produk, 
+            'total' =>  $request->jumlah * $request->harga,
+            'jumlah' => $request->jumlah,
+            
+        ]);
+        return redirect(route('home user'));
+    }
+
+    public function keranjang($id){
+        $user = User::find($id);
+        $produk = Produk::find($id);
+        $keranjang = Keranjang::get()->where('user_id', $user->id);
+        return view('users.keranjang',['keranjang' => $keranjang, 'produk' => $produk]);
+    }
+
+    public function hapus($id){
+        $keranjang = Keranjang::find($id);
+        return route('tampil keranjang');
     }
     
 }

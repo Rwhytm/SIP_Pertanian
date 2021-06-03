@@ -24,10 +24,17 @@ Route::group(
         Route::get('home/terlama', 'UserController@terlama')->name('terlama');
         Route::get('home/dari-tinggi', 'UserController@daritinggi')->name('hargatinggi');
         Route::get('home/dari-rendah', 'UserController@darirendah')->name('hargarendah');
-        Route::get('keranjang', 'UserController@keranjang')->name('keranjang');
+
+
+
+        
 
         // pemesanan produk user
         Route::get('tampil-produk/{id}', 'UserController@produk')->name('tampil.produk');
+        Route::post('keranjang', 'UserController@tambah')->name('keranjang');
+        Route::get('keranjang/{id}', 'UserController@keranjang')->name('tampil keranjang');
+        Route::delete('keranjang/hapus/{id}', 'UserController@hapus')->name('hapus keranjang');
+
     }
 );
 Route::group(
@@ -36,6 +43,7 @@ Route::group(
     function(){
         // dashboard
         Route::get('dashboard', 'DashboardController@index')->name('dashboard admin');
+        Route::get('profile/{id}', 'DashboardController@profil')->name('profil admin');
 
         // tabel user
         Route::get('list-users', 'DashboardController@user')->name('admin_user');

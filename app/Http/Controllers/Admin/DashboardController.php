@@ -23,4 +23,9 @@ class DashboardController extends Controller
         $user = User::orderBy('nama', 'ASC')->role('pembeli')->paginate(10);
         return view('admin\users\index', ['user' =>$user]);
     }
+
+    public function profil(){
+        $user = User::get();
+        return view('admin\users\profil',['user' => $user]);
+    }
 }
