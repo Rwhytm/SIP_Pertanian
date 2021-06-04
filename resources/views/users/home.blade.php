@@ -49,7 +49,7 @@
                                 <div class="custom-col-5 custom-col-style mb-65">
                                     <div class="product-wrapper">
                                         <div class="product-img">
-                                            <a href="">
+                                            <a >
                                                 @if ($p->produkImages->first())
 					                                <img src="{{ asset($p->produkImages->first()->path) }}" alt="" class="img-thumbnail img-center" style="width:500px; height: 300px; object-fit: cover;">
 				                                @else

@@ -1,62 +1,90 @@
 @extends('users.tampil_p.layout_tampil')
 @section('content')
-<div class="d-flex justify-content-center p-4">
-<div class="col-lg-6 col-md-12 col-12">
-    <div class="your-order">
-        <h3 class="text-center">Pesanan Kamu</h3>
-        <div class="your-order-table table-responsive">
-            <table>
-                <thead>
-                    <tr>
-                        <th class="product-name">Produk</th>
-                        <th class="product-total">Total</th>
-                    </tr>							
-                </thead>
-                <tbody>
-                    @foreach ($keranjang as $k)
-                    <tr class="cart_item">
-                        <td class="product-name text-left">
-                            {{ $k->produk->nama_produk }} <strong class="product-quantity"> × {{ $k->jumlah }}</strong>
-                        </td>
+<div class="container p-5">
+    <div class="row">
+        <div class="col-lg-6 col-md-12 col-12">
+            <div class="card p-3">
+                <form action="#">
+                    <div class="checkbox-form">						
+                        <h3>Konfirmasi Pembayaran</h3>
+                        <div class="row">
+                            <div class="col-md-12">
+                                
+                            </div>
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>Nama Rekening<span class="required">*</span></label>										
+                                    <input type="text" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>Nama Bank</label>
+                                    <input type="text" placeholder="" />
+                                </div>
+                            </div>
                             
-                        <td class="product-total">
-                            <span class="amount">Rp. {{ number_format($k->total) }}</span>
-                        </td>
-                    </tr>
-                    @endforeach
-
-                </tbody>
-                <tfoot>
-
-                    <tr class="order-total">
-                        <th class="text-left">Order Total</th>
-                        <td><strong><span class="amount">Rp. {{ number_format($order_total) }}</span></strong>
-                        </td>
-                    </tr>								
-                </tfoot>
-            </table>
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>Bank Tujuan<span class="required">*</span></label>
+                                    <select name="bank" id="bank">
+                                        <option value="s">b</option>
+                                        <option value="b">s</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>Tanggal Transfer<span class="required">*</span></label>										
+                                    <input class="form-control" type="datetime-local" value="" id="example-datetime-local-input">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>Jumlah<span class="required">*</span></label>										
+                                    <input type="text" readonly/>
+                                </div>
+                            </div>					
+                        </div>												
+                    </div>
+                </form>
+            </div>
+            
         </div>
-        <div class="payment-method">
-            <div class="payment-accordion">
-                <div class="panel-group" id="faq">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h5 class="panel-title"><a data-toggle="collapse" aria-expanded="true" data-parent="#faq" href="#payment-1">Pembayaran hanya melalui bank</a></h5>
-                        </div>
-                        <div id="payment-1" class="panel-collapse collapse show">
-                            <div class="panel-body">
-                                <p>Saat ini hanya tersedia pembayaran melalui bank</p>
+        <div class="col-lg-6 col-md-12 col-12">
+            <div class="card p-3">
+                <div class="card-header">
+                    <div class="d-flex justify-content-between">
+                        <span>Rp. Sekian</span>
+                        <span>svg</span>
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <h5 class="text-center">Atas Nama</h5>
+                        <div class="row">
+                            <h2>L</h2>
+                            <div class="col-md-6">
+                                <h5>nama</h5>
+                                <h5>noomor</h5>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="order-button-payment">
-                    <input type="submit" value="Check Out" />
-                </div>								
-            </div>
+                <div class="card-footer">
+                    <div class="col-md-12">
+                        <h5 class="text-center">Atas Nama</h5>
+                        <div class="row">
+                            <h2>L</h2>
+                            <div class="col-md-6">
+                                <h5>nama</h5>
+                                <h5>noomor</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>  
         </div>
     </div>
-</div>
-</div>
 </div>
 @endsection

@@ -10,7 +10,7 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>hapus</th>
+                                    {{-- <th>hapus</th> --}}
                                     <th>Produk</th>
                                     <th>Harga</th>
                                     <th>Jumlah</th>
@@ -21,15 +21,16 @@
                                 
                                 @forelse ($keranjang as $k)
                                 <tr>
-                                    <td class="product-remove">
-                                        <form action="{{ route('hapus keranjang', $k->id) }}" method="POST">
+                                    {{-- {{ dd($k->id) }} --}}
+                                    {{-- <td class="product-remove"> --}}
+                                        {{-- <a href="{{ route('hapus keranjang', $k->id) }}">hapus</a> --}}
+                                        {{-- <form action="{{ route('hapus keranjang', $k->id) }}" method="POST">
                                             @csrf
-                                            @method('delete')
-                                            <button class="btn btn-danger mr-3" type="submit">Hapus</button>
+                                            @method('DELETE')
+                                            <button type="submit" class="delete">Hapus</button>
                                         </form>
-                                    </td>
-                                    <td class="product-name"><a href="#">{{$k->produk->nama_produk}}</a></td>
-                                    {{-- <td class="product-price-cart"><span class="amount">{{$produk->harga}}</span></td> --}}
+                                    </td> --}}
+                                    <td class="product-name"><span href="#">{{$k->produk->nama_produk}}</span></td>
                                     <td class="product-price-cart"><span class="amount">{{$k->produk->harga}}</span></td>
                                     <td class="product-quantity">
                                         {{$k->jumlah}}

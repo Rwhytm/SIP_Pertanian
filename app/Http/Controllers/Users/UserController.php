@@ -59,7 +59,7 @@ class UserController extends Controller
 
     public function hapus($id){
         $keranjang = Keranjang::find($id)->delete();
-        return  redirect(route('tampil keranjang'),['keranjang' =>$id]);
+        return  view('users.keranjang');
     }
     public function bayar(){
         $user_id = auth()->user()->id;
@@ -69,6 +69,10 @@ class UserController extends Controller
         // dd($bayar);
 
         return view('users.pesanan', compact('keranjang', 'order_total'));
+    }
+
+    public function konfirmasi(){
+        return view('users.pembayaran');
     }
     
 }
