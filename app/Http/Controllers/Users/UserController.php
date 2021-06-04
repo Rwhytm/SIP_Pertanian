@@ -54,14 +54,17 @@ class UserController extends Controller
 
     public function keranjang($id){
         $user = User::find($id);
-        $produk = Produk::find($id);
-        $keranjang = Keranjang::get()->where('user_id', $user->id);
-        return view('users.keranjang',['keranjang' => $keranjang, 'produk' => $produk]);
+        $keranjang = Keranjang::where('user_id', $user->id)->get();
+        return view('users.keranjang',['keranjang' => $keranjang]);
     }
 
     public function hapus($id){
-        $keranjang = Keranjang::find($id);
-        return route('tampil keranjang');
+        $keranjang = Keranjang::find($id)->delete();
+        return  redirect(route('tampil keranjang'),['keranjang' =>$id]);
+        
+    }
+    public function pesan(){
+        return view('users.pesanan');
     }
     
 }

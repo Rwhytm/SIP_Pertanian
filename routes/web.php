@@ -35,6 +35,8 @@ Route::group(
         Route::get('keranjang/{id}', 'UserController@keranjang')->name('tampil keranjang');
         Route::delete('keranjang/hapus/{id}', 'UserController@hapus')->name('hapus keranjang');
 
+        Route::get('coba','UserController@pesan');
+
     }
 );
 Route::group(

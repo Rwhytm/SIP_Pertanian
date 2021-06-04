@@ -8,7 +8,6 @@
                 <div class="food-slider-content text-center fadeinup-animated">
                     {{-- <img class="animated" src="assets/img/slider/6.png" alt=""> --}}
                     <p class="animated">Belanja Di Fakultas Pertanian</p>
-                    <a class="food-slider-btn animated" href="#">Shop Now</a>
                 </div>
             </div>
         </div>
@@ -17,7 +16,6 @@
                 <div class="food-slider-content text-center fadeinup-animated">
                     {{-- <img class="animated" src="assets/img/slider/6.png" alt=""> --}}
                     <p class="animated">Belanja Di Fakultas Pertanian</p>
-                    <a class="food-slider-btn animated" href="#">Shop Now</a>
                 </div>
             </div>
         </div>
@@ -74,6 +72,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                                 @empty
                                     
                                 @endforelse

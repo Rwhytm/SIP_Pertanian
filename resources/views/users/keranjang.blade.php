@@ -10,7 +10,7 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th>remove</th>
+                                    <th>hapus</th>
                                     <th>Produk</th>
                                     <th>Harga</th>
                                     <th>Jumlah</th>
@@ -21,13 +21,12 @@
                                 
                                     @forelse ($keranjang as $k)
                                     <tr>   
-                                    
+                                        {{-- {{dd($k->distinct())}} --}}
                                     <td class="product-remove">
-                                        
-                                        <form action="" method="POST">
+                                        <form action="#" method="POST">
                                         @csrf
                                         @method('delete')
-                                             <button class="btn btn-danger mr-3">Hapus</button>
+                                             <button class="btn btn-danger mr-3" type="submit">Hapus</button>
                                         </form>
                                         {{-- <a href="#"><i class="pe-7s-close"></i></a> --}}
                                     
