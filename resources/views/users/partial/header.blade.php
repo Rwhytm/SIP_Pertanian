@@ -1,23 +1,13 @@
-{{-- 
-                            
-                            <li><a href="#">filter</a>
-                                <ul class="single-dropdown">
-                                    <li><a href="cart.html"></a></li>
-                                    <li><a href="{{route('home user')}}">semua produk</a></li>
-                                    <li><a href="{{route('terbaru')}}">produk terbaru</a></li>
-                                    <li><a href="{{route('terlama')}}">produk Terlama</a></li>
-                                    <li><a href="{{route('hargatinggi')}}">Harga Tinggi Ke Rendah</a></li>
-                                     <li><a href="{{route('hargarendah')}}">Harga Rendah Ke Tinggi</a></li>
-                                </ul>
-                            </li> --}}
+
 <header>
-    <div class="header-bottom wrapper-padding-2 bg-img res-header-sm food-header" style="background-image: url(assets/img/bg/11.jpg)">
+    <div class="header-bottom wrapper-padding-2 bg-img res-header-sm food-header" style="background-image: url({{ asset('users/assets/img/bg/11.jpg') }})">
     <div class="header-top-furniture wrapper-padding-2 res-header-sm">
         <div class="container-fluid">
             <div class="header-bottom-wrapper">
                 <div class="logo-2 furniture-logo ptb-30">
                     <a href="{{route('home user')}}">
-                        <img src="assets/img/logo/logo-faperta.png" alt="" style="width: 250px">
+                        {{-- <img src="assets/img/logo/logo-faperta.png" alt="" style="width: 250px"> --}}
+                        <img src="{{ asset('users/assets/img/logo/logo-faperta.png') }}" alt="" style="width: 250px">
                     </a>
                 </div>
                 <div class="menu-style-2 furniture-menu menu-hover">
@@ -84,8 +74,8 @@
                                 <option value="{{route('home user')}}">Semua</option>
                                 <option value="{{route('terbaru')}}">Terbaru</option>
                                 <option value="{{route('terlama')}}">Terlama</option>
-                                <option value="{{route('hargatinggi')}}">Terendah</option>
-                                <option value="{{route('hargarendah')}}">Tertinggi</option>
+                                <option value="{{route('hargatinggi')}}">Temurah</option>
+                                <option value="{{route('hargarendah')}}">Termahal</option>
 
                             </select>
                         </div>

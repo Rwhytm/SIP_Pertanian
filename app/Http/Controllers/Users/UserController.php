@@ -43,11 +43,10 @@ class UserController extends Controller
 
     public function tambah(Request $request){
         $keranjang = Keranjang::create([
-            'user_id' => $request->user_id,
+            'user_id' => auth()->user()->id,
             'produk_id' => $request->id_produk, 
             'total' =>  $request->jumlah * $request->harga,
             'jumlah' => $request->jumlah,
-            
         ]);
         return redirect(route('home user'));
     }
@@ -61,10 +60,15 @@ class UserController extends Controller
     public function hapus($id){
         $keranjang = Keranjang::find($id)->delete();
         return  redirect(route('tampil keranjang'),['keranjang' =>$id]);
-        
     }
-    public function pesan(){
-        return view('users.pesanan');
+    public function bayar(){
+        $user_id = auth()->user()->id;
+        $keranjang = Keranjang::where(['user_id' => $user_id, 'status' => 'belum bayar'])->get();
+        $order_total = Keranjang::where(['user_id' => $user_id, 'status' => 'belum bayar'])->sum('total');
+
+        // dd($bayar);
+
+        return view('users.pesanan', compact('keranjang', 'order_total'));
     }
     
 }

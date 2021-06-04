@@ -13,9 +13,13 @@ class Keranjang extends Model
         'total',
         'jumlah'];
 
+    // public function produk()
+    // {
+    //     return $this->hasMany('App\Models\Produk', 'id', 'produk_id');
+    // }
     public function produk()
     {
-        return $this->hasMany('App\Models\Produk', 'id', 'produk_id');
+        return $this->belongsTo('App\Models\Produk', 'produk_id');
     }
     public function user()
     {

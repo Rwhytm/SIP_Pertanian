@@ -46,7 +46,7 @@
                                         </div>
                                         <div class="product-content">
                                             <h4><a href="product-details.html">{{$p->nama_produk}}</a></h4>
-                                            <span>{{'Rp.'.$p->harga}}</span>
+                                            <span>{{'Rp.'.number_format($p->harga)}}</span>
                                             <br>
                                             <h4>{{'Tersisa : '. $p->jumlah.' '.$p->satuan}}</h4>
                                         </div>

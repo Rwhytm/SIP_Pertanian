@@ -54,7 +54,7 @@
 					                                <img src="{{ asset($p->produkImages->first()->path) }}" alt="" class="img-thumbnail img-center" style="width:500px; height: 300px; object-fit: cover;">
 				                                @else
                                                 <div style="width:500px; height:500px">
-					                                <img src="{{ asset('img/product/book/1.jpg') }}" alt="" style="width:500px; height:300px">
+					                                <img src="{{ asset('users/img/product/book/1.jpg') }}" alt="" style="width:500px; height:300px">
                                                 </div>
 				                                @endif
                                             </a>
@@ -66,9 +66,9 @@
                                         </div>
                                         <div class="product-content">
                                             <h4><a href="product-details.html">{{$p->nama_produk}}</a></h4>
-                                            <span>{{'Rp.'.$p->harga}}</span>
+                                            <span>{{'Rp.'.number_format($p->harga)}}</span>
                                             <br>
-                                            <h4>{{'Tersisa : '. $p->jumlah.' '.$p->satuan}}</h4>
+                                            <h4>{{'Tersisa : '. number_format($p->jumlah).' '.$p->satuan}}</h4>
                                         </div>
                                     </div>
                                 </div>

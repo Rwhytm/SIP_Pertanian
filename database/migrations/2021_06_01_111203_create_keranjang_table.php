@@ -19,11 +19,14 @@ class CreateKeranjangTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->integer('jumlah');
             $table->integer('total');
+            $table->enum('status', ['belum bayar', 'pending', 'proses', 'sukses', 'gagal', 'PO'])->default('belum bayar');
             $table->timestamps();
 
 
             $table->foreign('produk_id')->references('id')->on('produk')->onDelete('cascade');
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+
+            // $table->foreignId('produk_id')->constrained('produk', 'id')->onDelete('cascade');
         });
     }
 

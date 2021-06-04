@@ -19,33 +19,29 @@
                             </thead>
                             <tbody>
                                 
-                                    @forelse ($keranjang as $k)
-                                    <tr>   
-                                        {{-- {{dd($k->distinct())}} --}}
+                                @forelse ($keranjang as $k)
+                                <tr>
                                     <td class="product-remove">
-                                        <form action="#" method="POST">
-                                        @csrf
-                                        @method('delete')
-                                             <button class="btn btn-danger mr-3" type="submit">Hapus</button>
+                                        <form action="{{ route('hapus keranjang', $k->id) }}" method="POST">
+                                            @csrf
+                                            @method('delete')
+                                            <button class="btn btn-danger mr-3" type="submit">Hapus</button>
                                         </form>
-                                        {{-- <a href="#"><i class="pe-7s-close"></i></a> --}}
-                                    
-                                    
                                     </td>
-                                    <td class="product-name"><a href="#">{{$k->produk[0]->nama_produk}}</a></td>
+                                    <td class="product-name"><a href="#">{{$k->produk->nama_produk}}</a></td>
                                     {{-- <td class="product-price-cart"><span class="amount">{{$produk->harga}}</span></td> --}}
-                                    <td class="product-price-cart"><span class="amount">{{$k->produk[0]->harga}}</span></td>
+                                    <td class="product-price-cart"><span class="amount">{{$k->produk->harga}}</span></td>
                                     <td class="product-quantity">
                                         {{$k->jumlah}}
                                         {{-- <input value="1" type="number"> --}}
                                     </td>
                                     <td class="product-subtotal">{{$k->total}}</td>
-                                    </tr>  
-                                    @empty
-                                     <tr>
-                                        <td colspan="5">Tidak Ada Barang</td>
-                                     </tr>
-                                    @endforelse
+                                </tr>  
+                                @empty
+                                <tr>
+                                    <td colspan="5">Tidak Ada Barang</td>
+                                </tr>
+                                @endforelse
                                 
                             </tbody>
                         </table>
@@ -57,7 +53,7 @@
                                 <ul>
                                     <li>Total<span>{{$keranjang->sum('total')}}</span></li>
                                 </ul>
-                                <a href="#">Bayar</a>
+                                <a href="{{ route('bayar') }}">Bayar</a>
                             </div>
                         </div>
                     </div>
