@@ -36,6 +36,7 @@ Route::group(
         Route::delete('keranjang/hapus/{id}', 'UserController@hapus')->name('hapus keranjang');
 
         Route::get('pesanan','UserController@bayar')->name('bayar');
+        Route::put('checkout', 'UserController@checkout')->name('checkout');
         Route::get('konfirmasi','UserController@konfirmasi')->name('konfirmasi');
 
     }
@@ -51,6 +52,10 @@ Route::group(
         // tabel user
         Route::get('list-users', 'DashboardController@user')->name('admin_user');
 
+        //table informasi
+        Route::get('pengguna-baru', 'DashboardController@userbaru')->name('user.baru');
+        Route::get('barang-baru', 'DashboardController@barangbaru')->name('barang.baru');
+
         // produk
         Route::get('produk', 'ProdukController@index')->name('produk admin');
         Route::get('produk/tambah', 'ProdukController@tambah');
@@ -61,7 +66,7 @@ Route::group(
 
         // kategori
         Route::get('kategori', 'KategoriController@index')->name('kategori utama');
-        Route::get('kategori/tambah', 'KategoriController@tambah');
+        Route::get('kategori/tambah', 'KategoriController@tambah')->name('kategori tambah');
         Route::post('kategori/store', 'KategoriController@store')->name('kategori store');
         Route::delete('kategori/hapus/{id}', 'KategoriController@hapus')->name('kategori.hapus');
         Route::get('kategori/edit/{id}', 'KategoriController@edit')->name('kategori.edit');

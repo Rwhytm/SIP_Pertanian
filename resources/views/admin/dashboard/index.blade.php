@@ -10,6 +10,8 @@
             <div class="media-body align-self-center">
                 <h4 class="text-primary mb-2">{{$pelanggan->count()}}</h4>
                 <p>Pelanggan Terdaftar</p>
+                
+                {{-- {{ dd(url('admin/dashboard')) }} --}}
             </div>
         </div>
     </div>

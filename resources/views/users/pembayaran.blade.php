@@ -13,13 +13,13 @@
                             </div>
                             <div class="col-md-12">
                                 <div class="checkout-form-list">
-                                    <label>Nama Rekening<span class="required">*</span></label>										
+                                    <label>Nama Rekening Anda<span class="required">*</span></label>										
                                     <input type="text" placeholder="" />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="checkout-form-list">
-                                    <label>Nama Bank</label>
+                                    <label>Nama Bank Anda</label>
                                     <input type="text" placeholder="" />
                                 </div>
                             </div>
@@ -56,29 +56,29 @@
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
                         <span>Rp. Sekian</span>
-                        <span>svg</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 30px">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
+                        </svg>
                     </div>
                 </div>
                 <div class="card-body">
                     <div class="col-md-12">
-                        <h5 class="text-center">Atas Nama</h5>
                         <div class="row">
-                            <h2>L</h2>
+                            <img src="{{ asset('users/assets/img/logo/BRI.png') }}" alt="" style="width: 75px">
                             <div class="col-md-6">
-                                <h5>nama</h5>
-                                <h5>noomor</h5>
+                                <h5>Abdul Munir</h5>
+                                <h5>080809090</h5>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card-footer">
                     <div class="col-md-12">
-                        <h5 class="text-center">Atas Nama</h5>
                         <div class="row">
-                            <h2>L</h2>
+                            <img src="{{ asset('users/assets/img/logo/BNI.png') }}" alt="" style="width: 75px ; height: 75px">
                             <div class="col-md-6">
-                                <h5>nama</h5>
-                                <h5>noomor</h5>
+                                <h5>Abdul Munir</h5>
+                                <h5>122374921</h5>
                             </div>
                         </div>
                     </div>

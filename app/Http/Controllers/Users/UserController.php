@@ -71,6 +71,17 @@ class UserController extends Controller
         return view('users.pesanan', compact('keranjang', 'order_total'));
     }
 
+    public function checkout(Request $request){
+        $user_id = auth()->user()->id;
+        $keranjang = Keranjang::where(['user_id' => $user_id, 'status' => 'belum bayar'])->get();
+        // dd($keranjang->status);
+        $pesanan = Keranjang::update([
+            'status' => 'pending'
+        ]);
+        
+        return view('users.home');
+    }
+
     public function konfirmasi(){
         return view('users.pembayaran');
     }

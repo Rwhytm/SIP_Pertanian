@@ -28,4 +28,12 @@ class DashboardController extends Controller
         $user = User::get();
         return view('admin\users\profil',['user' => $user]);
     }
+    public function userbaru(){
+        $user = User::orderBy('id', 'DESC')->role('admin')->paginate(5);
+        return view('admin\informasi\pengguna', ['user' =>$user]);
+    }
+    public function barangbaru(){
+        $barang = Produk::orderBy('id', 'DESC')->paginate(5);
+        return view('admin\informasi\barang', ['barang' =>$barang]);
+    }
 }
