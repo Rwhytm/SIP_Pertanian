@@ -1,37 +1,34 @@
 <footer class="footer-area">
     <div class="footer-middle black-bg-2 pt-45 pb-15">
         <div class="container">
-            <div class="row">
+            <div class="d-flex justify-content-between">
                 <div class="col-lg-4 col-md-4">
                     <div class="footer-services-wrapper mb-30">
-                        <div class="footer-services-icon">
-                            <i class="pe-7s-car"></i>
-                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" style="width: 40px" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M11.3 1.046A1 1 0 0112 2v5h4a1 1 0 01.82 1.573l-7 10A1 1 0 018 18v-5H4a1 1 0 01-.82-1.573l7-10a1 1 0 011.12-.38z" clip-rule="evenodd" />
+                        </svg>
                         <div class="footer-services-content">
-                            <h3>Pernyataan 1</h3>
-                            <p>dasdwadwa</p>
+                            <h3>Lebih Cepat</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="footer-services-wrapper mb-30">
-                        <div class="footer-services-icon">
-                            <i class="pe-7s-shield"></i>
-                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" style="width: 40px" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
                         <div class="footer-services-content">
-                            <h3>Pernyataan 2</h3>
-                            <p>dawdwad</p>
+                            <h3>Lebih Efisien</h3>
                         </div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="footer-services-wrapper mb-30">
-                        <div class="footer-services-icon">
-                            <i class="pe-7s-headphones"></i>
-                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" style="width: 40px" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                        </svg>
                         <div class="footer-services-content">
-                            <h3>Pernyataan 3</h3>
-                            <p>dawdawd</p>
+                            <h3>Lebih mudah</h3>
                         </div>
                     </div>
                 </div>
@@ -50,7 +47,7 @@
                                     <span>Alamat:</span>
                                 </div>
                                 <div class="footer-info-content2">
-                                    <p>77 Seventh Streeth Banasree <br>Road Rampura -2100 Dhaka</p>
+                                    <p>Beringin Raya, Kec. Muara Bangka Hulu, Kota Bengkulu, Bengkulu 38119</p>
                                 </div>
                             </div>
                             <div class="footer-address-electro">
@@ -58,7 +55,7 @@
                                     <span>Kontak:</span>
                                 </div>
                                 <div class="footer-info-content2">
-                                    <p>+11 (019)  2518  4203 </p>
+                                    <p>+62 736 21290 / 21170</p>
                                 </div>
                             </div>
                             <div class="footer-address-electro">
@@ -66,7 +63,7 @@
                                     <span>Email:</span>
                                 </div>
                                 <div class="footer-info-content2">
-                                    <p><a href="#">domain@mail.com</a></p>
+                                    <p><a href="mailto:faperta@unib.ac.id">faperta@unib.ac.id</a></p>
                                 </div>
                             </div>
                         </div>
@@ -89,7 +86,7 @@
                         <p>
                             Copyright ©
                             <a href="http://fp.unib.ac.id/">Fakultas Pertanian</a>
-                            2021 . All Right Reserved.
+                            2021 .
                         </p>
                     </div>
                 </div>
