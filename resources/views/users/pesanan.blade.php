@@ -51,7 +51,7 @@
                         </div>
                     </div>
                     <div class="order-button-payment">
-                        <form action="" method="post">
+                        <form action="{{ route('checkout') }}" method="post">
                             @csrf
                             @method('PUT')
                             <button type="submit" class="btn btn-dark btn-lg btn-block">Check Out</button>

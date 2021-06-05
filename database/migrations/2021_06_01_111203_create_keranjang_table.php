@@ -15,6 +15,7 @@ class CreateKeranjangTable extends Migration
     {
         Schema::create('keranjang', function (Blueprint $table) {
             $table->id();
+            $table->string('nomor_transaksi')->nullable();
             $table->unsignedBigInteger('produk_id');
             $table->unsignedBigInteger('user_id');
             $table->integer('jumlah');

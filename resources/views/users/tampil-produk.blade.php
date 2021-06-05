@@ -26,7 +26,7 @@
                         <form action="{{route('keranjang')}}" method="post">
                             @csrf
                             <div class="cart-plus-minus">
-                                <input type="text" value="1" name="jumlah" class="cart-plus-minus-box" min="1"> 
+                                <input type="number" value="1" name="jumlah" class="cart-plus-minus-box" min="1"> 
                             </div>
                             @if ($produk->jumlah != 0)
                             <br>

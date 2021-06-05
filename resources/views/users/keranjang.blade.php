@@ -54,7 +54,12 @@
                                 <ul>
                                     <li>Total<span>{{$keranjang->sum('total')}}</span></li>
                                 </ul>
+                                @if ($keranjang->sum('total')>0)
                                 <a href="{{ route('bayar') }}">Bayar</a>
+                                    
+                                @else
+                                    
+                                @endif
                             </div>
                         </div>
                     </div>

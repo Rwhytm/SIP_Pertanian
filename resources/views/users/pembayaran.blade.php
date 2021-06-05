@@ -11,15 +11,21 @@
                             <div class="col-md-12">
                                 
                             </div>
-                            <div class="col-md-12">
+                            <div class="col-md-6">
                                 <div class="checkout-form-list">
-                                    <label>Nama Rekening Anda<span class="required">*</span></label>										
+                                    <label>Nomor Rekening<span class="required">*</span></label>										
+                                    <input type="text" placeholder="" />
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="checkout-form-list">
+                                    <label>Atas Nama<span class="required"></span></label>										
                                     <input type="text" placeholder="" />
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="checkout-form-list">
-                                    <label>Nama Bank Anda</label>
+                                    <label>Bank yang digunakan</label>
                                     <input type="text" placeholder="" />
                                 </div>
                             </div>
@@ -28,15 +34,15 @@
                                 <div class="checkout-form-list">
                                     <label>Bank Tujuan<span class="required">*</span></label>
                                     <select name="bank" id="bank">
-                                        <option value="s">b</option>
-                                        <option value="b">s</option>
+                                        <option value="BRI">b</option>
+                                        <option value="BNI">s</option>
                                     </select>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="checkout-form-list">
                                     <label>Tanggal Transfer<span class="required">*</span></label>										
-                                    <input class="form-control" type="datetime-local" value="" id="example-datetime-local-input">
+                                    <input class="form-control" type="date" value="" id="example-datetime-local-input">
                                 </div>
                             </div>
                             <div class="col-md-12">

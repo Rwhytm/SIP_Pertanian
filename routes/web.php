@@ -26,7 +26,7 @@ Route::group(
         Route::get('home/dari-rendah', 'UserController@darirendah')->name('hargarendah');
 
 
-
+        Route::get('filter-kategori/{id}', 'UserController@kategori')->name('filter.kategori');
         
 
         // pemesanan produk user
@@ -38,6 +38,9 @@ Route::group(
         Route::get('pesanan','UserController@bayar')->name('bayar');
         Route::put('checkout', 'UserController@checkout')->name('checkout');
         Route::get('konfirmasi','UserController@konfirmasi')->name('konfirmasi');
+
+
+        Route::get('cari','UserController@cari')->name('cari.produk');
 
     }
 );

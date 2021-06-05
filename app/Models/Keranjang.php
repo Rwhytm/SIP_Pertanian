@@ -8,6 +8,7 @@ class Keranjang extends Model
 {
     protected $table = 'keranjang';
     protected $fillable = [
+        'nomor_transaksi',
         'user_id',
         'produk_id',
         'total',

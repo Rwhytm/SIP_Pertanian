@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Produk;
 use App\Models\Keranjang;
+use App\Models\Kategori;
 use App\User;
 use App\Models\ProdukImage;
 use DB;
@@ -53,8 +54,14 @@ class UserController extends Controller
 
     public function keranjang($id){
         $user = User::find($id);
-        $keranjang = Keranjang::where('user_id', $user->id)->get();
+        $keranjang = Keranjang::where(['user_id'=> $user->id, 'status' => 'belum bayar'])->get();
         return view('users.keranjang',['keranjang' => $keranjang]);
+    }
+
+    public function kategori($id){
+        // $kategori = Kategori->where('id', $id)->get();
+        $produk = Kategori::find($id)->products[0]->id;
+        return view('users.filter.hasilfilter', ['produk' => $produk]);
     }
 
     public function hapus($id){
@@ -73,17 +80,25 @@ class UserController extends Controller
 
     public function checkout(Request $request){
         $user_id = auth()->user()->id;
-        $keranjang = Keranjang::where(['user_id' => $user_id, 'status' => 'belum bayar'])->get();
-        // dd($keranjang->status);
-        $pesanan = Keranjang::update([
+        $keranjang = Keranjang::where(['user_id' => $user_id, 'status' => 'belum bayar'])->update([
+            'nomor_transaksi' => 'TRX-' . time(),
             'status' => 'pending'
         ]);
-        
-        return view('users.home');
+        // dd($keranjang->status);
+        // $pesanan = Keranjang::create([
+        //     'nomor_transaksi' => 'TRX-' . time(),
+        // ]);
+         return redirect()->route('home user');
     }
 
     public function konfirmasi(){
         return view('users.pembayaran');
+    }
+    // Mencari produk
+    public function cari(Request $request){
+        $cari = $request->cari;
+        $produk = Produk::where('nama_produk', 'like',"%". $cari."%")->paginate(10);
+        return view('users\filter\hasilcari', ['produk' => $produk]);
     }
     
 }
