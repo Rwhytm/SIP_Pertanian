@@ -3,7 +3,7 @@
 <div class="slider-area">
     
     <div class="slider-active owl-carousel">
-        <div class="food-slider bg-img slider-height-5" style="background-image: url(assets/img/logo/gambar1.jpg)">
+        <div class="food-slider bg-img slider-height-5" style="background-image: url({{ asset('users/assets/img/logo/gambar1.jpg') }})">
             <div class="container">
                 <div class="food-slider-content text-center fadeinup-animated">
                     {{-- <img class="animated" src="assets/img/slider/6.png" alt=""> --}}
@@ -11,7 +11,7 @@
                 </div>
             </div>
         </div>
-        <div class="food-slider bg-img slider-height-5" style="background-image: url(assets/img/logo/gambar2.jpg)">
+        <div class="food-slider bg-img slider-height-5" style="background-image: url({{ asset('users/assets/img/logo/gambar2.jpg') }})">
             <div class="container">
                 <div class="food-slider-content text-center fadeinup-animated">
                     {{-- <img class="animated" src="assets/img/slider/6.png" alt=""> --}}
@@ -107,21 +107,21 @@
         <div class="row">
             <div class="col-lg-4 col-md-4">
                 <div class="single-food-services text-center food-services-padding1 mb-40">
-                    <img src="assets/img/banner/7.png" alt="">
+                    <img src="{{ asset('users/assets/img/banner/7.png') }}" alt="">
                     <h4>Pesan Dari Rumah</h4>
                     <p>Pesan barangmu dari rumah melalui website ini.</p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4">
                 <div class="single-food-services text-center food-services-padding2 mb-40">
-                    <img src="assets/img/banner/8.png" alt="">
+                    <img src="{{ asset('users/assets/img/banner/8.png') }}" alt="">
                     <h4>Lakukan Pembayaran</h4>
                     <p>Lakukan pembayaran melalui mobile banking atau bank terdekat </p>
                 </div>
             </div>
             <div class="col-lg-4 col-md-4">
                 <div class="single-food-services text-center food-services-padding3 mb-40">
-                    <img src="assets/img/banner/9.png" alt="">
+                    <img src="{{ asset('users/assets/img/banner/9.png') }}" alt="">
                     <h4>Barang Akan Diantar</h4>
                     <p>Barang yang anda pesan akan diproses dan segera kami antar</p>
                 </div>

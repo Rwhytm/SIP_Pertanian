@@ -1,104 +1,105 @@
-@extends('navigator')
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <title>{{config('app.name')}}</title>
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Favicon -->
-    <link rel="shortcut icon" type="image/x-icon" href="{{ URL::asset('users/assets/img/thumb-300x300.png')}}">
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
+@extends('users.awal.layout')
+@section('content')
+<div class="slider-area">
+    
+    <div class="slider-active owl-carousel">
+        <div class="food-slider bg-img slider-height-5" style="background-image: url({{ asset('users/assets/img/logo/gambar1.jpg') }})">
+            <div class="container">
+                <div class="food-slider-content text-center fadeinup-animated">
+                    {{-- <img class="animated" src="assets/img/slider/6.png" alt=""> --}}
+                    <p class="animated text-xl-center">Belanja Di Fakultas Pertanian</p>
+                    @if (Route::has('login'))
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                    <a class="food-slider-btn animated" href="{{ route('home user') }}l">Belanja Sekarang</a>
                     @else
-                        <a href="{{ route('login2') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
+                    <a class="food-slider-btn animated" href="{{route('login2')}}">Login</a>
+                    
                     @endauth
-                </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    💻
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                    @endif
                 </div>
             </div>
         </div>
-    </body>
-</html>
+        <div class="food-slider bg-img slider-height-5" style="background-image: url({{ asset('users/assets/img/logo/gambar2.jpg') }})">
+            <div class="container">
+                <div class="food-slider-content text-center fadeinup-animated">
+                    {{-- <img class="animated" src="assets/img/slider/6.png" alt=""> --}}
+                    <p class="animated text-xl-center">Belanja Di Fakultas Pertanian</p>
+                    @if (Route::has('login'))
+                    @auth
+                    <a class="food-slider-btn animated" href="{{ route('home user') }}l">Belanja Sekarang</a>
+                    @else
+                    <a class="food-slider-btn animated" href="{{route('login2')}}">Login</a>
+                    
+                    @endauth
+                    @endif
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{{-- <div class="container p-5">
+    <div class="section-title text-center mb-60">
+        <h2>Kategori</h2>
+    </div>
+    <div class="d-flex justify-content-center">
+        @php
+        use App\Models\Kategori;
+        $kategori = Kategori::orderBy('id', 'ASC')->get();
+        @endphp
+        <div class="d-flex justify-content-left">
+            @foreach ($kategori as $k)
+            <a href="{{ route('filter.kategori', $k->id) }}" class="btn btn-outline-secondary mr-4" style="border-radius: 50px;">{{ $k->nama_kategori }}</a>
+            @endforeach
+        </div>
+    </div>
+</div> --}}
+<div class="all-products-area pt-115 pb-50">
+    <div class="pl-100 pr-100">
+        <div class="container-fluid">
+            <div class="section-title text-center mb-60">
+                <h2>Selamat Datang di Incubator PErtanian</h2>
+                <p class="mt-5">Untuk melakukan proses pembelian di Incubator Pertanian, silahkan melakukan login atau registrasi, lalu tekan tombol Belanja Sekarang</p>
+            </div>
+            <div class="product-style">
+                
+                <div class="tab-content">
+                    <div class="tab-pane active show fade" id="home1" role="tabpanel">
+                        <div class="custom-row">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{-- animasi --}}
+
+<div class="food-services-area bg-img pt-200 pb-155" style="background-image: url({{ asset('users/assets/img/bg/12.jpg ') }})">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-4">
+                <div class="single-food-services text-center food-services-padding1 mb-40">
+                    <img src="{{ asset('users/assets/img/banner/7.png') }}" alt="">
+                    <h4>Pesan Dari Rumah</h4>
+                    <p>Pesan barangmu dari rumah melalui website ini.</p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="single-food-services text-center food-services-padding2 mb-40">
+                    <img src="{{ asset('users/assets/img/banner/7.png') }}" alt="">
+                    <h4>Lakukan Pembayaran</h4>
+                    <p>Lakukan pembayaran melalui mobile banking atau bank terdekat </p>
+                </div>
+            </div>
+            <div class="col-lg-4 col-md-4">
+                <div class="single-food-services text-center food-services-padding3 mb-40">
+                    <img src="{{ asset('users/assets/img/banner/9.png') }}" alt="">
+                    <h4>Barang Akan Diantar</h4>
+                    <p>Barang yang anda pesan akan diproses dan segera kami antar</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@endsection
