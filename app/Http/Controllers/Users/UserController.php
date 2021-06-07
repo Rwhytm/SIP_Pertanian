@@ -84,13 +84,13 @@ class UserController extends Controller
             'nomor_transaksi' => 'TRX-' . time(),
             'status' => 'pending'
         ]);
-        // dd($keranjang->status);
-        // $pesanan = Keranjang::create([
-        //     'nomor_transaksi' => 'TRX-' . time(),
-        // ]);
          return redirect()->route('home user');
     }
+    public function pesanansaya(){
+        $user_id = auth()->user()->id;
+        $pesanansaya = Keranjang::where(['user_id' => $user_id, 'status' => 'pending']);
 
+    }
     public function konfirmasi(){
         return view('users.pembayaran');
     }
