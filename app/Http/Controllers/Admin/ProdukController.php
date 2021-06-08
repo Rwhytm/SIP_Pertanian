@@ -14,7 +14,9 @@ use Session;
 
 class ProdukController extends Controller
 {
-    public function __construct(){
+    public function __construct()
+    {
+        $this->middleware(['role:admin']);
     }
     public function index(){
         $this->data['produk'] = Produk::orderBy('id', 'ASC')->paginate(10);

@@ -10,7 +10,7 @@
                     <p class="animated text-xl-center">Belanja Di Fakultas Pertanian</p>
                     @if (Route::has('login'))
                     @auth
-                    <a class="food-slider-btn animated" href="{{ route('home user') }}l">Belanja Sekarang</a>
+                    <a class="food-slider-btn animated" href="{{ route('home user') }}">Belanja Sekarang</a>
                     @else
                     <a class="food-slider-btn animated" href="{{route('login2')}}">Login</a>
                     
@@ -26,7 +26,7 @@
                     <p class="animated text-xl-center">Belanja Di Fakultas Pertanian</p>
                     @if (Route::has('login'))
                     @auth
-                    <a class="food-slider-btn animated" href="{{ route('home user') }}l">Belanja Sekarang</a>
+                    <a class="food-slider-btn animated" href="{{ route('home user') }}">Belanja Sekarang</a>
                     @else
                     <a class="food-slider-btn animated" href="{{route('login2')}}">Login</a>
                     

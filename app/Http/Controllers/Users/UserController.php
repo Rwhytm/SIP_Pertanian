@@ -13,6 +13,10 @@ use DB;
 
 class UserController extends Controller
 {
+    public function __construct()
+    {
+        
+    }
     public function index(){
         $image =  ProdukImage::orderBy('id', 'ASC');
         $produk = Produk::orderBy('nama_produk', 'ASC')->paginate(20);

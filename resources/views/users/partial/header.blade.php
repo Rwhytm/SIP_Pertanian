@@ -85,8 +85,8 @@
                                 <option value="{{route('home user')}}">Semua</option>
                                 <option value="{{route('terbaru')}}">Terbaru</option>
                                 <option value="{{route('terlama')}}">Terlama</option>
-                                <option value="{{route('hargatinggi')}}">Temurah</option>
-                                <option value="{{route('hargarendah')}}">Termahal</option>
+                                <option value="{{route('hargatinggi')}}">Termahal</option>
+                                <option value="{{route('hargarendah')}}">Termurah</option>
                                 
                             </select>
                         </div>
