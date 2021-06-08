@@ -10,7 +10,7 @@
                         <table>
                             <thead>
                                 <tr>
-                                    {{-- <th>hapus</th> --}}
+                                    <th>hapus</th>
                                     <th>Produk</th>
                                     <th>Harga</th>
                                     <th>Jumlah</th>
@@ -22,14 +22,21 @@
                                 @forelse ($keranjang as $k)
                                 <tr>
                                     {{-- {{ dd($k->id) }} --}}
-                                    {{-- <td class="product-remove"> --}}
+                                    <td class="product-remove"> 
                                         {{-- <a href="{{ route('hapus keranjang', $k->id) }}">hapus</a> --}}
-                                        {{-- <form action="{{ route('hapus keranjang', $k->id) }}" method="POST">
+                                        <div class="invisible">
+                                            <form action="{{ route('hapus keranjang', $k->id) }}" method="POST">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="delete">Hapus</button>
+                                            </form>
+                                        </div>
+                                        <form action="{{ route('hapus keranjang', $k->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="delete">Hapus</button>
                                         </form>
-                                    </td> --}}
+                                    </td>
                                     <td class="product-name"><span href="#">{{$k->produk->nama_produk}}</span></td>
                                     <td class="product-price-cart"><span class="amount">{{'Rp. '.number_format($k->produk->harga)}}</span></td>
                                     <td class="product-quantity">

@@ -65,8 +65,9 @@ class UserController extends Controller
     }
 
     public function hapus($id){
+        $userid = auth()->user()->id;
         $keranjang = Keranjang::find($id)->delete();
-        return  view('users.keranjang');
+        return  redirect(route("keranjang", $userid));
     }
     public function bayar(){
         $user_id = auth()->user()->id;
