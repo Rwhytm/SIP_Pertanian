@@ -34,7 +34,7 @@
                                         <form action="{{ route('hapus keranjang', $k->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
-                                            <button type="submit" class="delete">Hapus</button>
+                                            <button type="submit" class="btn btn-danger">Hapus</button>
                                         </form>
                                     </td>
                                     <td class="product-name"><span href="#">{{$k->produk->nama_produk}}</span></td>

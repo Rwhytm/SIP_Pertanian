@@ -24,17 +24,17 @@
                                 <tr>
                                     <td class="product-name">{{ $p->nomor_transaksi}}</span></td>
                                     <td class="product-price-cart">{{ $p->updated_at }}</td>
-                                    <td class="product-quantity">{{ $p->total }}</td>
+                                    <td class="product-quantity">{{ number_format($p->total) }}</td>
                                     <td class="product-quantity">{{ $p->status }}</td>
                                     <td class="product-quantity">
                                        @if ($p->status =='pending')
                                            
-                                               <button btn btn-primary>Konfirmasi</button>
+                                               <button class="btn btn-dark">Konfirmasi</button>
 
                                         @elseif ($p->status =='konfirmasi')
                                         @elseif ($p->status =='proses')
 
-                                        <button class="btn btn-secondary">Diterima</button>
+                                        <button class="btn btn-dark">Diterima</button>
 
                                         @elseif ($p->status =='proses')
                                            

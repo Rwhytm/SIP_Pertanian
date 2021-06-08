@@ -59,7 +59,6 @@ class UserController extends Controller
     }
 
     public function kategori($id){
-        // $kategori = Kategori->where('id', $id)->get();
         $produk = Kategori::find($id)->products[0]->id;
         return view('users.filter.hasilfilter', ['produk' => $produk]);
     }
@@ -67,14 +66,13 @@ class UserController extends Controller
     public function hapus($id){
         $userid = auth()->user()->id;
         $keranjang = Keranjang::find($id)->delete();
-        return  redirect(route("keranjang", $userid));
+        return  redirect(route("tampil keranjang", $userid));
     }
     public function bayar(){
         $user_id = auth()->user()->id;
         $keranjang = Keranjang::where(['user_id' => $user_id, 'status' => 'belum bayar'])->get();
         $order_total = Keranjang::where(['user_id' => $user_id, 'status' => 'belum bayar'])->sum('total');
 
-        // dd($bayar);
 
         return view('users.pesanan', compact('keranjang', 'order_total'));
     }
@@ -89,7 +87,7 @@ class UserController extends Controller
     }
     public function pesanansaya(){
         $user_id = auth()->user()->id;
-        $pesanansaya = Keranjang::distinct()->where(['user_id' => $user_id])->whereNotNull('nomor_transaksi')->get();
+        $pesanansaya = Keranjang::distinct()->where(['user_id' => $user_id, 'status' =>'pending'])->whereNotNull('nomor_transaksi')->get();
         return view('users.list-pesanan', ['pesanan' => $pesanansaya]);
     }
     public function konfirmasi(){
