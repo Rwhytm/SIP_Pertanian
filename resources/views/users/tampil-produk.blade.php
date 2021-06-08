@@ -8,7 +8,11 @@
                     <div class="product-details-tab mr-70">
                         <div class="product-details-large tab-content">
                             <div class="tab-pane active show fade" id="pro-details1" role="tabpanel">
+                                @if ($produk->produkImages->first())
                                 <img src="{{ asset($produk->produkImages->first()->path) }}" alt="" style="width:500px; height:300px">
+                                @else
+                                <img src="{{ asset('users/assets/img/product/1.jpg') }}" alt="" style="width:500px; height:300px" aria-placeholder="TIdak Ada Gambar">
+                                @endif
                             </div>
                         </div>
                     </div>
@@ -18,7 +22,7 @@
                 <div class="product-details-content">
                     <h3>{{$produk->nama_produk}}</h3>
                     <div class="details-price">
-                        <span >{{'Rp. '.$produk->harga}}</span>
+                        <span >{{'Rp. '.number_format($produk->harga)}}</span>
                         <p>Tersedia : {{$produk->jumlah}} {{$produk->satuan}}</p>
                     </div>
                     <p>{{$produk->deskripsi}}</p>

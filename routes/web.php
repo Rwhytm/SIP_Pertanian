@@ -17,7 +17,7 @@ Route::get('/', function () {
 });
 Route::group(
     
-    [['middleware' => ['role:pembeli']],'namespace' => 'Users', 'prefix' => 'users'],
+    [['middleware' => ['role:pembeli', 'role:admin']],'namespace' => 'Users', 'prefix' => 'users'],
     function(){
         Route::get('home', 'UserController@index')->name('home user');
         Route::get('home/terbaru', 'UserController@terbaru')->name('terbaru');
@@ -38,16 +38,27 @@ Route::group(
         Route::get('pesanan','UserController@bayar')->name('bayar');
         Route::put('checkout', 'UserController@checkout')->name('checkout');
         Route::get('konfirmasi','UserController@konfirmasi')->name('konfirmasi');
+        Route::get('pesanan-saya', 'UserController@pesanansaya')->name('pesanansaya');
 
 
         Route::get('cari','UserController@cari')->name('cari.produk');
 
     }
 );
+
+
+
+// Grup role admin
 Route::group(
     
     [['middleware' => ['role:admin']],'namespace' => 'Admin', 'prefix' => 'admin'],
     function(){
+
+        // pesanan user
+        Route::get('list-pesanan', 'DashboardController@pesananpending')->name('pesanan.pending');
+        Route::get('pesanan-sukses', 'DashboardController@pesanansukses')->name('pesanan.sukses');
+        Route::get('pre-order', 'DashboardController@pesananpreorder')->name('preorder');
+
         // dashboard
         Route::get('dashboard', 'DashboardController@index')->name('dashboard admin');
         Route::get('profile/{id}', 'DashboardController@profil')->name('profil admin');

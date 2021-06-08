@@ -69,9 +69,8 @@
                                             @if ($p->produkImages->first())
                                             <img src="{{ asset($p->produkImages->first()->path) }}" alt="" class="img-thumbnail img-center" style="width:500px; height: 300px; object-fit: cover;">
                                             @else
-                                            <div style="width:500px; height:500px">
-                                                <img src="{{ asset('users/img/product/book/1.jpg') }}" alt="" style="width:500px; height:300px">
-                                            </div>
+                                                <img src="{{ asset('users/assets/img/product/1.jpg') }}" alt="" style="width:500px; height:300px; object-fit: cover;" aria-placeholder="TIdak Ada Gambar">
+                                                
                                             @endif
                                         </a>
                                         <div class="product-action">

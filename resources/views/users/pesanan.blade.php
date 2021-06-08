@@ -55,7 +55,6 @@
                             @csrf
                             @method('PUT')
                             <button type="submit" class="btn btn-dark btn-lg btn-block">Check Out</button>
-                            <input type="submit" value="Check Out"  />
                         </form>
                     </div>								
                 </div>

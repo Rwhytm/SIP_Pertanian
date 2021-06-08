@@ -4,53 +4,36 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                <h1 class="cart-heading">Pesanan</h1>
+                <h1 class="cart-heading">Pesanan Saya</h1>
                 <form action="#">
                     <div class="table-content table-responsive">
                         <table>
                             <thead>
+                                
                                 <tr>
-                                    {{-- <th>hapus</th> --}}
-                                    <th>Produk</th>
-                                    <th>Harga</th>
-                                    <th>Jumlah</th>
-                                    <th>Total</th>
+                                    <th>Nomor Transaksi</th>
+                                    <th>Tanggal</th>
+                                    <th>Jumlah Pembayaran</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 
-                                
+                                @foreach ($pesanan as $p)
                                 <tr>
-                                    
-                                    <td class="product-name"><span href="#"></span></td>
-                                    <td class="product-price-cart"><span class="amount"></span></td>
-                                    <td class="product-quantity">
-                                
-                                        {{-- <input value="1" type="number"> --}}
-                                    </td>
-                                    {{-- <td class="product-subtotal">{{$k->total}}</td> --}}
+                                    <td class="product-name">{{ $p->nomor_transaksi}}</span></td>
+                                    <td class="product-price-cart">{{ $p->updated_at }}</td>
+                                    <td class="product-quantity">{{ $p->total }}</td>
+                                    <td class="product-quantity">{{ $p->status }}</td>
+                                    <td class="product-quantity">{{ $p->status }}</td>
                                 </tr>  
-                               
-                                
-                                
-                                
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
                     <div class="row">
                         <div class="col-md-5 ml-auto">
-                            <div class="cart-page-total">
-                                <h2>Total Belanja</h2>
-                                <ul>
-                                    {{-- <li>Total<span>{{$keranjang->sum('total')}}</span></li> --}}
-                                </ul>
-                                {{-- @if ($keranjang->sum('total')>0)
-                                <a href="{{ route('bayar') }}">Bayar</a>
-                                    
-                                @else
-                                    
-                                @endif --}}
-                            </div>
                         </div>
                     </div>
                 </form>

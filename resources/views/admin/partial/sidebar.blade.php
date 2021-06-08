@@ -106,6 +106,38 @@
           </a>
         </li>
       </ul>
+      {{-- Table Informasi --}}
+      <li  class="has-sub  expand active" >
+        <a class="sidenav-item-link" href="javascript:void(1)" data-toggle="collapse" data-target="#Pesanan"
+        aria-expanded="false" aria-controls="tables">
+        <i>
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" />
+          </svg>
+        </i>
+        <span class="nav-text">Pesanan</span> 
+      </a>
+      <ul  class="collapse "  id="Pesanan"
+      data-parent="#sidebar-menu">
+      <div class="sub-menu">
+        <li class="{{ Route::current()->getName() == "kategori utama" ? 'active'  : '' }}">
+          <a class="sidenav-item-link" href="{{ route('pesanan.pending') }}">
+            <span class="nav-text">Pesanan Pending</span>
+            
+          </a>
+        </li>
+        <li class="{{ Route::current()->getName() == "produk admin" ? 'active'  : '' }}">
+          <a class="sidenav-item-link" href="{{ route('pesanan.sukses')}}">
+            <span class="nav-text">Pesanan Sukses</span>
+          </a>
+        </li>
+        <li class="{{ Route::current()->getName() == "produk admin" ? 'active'  : '' }}">
+          <a class="sidenav-item-link" href="{{ route('preorder') }}">
+            <span class="nav-text">Pre-order</span>
+          </a>
+        </li>
+        
+
     </div>
   </div>
 </aside>

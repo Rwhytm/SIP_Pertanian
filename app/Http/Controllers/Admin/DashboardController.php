@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\User;
 use App\Models\Produk;
+use App\Models\Keranjang;
 
 class DashboardController extends Controller
 {
@@ -35,5 +36,17 @@ class DashboardController extends Controller
     public function barangbaru(){
         $barang = Produk::orderBy('id', 'DESC')->paginate(5);
         return view('admin\informasi\barang', ['barang' =>$barang]);
+    }
+    public function pesananpending(){
+        $keranjang = Keranjang::whereNotNull('nomor_transaksi')->get();
+        return view("admin.pesanan.pesanan-pending",['keranjang' => $keranjang]);
+    }
+    public function pesanansukses(){
+        $keranjang = Keranjang::where('status', 'sukses')->whereNotNull('nomor_transaksi')->get();
+        return view("admin.pesanan.pesanan-sukses",['keranjang' => $keranjang]);
+    }
+    public function pesananpreorder(){
+        $keranjang = Keranjang::where('status', 'PO')->whereNotNull('nomor_transaksi')->get();
+        return view("admin.pesanan.pesanan-pending",['keranjang' => $keranjang]);
     }
 }

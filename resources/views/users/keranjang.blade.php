@@ -31,12 +31,12 @@
                                         </form>
                                     </td> --}}
                                     <td class="product-name"><span href="#">{{$k->produk->nama_produk}}</span></td>
-                                    <td class="product-price-cart"><span class="amount">{{$k->produk->harga}}</span></td>
+                                    <td class="product-price-cart"><span class="amount">{{'Rp. '.number_format($k->produk->harga)}}</span></td>
                                     <td class="product-quantity">
                                         {{$k->jumlah}}
                                         {{-- <input value="1" type="number"> --}}
                                     </td>
-                                    <td class="product-subtotal">{{$k->total}}</td>
+                                    <td class="product-subtotal">{{'Rp. '.number_format($k->total)}}</td>
                                 </tr>  
                                 @empty
                                 <tr>
@@ -52,7 +52,7 @@
                             <div class="cart-page-total">
                                 <h2>Total Belanja</h2>
                                 <ul>
-                                    <li>Total<span>{{$keranjang->sum('total')}}</span></li>
+                                    <li>Total<span>{{'Rp. '.number_format($keranjang->sum('total'))}}</span></li>
                                 </ul>
                                 @if ($keranjang->sum('total')>0)
                                 <a href="{{ route('bayar') }}">Bayar</a>
