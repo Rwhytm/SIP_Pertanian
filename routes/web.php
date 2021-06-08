@@ -37,7 +37,7 @@ Route::group(
 
         Route::get('pesanan','UserController@bayar')->name('bayar');
         Route::put('checkout', 'UserController@checkout')->name('checkout');
-        Route::get('konfirmasi','UserController@konfirmasi')->name('konfirmasi');
+        Route::get('konfirmasi/{id}','UserController@konfirmasi')->name('konfirmasi');
         Route::get('pesanan-saya', 'UserController@pesanansaya')->name('pesanansaya');
 
 

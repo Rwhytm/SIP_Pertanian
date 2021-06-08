@@ -20,6 +20,9 @@ class CreateKeranjangTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->string('nomor_rekening')->nullable();
             $table->string('nama_rekening')->nullable();
+            $table->string('nama_bank')->nullable();
+            $table->dateTime('tanggal_transfer')->nullable();
+            $table->string('jumlah_dibayar')->nullable();
             $table->integer('jumlah');
             $table->integer('total');
             $table->enum('status', ['belum bayar', 'pending','konfirmasi', 'proses', 'sukses', 'gagal', 'PO'])->default('belum bayar');

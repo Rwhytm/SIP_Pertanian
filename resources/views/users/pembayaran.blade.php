@@ -34,8 +34,8 @@
                                 <div class="checkout-form-list">
                                     <label>Bank Tujuan<span class="required">*</span></label>
                                     <select name="bank" id="bank">
-                                        <option value="BRI">b</option>
-                                        <option value="BNI">s</option>
+                                        <option value="BRI">BRI</option>
+                                        <option value="BNI">BNI</option>
                                     </select>
                                 </div>
                             </div>
@@ -48,7 +48,7 @@
                             <div class="col-md-12">
                                 <div class="checkout-form-list">
                                     <label>Jumlah<span class="required">*</span></label>										
-                                    <input type="text" readonly/>
+                                    <input type="text" name="jumlah" value="{{ number_format($nomor->sum('total')) }}" readonly/>
                                 </div>
                             </div>					
                         </div>												
@@ -61,7 +61,7 @@
             <div class="card p-3">
                 <div class="card-header">
                     <div class="d-flex justify-content-between">
-                        <span>Rp. Sekian</span>
+                        <span>Rp. {{ number_format($nomor->sum('total')) }}</span>
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" style="width: 30px">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z" />
                         </svg>

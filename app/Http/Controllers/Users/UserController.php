@@ -87,11 +87,14 @@ class UserController extends Controller
     }
     public function pesanansaya(){
         $user_id = auth()->user()->id;
-        $pesanansaya = Keranjang::distinct()->where(['user_id' => $user_id, 'status' =>'pending'])->whereNotNull('nomor_transaksi')->get();
+        
+        $pesanansaya = Keranjang::where(['user_id' => $user_id])->whereNotNull('nomor_transaksi')->get()->unique('nomor_transaksi');
+        
         return view('users.list-pesanan', ['pesanan' => $pesanansaya]);
     }
-    public function konfirmasi(){
-        return view('users.pembayaran');
+    public function konfirmasi($id){
+        $nomor = Keranjang::where(['nomor_transaksi' => $id])->get();
+        return view('users.pembayaran',['nomor' => $nomor]);
     }
     // Mencari produk
     public function cari(Request $request){
