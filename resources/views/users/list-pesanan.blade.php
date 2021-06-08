@@ -26,7 +26,22 @@
                                     <td class="product-price-cart">{{ $p->updated_at }}</td>
                                     <td class="product-quantity">{{ $p->total }}</td>
                                     <td class="product-quantity">{{ $p->status }}</td>
-                                    <td class="product-quantity">{{ $p->status }}</td>
+                                    <td class="product-quantity">
+                                       @if ($p->status =='pending')
+                                           
+                                               <button btn btn-primary>Konfirmasi</button>
+
+                                        @elseif ($p->status =='konfirmasi')
+                                        @elseif ($p->status =='proses')
+
+                                        <button class="btn btn-secondary">Diterima</button>
+
+                                        @elseif ($p->status =='proses')
+                                           
+                                       @else
+                                           
+                                       @endif
+                                    </td>
                                 </tr>  
                                 @endforeach
                             </tbody>

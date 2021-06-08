@@ -84,6 +84,7 @@
                                         <br>
                                         <h4>{{'Tersisa : '. number_format($p->jumlah).' '.$p->satuan}}</h4>
                                     </div>
+                                    
                                 </div>
                             </div>
                             
@@ -91,6 +92,7 @@
                             
                             @endforelse
                         </div>
+                        {{ $produk->links() }}
                     </div>
                 </div>
             </div>
