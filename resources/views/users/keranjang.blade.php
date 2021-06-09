@@ -69,6 +69,7 @@
                                 @endif
                             </div>
                         </div>
+                        <a class="btn btn-primary" href="{{route('home user')}}">Tambah Pesanan</a>
                     </div>
                 </form>
             </div>

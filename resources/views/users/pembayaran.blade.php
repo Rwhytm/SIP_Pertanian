@@ -9,46 +9,47 @@
                         <h3>Konfirmasi Pembayaran</h3>
                         <div class="row">
                             <div class="col-md-12">
-                                
+                                {{-- {{ dd($nomor[0]->nomor_transaksi) }} --}}
                             </div>
                             <div class="col-md-6">
                                 <div class="checkout-form-list">
                                     <label>Nomor Rekening<span class="required">*</span></label>										
-                                    <input type="text" placeholder="" />
+                                    <input type="text" placeholder="" name="nomor_rekening"/>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="checkout-form-list">
                                     <label>Atas Nama<span class="required"></span></label>										
-                                    <input type="text" placeholder="" />
+                                    <input type="text" placeholder="" name="atasnama"/>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="checkout-form-list">
                                     <label>Bank yang digunakan</label>
-                                    <input type="text" placeholder="" />
+                                    <input type="text" placeholder="" name="bankanda"/>
                                 </div>
                             </div>
                             
                             <div class="col-md-12">
                                 <div class="checkout-form-list">
                                     <label>Bank Tujuan<span class="required">*</span></label>
-                                    <select name="bank" id="bank">
+                                    <select name="bankkita" id="bank">
                                         <option value="BRI">BRI</option>
                                         <option value="BNI">BNI</option>
                                     </select>
                                 </div>
                             </div>
+                            {{-- {{ dd(now()) }} --}}
                             <div class="col-md-12">
                                 <div class="checkout-form-list">
                                     <label>Tanggal Transfer<span class="required">*</span></label>										
-                                    <input class="form-control" type="date" value="" id="example-datetime-local-input">
+                                    <input name="tf" class="form-control" type="text" value="{{ now() }}" readonly>
                                 </div>
                             </div>
                             <div class="col-md-12">
                                 <div class="checkout-form-list">
                                     <label>Jumlah<span class="required">*</span></label>										
-                                    <input type="text" name="jumlah" value="{{ number_format($nomor->sum('total')) }}" readonly/>
+                                    <input type="text" name="jumlahdb" value="{{ number_format($nomor->sum('total')) }}" readonly/>
                                 </div>
                             </div>					
                         </div>												
@@ -88,8 +89,16 @@
                             </div>
                         </div>
                     </div>
+                    
                 </div>
-            </div>  
+            </div>
+            <div class="d-flex justify-content-center pt-5">
+                <form action="{{ route('konfirmasipesanan', $nomor[0]->nomor_transaksi ) }}" method="post">
+                    @csrf
+                    @method('put')
+                    <button class="btn btn-dark" type="submit">Konfirmasi</button> 
+                </form>
+            </div>
         </div>
     </div>
 </div>

@@ -12,7 +12,13 @@ class Keranjang extends Model
         'user_id',
         'produk_id',
         'total',
-        'jumlah'];
+        'jumlah',
+        'nomor_rekening',
+        'nama_rekening',
+        'nama_bank',
+        'tanggal_transfer',
+        'jumlah_dibayar'
+    ];
 
     // public function produk()
     // {

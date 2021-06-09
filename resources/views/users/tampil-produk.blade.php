@@ -26,11 +26,20 @@
                         <p>Tersedia : {{$produk->jumlah}} {{$produk->satuan}}</p>
                     </div>
                     <p>{{$produk->deskripsi}}</p>
-                    <div class="quickview-plus-minus">
+                    <div class="quickview-plus-minus col-xs-2">
                         <form action="{{route('keranjang')}}" method="post">
                             @csrf
-                            <div class="cart-plus-minus">
-                                <input type="number" value="1" name="jumlah" class="cart-plus-minus-box" min="1"> 
+                            @if ($errors->any())
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                            @endif
+                            <div class="cart">
+                                <input type="number" value="1" class="@error('jumlah') is-invalid @enderror" name="jumlah" class="" min="1" max="{{$produk->jumlah}}"> 
                             </div>
                             @if ($produk->jumlah != 0)
                             <br>

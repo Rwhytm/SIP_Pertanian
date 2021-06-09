@@ -47,6 +47,8 @@ class UserController extends Controller
     }
 
     public function tambah(Request $request){
+        $this->validate($request,
+        ['jumlah' => ['required'],]);
         $keranjang = Keranjang::create([
             'user_id' => auth()->user()->id,
             'produk_id' => $request->id_produk, 
@@ -100,6 +102,26 @@ class UserController extends Controller
         $nomor = Keranjang::where(['nomor_transaksi' => $id])->get();
         return view('users.pembayaran',['nomor' => $nomor]);
     }
+
+    public function konfirmasipesanan(Request $request, $id){
+        $nomor = Keranjang::where(['nomor_transaksi' => $id])->update([
+            'nomor_rekening' => $request->nomor_rekening,
+            'nama_rekening' => $request->atasnama,
+            'nama_bank' => $request->bankanda,
+            'tanggal_transfer' => $request->tf,
+            'jumlah_dibayar' => $request->jumlahdb,
+            'status' => 'konfirmasi',
+        ]);
+        return redirect()->route('home user');
+    }
+
+
+
+
+
+
+
+
     // Mencari produk
     public function cari(Request $request){
         $cari = $request->cari;
