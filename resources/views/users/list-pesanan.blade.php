@@ -39,6 +39,7 @@
                                                 <button class="btn btn-dark">Konfirmasi</button>
                                              </form>
                                         @elseif ($p->status =='konfirmasi')
+                                        <p>Menunggu Diproses</p>
                                         @elseif ($p->status =='proses')
 
                                         <button class="btn btn-dark">Diterima</button>

@@ -5,6 +5,10 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                 <h1 class="cart-heading">Keranjang</h1>
+                            <div class="d-flex justify-content-end pd-3">
+                                <a class="btn btn-dark" href="{{route('home user')}}">Tambah Pesanan</a>
+                            </div>
+                            <br>
                 <form action="#">
                     <div class="table-content table-responsive">
                         <table>
@@ -63,13 +67,12 @@
                                 </ul>
                                 @if ($keranjang->sum('total')>0)
                                 <a href="{{ route('bayar') }}">Bayar</a>
-                                    
+                                
                                 @else
-                                    
+                                
                                 @endif
                             </div>
                         </div>
-                        <a class="btn btn-primary" href="{{route('home user')}}">Tambah Pesanan</a>
                     </div>
                 </form>
             </div>

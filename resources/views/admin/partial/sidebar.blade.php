@@ -127,6 +127,21 @@
           </a>
         </li>
         <li class="{{ Route::current()->getName() == "produk admin" ? 'active'  : '' }}">
+          <a class="sidenav-item-link" href="{{ route('pesanan.dibayar') }}">
+            <span class="nav-text">Pesanan Sudah Dibayar</span>
+          </a>
+        </li>
+        <li class="{{ Route::current()->getName() == "produk admin" ? 'active'  : '' }}">
+          <a class="sidenav-item-link" href="{{ route('pesanan.diproses') }}">
+            <span class="nav-text">Pesanan Diproses</span>
+          </a>
+        </li>
+        <li class="{{ Route::current()->getName() == "produk admin" ? 'active'  : '' }}">
+          <a class="sidenav-item-link" href="{{ route('pesanan.gagal') }}">
+            <span class="nav-text">Pesanan Cancel</span>
+          </a>
+        </li>
+        <li class="{{ Route::current()->getName() == "produk admin" ? 'active'  : '' }}">
           <a class="sidenav-item-link" href="{{ route('pesanan.sukses')}}">
             <span class="nav-text">Pesanan Sukses</span>
           </a>
@@ -136,8 +151,6 @@
             <span class="nav-text">Pre-order</span>
           </a>
         </li>
-        
-
     </div>
   </div>
 </aside>

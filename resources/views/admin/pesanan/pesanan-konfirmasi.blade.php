@@ -5,7 +5,7 @@
         <div class="col-lg-12">
             <div class="card card-default">
                 <div class="card-header card-header-">
-                    <h2>Pesanan Pending</h2>
+                    <h2>Pesanan Sudah Dibayar</h2>
                 </div>
                 <div class="col-md-11">
                     
@@ -15,9 +15,9 @@
                         <thead>
                             <th class="text-center">Nomor Tansakasi</th>
                             <th class="text-center">Tanggal</th>
-                            {{-- <th class="text-center">Pembeli</th> --}}
                             {{-- <th class="text-center">Jumlah Pembayaran</th> --}}
                             <th class="text-center">Status</th>
+                            <th class="text-center">Informasi</th>
                             <th class="text-center">Action</th>
                         </thead>
                         <tbody>
@@ -31,26 +31,44 @@
                                 <td class="text-center">{{ $k->nomor_transaksi }}</td>
                                 <td class="text-center">{{ $k->updated_at }}</td>
                                 {{-- <td class="text-center"></td> --}}
-                                {{-- <td class="text-center">{{$k->jumlah_dibayar }}</td> --}}
                                 <td class="text-center">{{ $k->status }}</td>
                                 <td class="text-center">
+                                    <form action="#" method="GET">
+                                        @csrf
+                                        <button type="submit" class="btn btn-primary">i</button>   
+                                    </form> 
+                                </td>
+                                <td class="text-center">
                                     @if ($k->status == 'pending')
-                                        <p>Menuggu Konfirmasi</p>
+                                    <p>Menuggu Konfirmasi</p>
                                     @else
-                                    <button class="btn btn-dark">Proses Pesanan</button>
+                                    <div class="d-flex justify-content-end">
+                                        <div class="mr-1">
+                                            <form action="{{ route('proses.pesanan', $k->nomor_transaksi)}}" method="POST">
+                                                @csrf
+                                                @method('put')
+                                                <button class="btn btn-dark">Proses Pesanan</button>
+                                            </form>
+                                        </div>
+                                        <div class="mr-1">
+                                            <form action="{{ route('cancel.pesanan', $k->nomor_transaksi)}}" method="POST">
+                                                @csrf
+                                                @method('put')
+                                                <button class="btn btn-danger">Batalkan</button>
+                                            </form>
+                                        </div>
+                                    </div>
                                     @endif
                                     
                                 </td>
                             </tr>
                             @endif
                             @endforeach
-                            
-                            
                         </tbody>
+                        {{-- {{ $keranjang->links() }} --}}
                     </table>
-                    {{-- {{ $kategori->links() }} --}}
                     <div class="table-footer text-right">
-                        
+                        {{-- {{ $keranjang->links() }} --}}
                     </div>
                 </div>
             </div>

@@ -69,7 +69,7 @@
                                             @if ($p->produkImages->first())
                                             <img src="{{ asset($p->produkImages->first()->path) }}" alt="" class="img-thumbnail img-center" style="width:500px; height: 300px; object-fit: cover;">
                                             @else
-                                                <img src="{{ asset('users/assets/img/product/1.jpg') }}" alt="" style="width:500px; height:300px; object-fit: cover;" aria-placeholder="TIdak Ada Gambar">
+                                                <img src="{{ asset('users/assets/img/noproduk.jpg') }}"  class="img-thumbnail img-center" style="width:500px; height:300px; object-fit: cover;" aria-placeholder="TIdak Ada Gambar">
                                             @endif
                                         </a>
                                         <div class="product-action">

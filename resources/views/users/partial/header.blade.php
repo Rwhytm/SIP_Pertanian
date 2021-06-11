@@ -47,6 +47,9 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="{{ route('pesanansaya')}}">Pesanan Saya</a>
+                                <a class="dropdown-item" href="{{ route('pesananterkonfirmasi')}}">Pesanan Terkonfirmasi</a>
+                                <a class="dropdown-item" href="{{ route('pesanandiproses')}}">Pesanan Diproses</a>
+                                <a class="dropdown-item" href="{{ route('riwayatpesanan') }}">Riwayat Pesanan</a>
                                 <a class="dropdown-item" href="{{ route('logout') }}"
                                 onclick="event.preventDefault();
                                 document.getElementById('logout-form').submit();">

@@ -8,8 +8,9 @@
                 <table>
                     <thead>
                         <tr>
-                            <th class="product-name">Produk</th>
-                            <th class="product-total">Total</th>
+                            <th class="text-left">Produk</th>
+                            <th class="text-left">Harga</th>
+                            <th class="text-left">Total</th>
                         </tr>							
                     </thead>
                     <tbody>
@@ -18,8 +19,10 @@
                             <td class="product-name text-left">
                                 {{ $k->produk->nama_produk }} <strong class="product-quantity"> × {{ $k->jumlah }}</strong>
                             </td>
-                            
-                            <td class="product-total">
+                            <td class="text-left">
+                                <span class="amount">Rp. {{ number_format($k->produk->harga) }}</span>
+                            </td>
+                            <td class="text-left">
                                 <span class="amount">Rp. {{ number_format($k->total) }}</span>
                             </td>
                         </tr>
@@ -29,8 +32,9 @@
                     <tfoot>
                         
                         <tr class="order-total">
-                            <th class="text-left">Order Total</th>
-                            <td><strong><span class="amount">Rp. {{ number_format($order_total) }}</span></strong>
+                            <th colspan="2" class="text-left">Order Total</th>
+                            <td>
+                                <strong><span class="text-right">Rp. {{ number_format($order_total) }}</span></strong>
                             </td>
                         </tr>								
                     </tfoot>

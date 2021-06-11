@@ -25,6 +25,7 @@ class CreateKeranjangTable extends Migration
             $table->string('jumlah_dibayar')->nullable();
             $table->integer('jumlah');
             $table->integer('total');
+            $table->text('path')->nullable();
             $table->enum('status', ['belum bayar', 'pending','konfirmasi', 'proses', 'sukses', 'gagal', 'PO'])->default('belum bayar');
             $table->timestamps();
 

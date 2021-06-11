@@ -11,7 +11,7 @@
                                 @if ($produk->produkImages->first())
                                 <img src="{{ asset($produk->produkImages->first()->path) }}" alt="" style="width:500px; height:300px">
                                 @else
-                                <img src="{{ asset('users/assets/img/product/1.jpg') }}" alt="" style="width:500px; height:300px" aria-placeholder="TIdak Ada Gambar">
+                                <img src="{{ asset('users/assets/img/noproduk.jpg') }}" alt="" style="width:500px; height:300px" >
                                 @endif
                             </div>
                         </div>
@@ -27,6 +27,7 @@
                     </div>
                     <p>{{$produk->deskripsi}}</p>
                     <div class="quickview-plus-minus col-xs-2">
+                        @if ($produk->jumlah != 0)
                         <form action="{{route('keranjang')}}" method="post">
                             @csrf
                             @if ($errors->any())
@@ -41,7 +42,7 @@
                             <div class="cart">
                                 <input type="number" value="1" class="@error('jumlah') is-invalid @enderror" name="jumlah" class="" min="1" max="{{$produk->jumlah}}"> 
                             </div>
-                            @if ($produk->jumlah != 0)
+                            
                             <br>
                             <button type="submit" class="btn btn-dark btn-lg">Tambah Ke Keranjang</button>
                             <div class="invisible">
@@ -51,8 +52,23 @@
                             </div>
                         </form>
                         @else
-                        <div class="quickview-btn-cart">
-                            <a class="btn-hover-red" href="#">Pre-order</a>
+                        <div class="row">
+                            <div class="cart">
+                                <h2>SOLD OUT</h2>
+                                {{-- <input type="number" value="0" class="@error('jumlah') is-invalid @enderror" name="jumlah" class="" min="1" > 
+                            </div>
+                            <div class="invisible">
+                                <input  name="user_id" type="text" value="{{Auth::user()->id}}" readonly>
+                                <input  name="id_produk" type="text" value="{{$produk->id}}" readonly>
+                                <input  name="harga" type="text" value="{{$produk->harga}}" readonly>
+                            </div>
+                            <div class="container">
+                                <form action="{{ route('preorder') }}" method="post">
+                                    @csrf
+                                    <button  type="submit" class="btn btn-dark">Pre-order</button>
+                                    
+                                </form> --}}
+                            </div>
                         </div>
                         @endif
                         

@@ -34,11 +34,15 @@ Route::group(
         Route::post('keranjang', 'UserController@tambah')->name('keranjang');
         Route::get('keranjang/{id}', 'UserController@keranjang')->name('tampil keranjang');
         Route::delete('keranjang/hapus/{id}', 'UserController@hapus')->name('hapus keranjang');
+        Route::post('preorder', 'UserController@preorder')->name('preorder');
 
         Route::get('pesanan','UserController@bayar')->name('bayar');
         Route::put('checkout', 'UserController@checkout')->name('checkout');
         Route::get('konfirmasi/{id}','UserController@konfirmasi')->name('konfirmasi');
         Route::get('pesanan-saya', 'UserController@pesanansaya')->name('pesanansaya');
+        Route::get('riwayat-pesanan', 'UserController@riwayatpesanan')->name('riwayatpesanan');
+        Route::get('pesanan-terkonfirmasi', 'UserController@pesananterkonfirmasi')->name('pesananterkonfirmasi');
+        Route::get('pesanan-dibayar', 'UserController@pesanandiproses')->name('pesanandiproses');
         Route::put('konfirmasi/pesanan/{id}','UserController@konfirmasipesanan')->name('konfirmasipesanan');
 
 
@@ -58,7 +62,12 @@ Route::group(
         // pesanan user
         Route::get('list-pesanan', 'DashboardController@pesananpending')->name('pesanan.pending');
         Route::get('pesanan-sukses', 'DashboardController@pesanansukses')->name('pesanan.sukses');
+        Route::get('pesanan-dibayar', 'DashboardController@pesanandibayar')->name('pesanan.dibayar');
+        Route::get('pesanan-diproses', 'DashboardController@pesananproses')->name('pesanan.diproses');
+        Route::get('pesanan-cancel', 'DashboardController@pesanangagal')->name('pesanan.gagal');
         Route::get('pre-order', 'DashboardController@pesananpreorder')->name('preorder');
+        Route::put('proses-pesanan/{id}', 'DashboardController@prosespesanan')->name('proses.pesanan');
+        Route::put('cancel-pesanan/{id}', 'DashboardController@cancelpesanan')->name('cancel.pesanan');
 
         // dashboard
         Route::get('dashboard', 'DashboardController@index')->name('dashboard admin');

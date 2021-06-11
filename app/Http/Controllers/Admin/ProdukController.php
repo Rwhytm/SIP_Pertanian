@@ -83,19 +83,9 @@ class ProdukController extends Controller
     }
     public function upload_image(UploadImageRequest $request, $id){
         $produk = Produk::find($id);
-        
-        // $rules = array(
-        //     'image' => 'mimes:jpeg,jpg,png,gif|required|max:10000' // max 10000kb
-        //   );
-        // if ($request->file('image')){
         if ($request->hasFile('image')){ 
             $image = $request->file('image');
-            
-            // $name = Str::slug($produk->name).'_'.time();
-            // $name = Str::slug($request->file('image')).'_'.time().$request->file('image')->getClientOriginalName();
             $name = time().$request->file('image')->getClientOriginalName();
-            // $filename = $name.'.'.$image->getClientOriginalExtension();
-
             $folder = 'storage/uploads/images';
             $filePath = 'storage/uploads/images/'. $name; 
             $request->file('image')->move('storage/uploads/images', $name);

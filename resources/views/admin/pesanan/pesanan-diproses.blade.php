@@ -5,7 +5,7 @@
         <div class="col-lg-12">
             <div class="card card-default">
                 <div class="card-header card-header-">
-                    <h2>Pesanan Pending</h2>
+                    <h2>Pesanan Sedang Diproses</h2>
                 </div>
                 <div class="col-md-11">
                     
@@ -33,14 +33,7 @@
                                 {{-- <td class="text-center"></td> --}}
                                 {{-- <td class="text-center">{{$k->jumlah_dibayar }}</td> --}}
                                 <td class="text-center">{{ $k->status }}</td>
-                                <td class="text-center">
-                                    @if ($k->status == 'pending')
-                                        <p>Menuggu Konfirmasi</p>
-                                    @else
-                                    <button class="btn btn-dark">Proses Pesanan</button>
-                                    @endif
-                                    
-                                </td>
+                                <td class="text-center">{{$k->jumlah_dibayar }}</td>
                             </tr>
                             @endif
                             @endforeach

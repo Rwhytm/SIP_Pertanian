@@ -60,7 +60,7 @@
                 <div class="form-group row">
                     <label for="satuan" class="col-md-4 col-form-label text-md-right">{{ __('Satuan') }}</label>
                     <div class="col-md-7">
-                        <input id="satuan" type="text" class="form-control" name="satuan">
+                        <input id="satuan" type="text" class="form-control" name="satuan" value="{{$produk->satuan}}">
                     </div>
                 </div>
                 <div class="form-group row">

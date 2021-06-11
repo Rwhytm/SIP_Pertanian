@@ -85,16 +85,65 @@ class UserController extends Controller
 
     public function checkout(Request $request){
         $user_id = auth()->user()->id;
+        // $produk_id = Keranjang::where(['user_id' => $user_id, 'status' => 'belum bayar'])->get('produk_id');
+        // $produk = Produk::find($produk_id);
         $keranjang = Keranjang::where(['user_id' => $user_id, 'status' => 'belum bayar'])->update([
             'nomor_transaksi' => 'TRX-' . time(),
             'status' => 'pending'
         ]);
+        
          return redirect()->route('home user');
     }
+
+    // Mencoba preorder
+    // public function tambah(Request $request){
+    //     $this->validate($request,
+    //     ['jumlah' => ['required'],]);
+    //     $keranjang = Keranjang::create([
+    //         'user_id' => auth()->user()->id,
+    //         'produk_id' => $request->id_produk, 
+    //         'total' =>  $request->jumlah * $request->harga,
+    //         'jumlah' => $request->jumlah,
+    //     ]);
+    //     return redirect(route('home user'));
+    // }
+    // public function preorder(Request $request){
+    //     $user_id = auth()->user()->id;
+    //     $keranjang = Keranjang::create([
+    //         'user_id' => auth()->user()->id,
+    //         'produk_id' => $request->id_produk, 
+    //         'total' =>  $request->jumlah * $request->harga,
+    //         'jumlah' => $request->jumlah,
+    //         'nomor_transaksi' => 'TRX-PO' . time(),
+    //         'status' => 'PO'
+    //     ]);
+    // }
     public function pesanansaya(){
         $user_id = auth()->user()->id;
         
-        $pesanansaya = Keranjang::where(['user_id' => $user_id])->whereNotNull('nomor_transaksi')->get()->unique('nomor_transaksi');
+        $pesanansaya = Keranjang::where(['user_id' => $user_id, 'status' => 'pending'])->whereNotNull('nomor_transaksi')->get()->unique('nomor_transaksi');
+        
+        return view('users.list-pesanan', ['pesanan' => $pesanansaya]);
+    }
+
+    public function riwayatpesanan(){
+        $user_id = auth()->user()->id;
+        
+        $pesanansaya = Keranjang::where(['user_id' => $user_id, 'status' => 'sukses'])->whereNotNull('nomor_transaksi')->get()->unique('nomor_transaksi');
+        
+        return view('users.list-pesanan', ['pesanan' => $pesanansaya]);
+    }
+    public function pesananterkonfirmasi(){
+        $user_id = auth()->user()->id;
+        
+        $pesanansaya = Keranjang::where(['user_id' => $user_id, 'status' => 'konfirmasi'])->whereNotNull('nomor_transaksi')->get()->unique('nomor_transaksi');
+        
+        return view('users.list-pesanan', ['pesanan' => $pesanansaya]);
+    }
+    public function pesanandiproses(){
+        $user_id = auth()->user()->id;
+        
+        $pesanansaya = Keranjang::where(['user_id' => $user_id, 'status' => 'proses'])->whereNotNull('nomor_transaksi')->get()->unique('nomor_transaksi');
         
         return view('users.list-pesanan', ['pesanan' => $pesanansaya]);
     }
