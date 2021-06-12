@@ -41,9 +41,18 @@
                                         @elseif ($p->status =='konfirmasi')
                                         <p>Menunggu Diproses</p>
                                         @elseif ($p->status =='proses')
-
-                                        <button class="btn btn-dark">Diterima</button>
-
+                                        <div class="invisible">
+                                        <form action="{{route('terima.pesanan', $p->nomor_transaksi)}}" method="post">
+                                            @csrf
+                                            @method('PUT')
+                                        <button type="submit" class="btn btn-dark">Diterima</button>
+                                        </form>
+                                        </div>
+                                        <form action="{{route('terima.pesanan', $p->nomor_transaksi)}}" method="post">
+                                            @csrf
+                                            @method('PUT')
+                                        <button type="submit" class="btn btn-dark">Diterima</button>
+                                        </form>
                                         @elseif ($p->status =='proses')
                                            
                                        @else

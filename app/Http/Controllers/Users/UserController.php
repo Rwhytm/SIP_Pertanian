@@ -163,6 +163,12 @@ class UserController extends Controller
         ]);
         return redirect()->route('home user');
     }
+    public function terimapesanan(Request $request, $id){
+        $nomor = Keranjang::where(['nomor_transaksi' => $id])->update([
+            'status' => 'sukses',
+        ]);
+        return redirect()->route('home user');
+    }
 
 
 

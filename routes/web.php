@@ -35,6 +35,7 @@ Route::group(
         Route::get('keranjang/{id}', 'UserController@keranjang')->name('tampil keranjang');
         Route::delete('keranjang/hapus/{id}', 'UserController@hapus')->name('hapus keranjang');
         Route::post('preorder', 'UserController@preorder')->name('preorder');
+        Route::put('terima-pesanan/{id}', 'UserController@terimapesanan')->name('terima.pesanan');
 
         Route::get('pesanan','UserController@bayar')->name('bayar');
         Route::put('checkout', 'UserController@checkout')->name('checkout');
@@ -68,6 +69,7 @@ Route::group(
         Route::get('pre-order', 'DashboardController@pesananpreorder')->name('preorder');
         Route::put('proses-pesanan/{id}', 'DashboardController@prosespesanan')->name('proses.pesanan');
         Route::put('cancel-pesanan/{id}', 'DashboardController@cancelpesanan')->name('cancel.pesanan');
+        
 
         // dashboard
         Route::get('dashboard', 'DashboardController@index')->name('dashboard admin');
