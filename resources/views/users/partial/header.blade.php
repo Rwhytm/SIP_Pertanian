@@ -73,7 +73,7 @@
                 </div>
                 <div class="furniture-search">
                     <form action="{{ route('cari.produk') }}">
-                        <input placeholder="I am Searching for . . ." type="text" name="cari">
+                        <input placeholder="Cari Nama Produk . . . ." type="text" name="cari">
                         <button>
                             <i class="ti-search"></i>
                         </button>

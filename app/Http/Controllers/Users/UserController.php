@@ -183,5 +183,13 @@ class UserController extends Controller
         $produk = Produk::where('nama_produk', 'like',"%". $cari."%")->paginate(10);
         return view('users\filter\hasilcari', ['produk' => $produk]);
     }
+
+    public function invoice($id){
+        $idu = auth()->user()->id;
+        $user = User::where('id' , $idu)->get();
+        $transaksi = Keranjang::where('nomor_transaksi', $id)->get();
+
+        return view('users.invoice', ['user' => $user, 'transaksi' => $transaksi]);
+    }
     
 }

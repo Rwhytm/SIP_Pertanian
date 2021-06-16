@@ -33,7 +33,7 @@
                                 {{-- <td class="text-center"></td> --}}
                                 <td class="text-center">{{ $k->status }}</td>
                                 <td class="text-center">
-                                    <form action="#" method="GET">
+                                    <form action="{{ route('invoice', $k->nomor_transaksi) }}" method="GET">
                                         @csrf
                                         <button type="submit" class="btn btn-primary">i</button>   
                                     </form> 

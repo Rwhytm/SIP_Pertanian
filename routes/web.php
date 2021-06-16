@@ -110,5 +110,8 @@ Route::get('login/user', 'Auth\LoginController@showLoginForm')->name('login2');
 Route::post('login/success', 'Auth\LoginController@login');
 
 Auth::routes();
-
+Route::get('/invoice/{id}', 'Users\UserController@invoice')->name('invoice');
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('generate-pdf/{{id}}','PDFController@generatePDF')->name('bikin pdf');
+
+Route::get('/send-email', 'EmailController@Email');

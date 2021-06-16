@@ -41,6 +41,6 @@ class User extends Authenticatable
 
     public function keranjang()
     {
-        return $this->belongsToMany('App\Models\Keranjang'. 'Keranjang');
+        return $this->belongsToMany('App\Models\Keranjang', 'Keranjang');
     }
 }

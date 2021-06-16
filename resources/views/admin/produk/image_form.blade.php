@@ -35,7 +35,7 @@
                         
                         <div class="form-footer pt-5 border-top">
                             <button type="submit" class="btn btn-primary btn-default">Save</button>
-                            <a href="{{ route('produk.image', $produk->id) }}" class="btn btn-secondary btn-default">Back</a>
+                            <a href="{{ {{ url()->previous() }} }}" class="btn btn-secondary btn-default">Back</a>
                         </div>
                     </form>
                     {{-- {!! Form::open(['url' => ['admin/products/images', $product->id], 'method' => 'POST', 'enctype' => 'multipart/form-data']) !!}
