@@ -10,6 +10,15 @@
             <div class="card-body">
                 <form action="{{route('produk store')}}" method="post">
                     {{ csrf_field() }}
+                    @if ($errors->any())
+                        <div class="alert alert-danger">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
                 <div class="form-group row">
                     <label for="nama" class="col-md-4 col-form-label text-md-right">{{ __('Nama Produk') }}</label>
                     <div class="col-md-7">

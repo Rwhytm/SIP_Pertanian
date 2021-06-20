@@ -59,10 +59,10 @@ class DashboardController extends Controller
         $keranjang = Keranjang::where('status', 'sukses')->get()->unique('nomor_transaksi');
         return view("admin.pesanan.pesanan-sukses",['keranjang' => $keranjang]);
     }
-    public function pesananpreorder(){
-        $keranjang = Keranjang::where('status', 'PO')->whereNotNull('nomor_transaksi')->get();
-        return view("admin.pesanan.pesanan-pending",['keranjang' => $keranjang]);
-    }
+    // public function pesananpreorder(){
+    //     $keranjang = Keranjang::where('status', 'PO')->whereNotNull('nomor_transaksi')->get();
+    //     return view("admin.pesanan.pesanan-pending",['keranjang' => $keranjang]);
+    // }
     public function prosespesanan(Request $request, $id){
         $nomor = Keranjang::where(['nomor_transaksi' => $id])->update([
             'status' => 'proses',

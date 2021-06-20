@@ -21,7 +21,7 @@
                                     </div>
                                 </div>
                             </td>
-                            <td class="text-right">{{ $u->nomor_hp }}</td>
+                            <td class="text-right">{{ $u->nohp }}</td>
                         </tr>
                     </tbody>
                     @endforeach

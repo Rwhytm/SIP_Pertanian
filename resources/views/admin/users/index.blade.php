@@ -24,7 +24,7 @@
                                         <td>{{$loop->iteration}}</td>
                                         <td class="text-center">{{$u->nama}}</td>
                                         <td class="text-center">{{$u->email}}</td>
-                                        <td class="text-center">{{$u->nomor_hp}}</td>
+                                        <td class="text-center">{{$u->nohp}}</td>
                                         <td class="text-left">{{Str::limit($u->alamat, 20)}}</td>
                                         <td></td>
                                     </tr>

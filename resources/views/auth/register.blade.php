@@ -44,7 +44,7 @@
                 <div class="form-group col-md-12 ">
                     <input id="nohp" type="text" class="form-control @error('nohp') is-invalid @enderror" name="nohp" value="" required autocomplete="nohp" autofocus placeholder="Nomor HP">
 
-                    @error('no hp')
+                    @error('nohp')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

@@ -30,7 +30,9 @@ class ProdukController extends Controller
         return view('admin.produk.tambah_produk',['kategori'   =>  $kategori]);
     }
     public function store(Request $request){
-        $produk = Produk::create([
+        $produk = Produk::create(
+            
+            [
             'nama_produk' =>  Str::upper($request->nama),
             'jumlah' => $request->jumlah,
             'harga' => $request->harga,

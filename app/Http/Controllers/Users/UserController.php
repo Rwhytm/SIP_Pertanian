@@ -57,7 +57,15 @@ class UserController extends Controller
         ]);
         return redirect(route('home user'));
     }
-
+    public function checkout(Request $request){
+        $user_id = auth()->user()->id;
+        $keranjang = Keranjang::where(['user_id' => $user_id, 'status' => 'belum bayar'])->update([
+            'nomor_transaksi' => 'TRX-' . time(),
+            'status' => 'pending'
+        ]);
+        
+        return redirect()->route('home user');
+    }
     public function keranjang($id){
         $user = User::find($id);
         $keranjang = Keranjang::where(['user_id'=> $user->id, 'status' => 'belum bayar'])->get();
@@ -83,18 +91,15 @@ class UserController extends Controller
         return view('users.pesanan', compact('keranjang', 'order_total'));
     }
 
-    public function checkout(Request $request){
+    
+    
+    public function pesanansaya(){
         $user_id = auth()->user()->id;
-        // $produk_id = Keranjang::where(['user_id' => $user_id, 'status' => 'belum bayar'])->get('produk_id');
-        // $produk = Produk::find($produk_id);
-        $keranjang = Keranjang::where(['user_id' => $user_id, 'status' => 'belum bayar'])->update([
-            'nomor_transaksi' => 'TRX-' . time(),
-            'status' => 'pending'
-        ]);
         
-         return redirect()->route('home user');
+        $pesanansaya = Keranjang::where(['user_id' => $user_id, 'status' => 'pending'])->whereNotNull('nomor_transaksi')->get()->unique('nomor_transaksi');
+        
+        return view('users.list-pesanan', ['pesanan' => $pesanansaya]);
     }
-
     // Mencoba preorder
     // public function tambah(Request $request){
     //     $this->validate($request,
@@ -118,13 +123,6 @@ class UserController extends Controller
     //         'status' => 'PO'
     //     ]);
     // }
-    public function pesanansaya(){
-        $user_id = auth()->user()->id;
-        
-        $pesanansaya = Keranjang::where(['user_id' => $user_id, 'status' => 'pending'])->whereNotNull('nomor_transaksi')->get()->unique('nomor_transaksi');
-        
-        return view('users.list-pesanan', ['pesanan' => $pesanansaya]);
-    }
 
     public function riwayatpesanan(){
         $user_id = auth()->user()->id;

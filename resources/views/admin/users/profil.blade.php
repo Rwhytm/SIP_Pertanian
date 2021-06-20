@@ -83,7 +83,7 @@
                 <p class="text-dark font-weight-medium pt-4 mb-2">Alamat email</p>
                 <p>{{Auth::user()->email}}</p>
                 <p class="text-dark font-weight-medium pt-4 mb-2">Nomor HP</p>
-                <p>{{Auth::user()->nomor_hp}}</p>
+                <p>{{Auth::user()->nohp}}</p>
                 <p class="text-dark font-weight-medium pt-4 mb-2">Alamat</p>
                 <p>{{Auth::user()->alamat}}</p>
               </div>
