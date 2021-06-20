@@ -8,9 +8,11 @@ use App\Models\Produk;
 use App\Models\Keranjang;
 use App\Models\Kategori;
 use App\User;
+use illuminate\Support\Facedes\Storage;
 use App\Models\ProdukImage;
 use DB;
 use \App\Mail\TestMail;
+use Session;
 
 class UserController extends Controller
 {
@@ -152,9 +154,18 @@ class UserController extends Controller
     }
 
     public function konfirmasipesanan(Request $request, $id){
+        
+        if ($request->hasFile('bukti')){ 
+            $image = $request->file('bukti');
+            $name = time().$request->file('bukti')->getClientOriginalName();
+            $folder = 'storage/uploads/bukti';
+            $filePath = 'storage/uploads/bukti/'. $name; 
+            $request->file('bukti')->move('storage/uploads/bukti', $name);
+        }
         $nomor = Keranjang::where(['nomor_transaksi' => $id])->update([
             'nomor_rekening' => $request->nomor_rekening,
             'nama_rekening' => $request->atasnama,
+            'path' => $name,
             'nama_bank' => $request->bankanda,
             'tanggal_transfer' => $request->tf,
             'jumlah_dibayar' => $request->jumlahdb,

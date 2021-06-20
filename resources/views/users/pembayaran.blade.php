@@ -4,7 +4,9 @@
     <div class="row">
         <div class="col-lg-6 col-md-12 col-12">
             <div class="card p-3">
-                <form action="#">
+                <form action="{{ route('konfirmasipesanan', $nomor[0]->nomor_transaksi ) }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    @method('PUT')
                     <div class="checkbox-form">						
                         <h3>Konfirmasi Pembayaran</h3>
                         <div class="row">
@@ -52,7 +54,14 @@
                                     <input type="text" name="jumlahdb" value="{{ number_format($nomor->sum('total')) }}" readonly/>
                                 </div>
                             </div>					
-                        </div>												
+                        </div>	
+                        
+                            <label for="exampleFormControlFile1">Upload Bukti Transfer</label>
+                            <input type="file" class="form-control" id="bukti" name="bukti" multiple>
+                        											
+                    </div>
+                    <div class="d-flex justify-content-center pt-5">
+                        <button class="btn btn-dark" type="submit">Konfirmasi</button> 
                     </div>
                 </form>
             </div>
@@ -89,14 +98,14 @@
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
+            
             <div class="d-flex justify-content-center pt-5">
                 <form action="{{ route('konfirmasipesanan', $nomor[0]->nomor_transaksi ) }}" method="post">
                     @csrf
                     @method('put')
-                    <button class="btn btn-dark" type="submit">Konfirmasi</button> 
+                    
                 </form>
             </div>
         </div>

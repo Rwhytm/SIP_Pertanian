@@ -33,10 +33,23 @@
                                 {{-- <td class="text-center"></td> --}}
                                 <td class="text-center">{{ $k->status }}</td>
                                 <td class="text-center">
+                                    <div class="d-flex justify-content-center">
+                                        <div class="invisible">
+                                            <form action="{{ route('download bukti', $k->path)}}" method="GET">
+                                                @csrf
+                                                <button type="submit" class="btn btn-primary">bukti</button>   
+                                            </form> 
+                                        {{-- {{ dd(storage_path()) }} --}}
+                                        </div>
                                     <form action="{{ route('invoice', $k->nomor_transaksi) }}" method="GET">
                                         @csrf
                                         <button type="submit" class="btn btn-primary">i</button>   
                                     </form> 
+                                    <form action="{{ route('download bukti', $k->path)}}" method="GET" class="pl-2">
+                                        @csrf
+                                        <button type="submit" class="btn btn-dark">bukti</button>   
+                                    </form> 
+                                </div>
                                 </td>
                                 <td class="text-center">
                                     @if ($k->status == 'pending')

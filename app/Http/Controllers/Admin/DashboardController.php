@@ -55,6 +55,12 @@ class DashboardController extends Controller
         $keranjang = Keranjang::where('status', 'gagal')->get()->unique('nomor_transaksi');
         return view("admin.pesanan.pesanan-cancel",['keranjang' => $keranjang]);
     }
+    public function download(request $request, $id){
+        // $path = Keranjang::where('nomor_transaksi', $id)->get('path')->first();
+        return response()->download(public_path('storage/uploads/bukti/'.$id));
+    //      dd($path);
+    //     return view('welcome');
+    }
     public function pesanansukses(){
         $keranjang = Keranjang::where('status', 'sukses')->get()->unique('nomor_transaksi');
         return view("admin.pesanan.pesanan-sukses",['keranjang' => $keranjang]);

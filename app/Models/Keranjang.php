@@ -12,6 +12,7 @@ class Keranjang extends Model
         'user_id',
         'produk_id',
         'total',
+        'path',
         'jumlah',
         'nomor_rekening',
         'nama_rekening',

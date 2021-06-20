@@ -70,15 +70,20 @@
     <div class="content">					<div class="invoice-wrapper rounded border bg-white py-5 px-3 px-md-4 px-lg-5">
       <div class="d-flex justify-content-between">
         <h2 class="text-dark font-weight-medium">Invoice #{{ $transaksi[0]->nomor_transaksi }}</h2>
-        {{-- <div class="btn-group">
-          <form action="{{ route('bikin pdf',$transaksi[0]->nomor_transaksi) }}" method="GET">
-          <button type="submit" class="btn btn-sm btn-secondary">
+        <div class="btn-group">
+          {{-- <form action="{{ route('bikin pdf') }}" method="GET">
             @csrf
-            <i class="mdi mdi-content-save"></i> Save</button>
+          <button type="submit" class="btn btn-sm btn-secondary">
+            Save</button>
           </form>
-          <button class="btn btn-sm btn-secondary">
-            <i class="mdi mdi-printer"></i> Print</button>
-        </div> --}}
+          <form action="{{ route('bikin pdf') }}" method="GET">
+            @csrf
+          <button type="submit" class="btn btn-sm btn-secondary">
+            Save</button>
+          </form> --}}
+          {{-- <button class="btn btn-sm btn-secondary">
+            <i class="mdi mdi-printer"></i> Print</button> --}}
+        </div>
       </div>
       <div class="row pt-5">
         <div class="col-xl-3 col-lg-4">

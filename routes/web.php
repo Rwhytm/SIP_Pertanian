@@ -103,6 +103,9 @@ Route::group(
         Route::get('produk/{id}/add-image', 'ProdukController@addImage')->name('add.image');
         Route::post('produk/images/{id}', 'ProdukController@upload_image')->name('upload_image');
         Route::delete('produk/images/{id}', 'ProdukController@remove_image')->name('hapus.image');
+
+        //route download bukti
+        Route::get('download-bukti/{id}', 'DashboardController@download')->name('download bukti');
     }
 );
 
@@ -112,6 +115,6 @@ Route::post('login/success', 'Auth\LoginController@login');
 Auth::routes();
 Route::get('/invoice/{id}', 'Users\UserController@invoice')->name('invoice');
 Route::get('/home', 'HomeController@index')->name('home');
-Route::get('generate-pdf/{{id}}','PDFController@generatePDF')->name('bikin pdf');
+// Route::get('generate-pdf/','PDFController@generatePDF')->name('bikin pdf');
 
-Route::get('/send-email', 'EmailController@Email');
+// Route::get('/send-email', 'EmailController@Email');
