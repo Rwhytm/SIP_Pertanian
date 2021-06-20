@@ -10,6 +10,7 @@ use App\Models\Kategori;
 use App\User;
 use App\Models\ProdukImage;
 use DB;
+use \App\Mail\TestMail;
 
 class UserController extends Controller
 {
@@ -159,6 +160,12 @@ class UserController extends Controller
             'jumlah_dibayar' => $request->jumlahdb,
             'status' => 'konfirmasi',
         ]);
+
+        $detail = [
+            'title' => 'Konfirmasi Pesanan',
+            'body' => 'Pesanan Anda sudah terkonfirmasi, mohon menunggu untuk pengiriman produk'
+        ];
+        \Mail::to(auth()->user()->email)->send(new TestMail($detail));
         return redirect()->route('home user');
     }
     public function terimapesanan(Request $request, $id){

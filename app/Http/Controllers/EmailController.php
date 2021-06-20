@@ -9,8 +9,8 @@ class EmailController extends Controller
 {
     public function Email(){
         $detail = [
-            'title' => 'adada',
-            'body' => 'dasdaw'
+            'title' => '',
+            'body' => ''
         ];
         \Mail::to('rajuwahyudi842@gmail.com')->send(new TestMail($detail));
         return view('email.thanks');
