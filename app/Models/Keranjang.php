@@ -31,6 +31,8 @@ class Keranjang extends Model
     }
     public function user()
     {
-        return $this->belongsToMany('App\Models\User', 'keranjang');
+        // return $this->belongsToMany('App\User', 'keranjang');
+        return $this->hasMany('App\User', 'id', 'user_id');
+        // return $this->belongsToMany(User::class, 'keranjang');
     }
 }

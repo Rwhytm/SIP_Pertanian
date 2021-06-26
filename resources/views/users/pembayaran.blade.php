@@ -53,12 +53,21 @@
                                     <label>Jumlah<span class="required">*</span></label>										
                                     <input type="text" name="jumlahdb" value="{{ number_format($nomor->sum('total')) }}" readonly/>
                                 </div>
-                            </div>					
+                            </div>	
+                            <div class="col-md-12">
+                                <div class="checkout-form-list">
+                                    <label>Pengiriman<span class="required">*</span></label>
+                                    <select name="pengiriman" id="pengiriman">
+                                        <option value="BRI">Jemput di tempat</option>
+                                        <option value="BNI">Antar alamat *khusus UNIB belakang</option>
+                                    </select>
+                                </div>
+                            </div>	
                         </div>	
                         
                             <label for="exampleFormControlFile1">Upload Bukti Transfer</label>
                             <input type="file" class="form-control" id="bukti" name="bukti" multiple>
-                        											
+                        	   										
                     </div>
                     <div class="d-flex justify-content-center pt-5">
                         <button class="btn btn-dark" type="submit">Konfirmasi</button> 
@@ -99,6 +108,7 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
             
             <div class="d-flex justify-content-center pt-5">
@@ -109,6 +119,7 @@
                 </form>
             </div>
         </div>
+        
     </div>
 </div>
 @endsection

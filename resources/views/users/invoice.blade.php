@@ -98,10 +98,10 @@
         <div class="col-xl-3 col-lg-4">
           <p class="text-dark mb-2">Ke</p>
           <address>
-            {{ $transaksi[0]->user_id }}
-            <br> #
-            <br> #
-            <br> #
+            {{ $transaksi[0]->user[0]->alamat }}
+            <br> {{ $transaksi[0]->user[0]->nama }}
+            <br> {{ $transaksi[0]->user[0]->email }}
+            <br> {{ $transaksi[0]->user[0]->nohp }}
           </address>
         </div>
         <div class="col-xl-3 col-lg-4">

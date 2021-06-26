@@ -202,7 +202,7 @@ class UserController extends Controller
 
     public function invoice($id){
         $idu = auth()->user()->id;
-        $user = User::where('id' , $idu)->get();
+        $user = User::where('id' , $idu);
         $transaksi = Keranjang::where('nomor_transaksi', $id)->get();
 
         return view('users.invoice', ['user' => $user, 'transaksi' => $transaksi]);

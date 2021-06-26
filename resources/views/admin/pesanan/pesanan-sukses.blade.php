@@ -27,7 +27,7 @@
                                 <td class="text-center">{{ $k->nomor_transaksi }}</td>
                                 <td class="text-center">{{ $k->updated_at }}</td>
                                 <td class="text-center">{{ $k->user_id}}</td>
-                                <td class="text-center">sad</td>
+                                <td class="text-center">{{ $k->user[0]->nama }}</td>
                                 <td class="text-center">{{ $k->status }}</td>
                                 <td class="text-center">{{ $k->total }}</td>
                                 <td>

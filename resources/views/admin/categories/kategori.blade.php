@@ -8,10 +8,11 @@
                         <h2>Kategori</h2>
                     </div>
                     <div class="col-md-11">
-                    <div class="text-right ">
-                        <a href="{{url('admin/kategori/tambah') }}" class="btn btn-primary">Tambah</a>
+                        <div class="text-right ">
+                            <a href="{{url('admin/kategori/tambah') }}" class="btn btn-primary">Tambah</a>
+                        </div>
                     </div>
-                     </div>
+                    
                     <div class="card-body ">
                         <table class="table table-boardered table-striped">
                             <thead>

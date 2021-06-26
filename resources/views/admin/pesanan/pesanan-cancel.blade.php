@@ -15,7 +15,7 @@
                         <thead>
                             <th class="text-center">Nomor Tansakasi</th>
                             <th class="text-center">Tanggal</th>
-                            {{-- <th class="text-center">Pembeli</th> --}}
+                            <th class="text-center">Pembeli</th>
                             {{-- <th class="text-center">Jumlah Pembayaran</th> --}}
                             <th class="text-center">Status</th>
                         </thead>
@@ -29,7 +29,7 @@
                             <tr>
                                 <td class="text-center">{{ $k->nomor_transaksi }}</td>
                                 <td class="text-center">{{ $k->updated_at }}</td>
-                                {{-- <td class="text-center"></td> --}}
+                                <td class="text-center">{{ $k->user[0]->nama }}</td>
                                 {{-- <td class="text-center">{{$k->jumlah_dibayar }}</td> --}}
                                 <td class="text-center">{{ $k->status }}</td>
                                 

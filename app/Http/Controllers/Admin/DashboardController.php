@@ -40,20 +40,24 @@ class DashboardController extends Controller
         return view('admin\informasi\barang', ['barang' =>$barang]);
     }
     public function pesananpending(){
+        $pembeli = User::get();
         $keranjang = Keranjang::where('status', 'pending')->get()->unique('nomor_transaksi');
-        return view("admin.pesanan.pesanan-pending",['keranjang' => $keranjang]);
+        return view("admin.pesanan.pesanan-pending",['keranjang' => $keranjang,'pembeli' => $pembeli]);
     }
     public function pesanandibayar(){
+        $pembeli = User::get();
         $keranjang = Keranjang::where('status', 'konfirmasi')->get()->unique('nomor_transaksi');
-        return view("admin.pesanan.pesanan-konfirmasi",['keranjang' => $keranjang]);
+        return view("admin.pesanan.pesanan-konfirmasi",['keranjang' => $keranjang, 'pembeli' => $pembeli]);
     }
     public function pesananproses(){
+        $pembeli = User::get();
         $keranjang = Keranjang::where('status', 'proses')->get()->unique('nomor_transaksi');
-        return view("admin.pesanan.pesanan-diproses",['keranjang' => $keranjang]);
+        return view("admin.pesanan.pesanan-diproses",['keranjang' => $keranjang,'pembeli' => $pembeli]);
     }
     public function pesanangagal(){
+        $pembeli = User::get();
         $keranjang = Keranjang::where('status', 'gagal')->get()->unique('nomor_transaksi');
-        return view("admin.pesanan.pesanan-cancel",['keranjang' => $keranjang]);
+        return view("admin.pesanan.pesanan-cancel",['keranjang' => $keranjang, 'pembeli' => $pembeli]);
     }
     public function download(request $request, $id){
         // $path = Keranjang::where('nomor_transaksi', $id)->get('path')->first();
@@ -62,8 +66,9 @@ class DashboardController extends Controller
     //     return view('welcome');
     }
     public function pesanansukses(){
+        $pembeli = User::get();
         $keranjang = Keranjang::where('status', 'sukses')->get()->unique('nomor_transaksi');
-        return view("admin.pesanan.pesanan-sukses",['keranjang' => $keranjang]);
+        return view("admin.pesanan.pesanan-sukses",['keranjang' => $keranjang,  'pembeli' => $pembeli]);
     }
     // public function pesananpreorder(){
     //     $keranjang = Keranjang::where('status', 'PO')->whereNotNull('nomor_transaksi')->get();

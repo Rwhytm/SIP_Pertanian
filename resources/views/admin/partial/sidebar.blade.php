@@ -128,7 +128,7 @@
         </li>
         <li class="{{ Route::current()->getName() == "produk admin" ? 'active'  : '' }}">
           <a class="sidenav-item-link" href="{{ route('pesanan.dibayar') }}">
-            <span class="nav-text">Pesanan Sudah Dibayar</span>
+            <span class="nav-text">Pesanan Dibayar</span>
           </a>
         </li>
         <li class="{{ Route::current()->getName() == "produk admin" ? 'active'  : '' }}">
@@ -137,20 +137,20 @@
           </a>
         </li>
         <li class="{{ Route::current()->getName() == "produk admin" ? 'active'  : '' }}">
-          <a class="sidenav-item-link" href="{{ route('pesanan.gagal') }}">
-            <span class="nav-text">Pesanan Cancel</span>
-          </a>
-        </li>
-        <li class="{{ Route::current()->getName() == "produk admin" ? 'active'  : '' }}">
           <a class="sidenav-item-link" href="{{ route('pesanan.sukses')}}">
             <span class="nav-text">Pesanan Sukses</span>
           </a>
         </li>
         <li class="{{ Route::current()->getName() == "produk admin" ? 'active'  : '' }}">
+          <a class="sidenav-item-link" href="{{ route('pesanan.gagal') }}">
+            <span class="nav-text">Pesanan Cancel</span>
+          </a>
+        </li>
+        {{-- <li class="{{ Route::current()->getName() == "produk admin" ? 'active'  : '' }}">
           <a class="sidenav-item-link" href="{{ route('preorder') }}">
             <span class="nav-text">Pre-order</span>
           </a>
-        </li>
+        </li> --}}
     </div>
   </div>
 </aside>
