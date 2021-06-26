@@ -155,6 +155,7 @@ class UserController extends Controller
 
     public function konfirmasipesanan(Request $request, $id){
         
+
         if ($request->hasFile('bukti')){ 
             $image = $request->file('bukti');
             $name = time().$request->file('bukti')->getClientOriginalName();
@@ -170,6 +171,8 @@ class UserController extends Controller
             'tanggal_transfer' => $request->tf,
             'jumlah_dibayar' => $request->jumlahdb,
             'status' => 'konfirmasi',
+            'pengiriman' => $request->pengiriman,
+            
         ]);
 
         $detail = [

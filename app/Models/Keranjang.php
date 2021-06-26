@@ -18,7 +18,8 @@ class Keranjang extends Model
         'nama_rekening',
         'nama_bank',
         'tanggal_transfer',
-        'jumlah_dibayar'
+        'jumlah_dibayar',
+        'pengiriman'
     ];
 
     // public function produk()

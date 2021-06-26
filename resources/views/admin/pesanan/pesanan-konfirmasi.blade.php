@@ -17,6 +17,7 @@
                             <th class="text-center">Tanggal</th>
                             <th class="text-center">Pembeli</th>
                             <th class="text-center">Status</th>
+                            <th class="text-center">Pengiriman</th>
                             <th class="text-center">Informasi</th>
                             <th class="text-center">Action</th>
                         </thead>
@@ -32,6 +33,7 @@
                                 <td class="text-center">{{ $k->updated_at }}</td>
                                 <td class="text-center">{{ $k->user[0]->nama }}</td>
                                 <td class="text-center">{{ $k->status }}</td>
+                                <td class="text-center">{{ $k->pengiriman }}</td>
                                 <td class="text-center">
                                     <div class="d-flex justify-content-center">
                                         <div class="invisible">

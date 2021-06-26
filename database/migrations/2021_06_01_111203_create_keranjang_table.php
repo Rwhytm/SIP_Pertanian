@@ -23,6 +23,7 @@ class CreateKeranjangTable extends Migration
             $table->string('nama_bank')->nullable();
             $table->string('tanggal_transfer')->nullable();
             $table->string('jumlah_dibayar')->nullable();
+            $table->string('pengiriman')->nullable();
             $table->integer('jumlah');
             $table->integer('total');
             $table->text('path')->nullable();

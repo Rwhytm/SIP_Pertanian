@@ -58,8 +58,8 @@
                                 <div class="checkout-form-list">
                                     <label>Pengiriman<span class="required">*</span></label>
                                     <select name="pengiriman" id="pengiriman">
-                                        <option value="BRI">Jemput di tempat</option>
-                                        <option value="BNI">Antar alamat *khusus UNIB belakang</option>
+                                        <option value="Jemput ditempat">Jemput di tempat</option>
+                                        <option value="Antar alamat">Antar alamat *khusus UNIB belakang</option>
                                     </select>
                                 </div>
                             </div>	
