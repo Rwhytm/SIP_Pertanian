@@ -46,7 +46,6 @@
                                     <label>Bank Tujuan<span class="required">*</span></label>
                                     <select name="bankkita" id="bank">
                                         <option value="BRI">BRI</option>
-                                        <option value="BNI">BNI</option>
                                     </select>
                                 </div>
                             </div>
@@ -129,23 +128,13 @@
                         <div class="row">
                             <img src="{{ asset('users/assets/img/logo/BRI.png') }}" alt="" style="width: 75px">
                             <div class="col-md-6">
-                                <h5>Abdul Munir</h5>
-                                <h5>080809090</h5>
+                                <h5>Incubator Pertanian</h5>
+                                <h5>1234534223</h5>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="card-footer">
-                    <div class="col-md-12">
-                        <div class="row">
-                            <img src="{{ asset('users/assets/img/logo/BNI.png') }}" alt="" style="width: 75px ; height: 75px">
-                            <div class="col-md-6">
-                                <h5>Abdul Munir</h5>
-                                <h5>122374921</h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                
                 
             </div>
             
