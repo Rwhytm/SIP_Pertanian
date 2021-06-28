@@ -71,8 +71,10 @@
                             </div>
                         </div>
                         @endif
-                        
                     </div>
+                    <a href="{{ url()->previous() }}">
+                    <div class="btn btn-dark">Kembali</div>
+                    </a>
                 </div>
             </div>
         </div>
