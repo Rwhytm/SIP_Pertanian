@@ -32,9 +32,8 @@
                     <tfoot>
                         
                         <tr class="order-total">
-                            <th colspan="2" class="text-left">Order Total</th>
                             <td>
-                                <strong><span class="text-right">Rp. {{ number_format($order_total) }}</span></strong>
+                                
                             </td>
                         </tr>								
                     </tfoot>
@@ -49,7 +48,7 @@
                             </div>
                             <div id="payment-1" class="panel-collapse collapse show">
                                 <div class="panel-body">
-                                    <p>Saat ini hanya tersedia pembayaran melalui bank</p>
+                                    <p>Saat ini hanya tersedia pembayaran melalui bank, untuk melihat total pembayaran silahkan ke menu konfirmasi</p>
                                 </div>
                             </div>
                         </div>
@@ -58,7 +57,7 @@
                         <form action="{{ route('checkout') }}" method="post">
                             @csrf
                             @method('PUT')
-                            <button type="submit" class="btn btn-dark btn-lg btn-block">Check Out</button>
+                            <button type="submit" class="btn btn-dark btn-lg btn-block">Beli</button>
                         </form>
                     </div>								
                 </div>
