@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\User;
 use App\Models\Produk;
 use App\Models\Keranjang;
+use \App\Mail\TestMail;
 
 class DashboardController extends Controller
 {
@@ -17,9 +18,9 @@ class DashboardController extends Controller
     public function index(){
         $pelanggan = User::orderBy('id', 'DESC')->role('pembeli');
         $produk = Produk::orderBy('id', 'ASC');
-        $keranjang1 = Keranjang::where('status', 'pending')->get();
+        $keranjang1 = Keranjang::where('status', 'konfirmasi')->get();
         $keranjang = Keranjang::where('status', 'sukses')->get();
-        return view('admin\dashboard\index',['pelanggan' => $pelanggan, 'produk' => $produk, 'keranjang' =>$keranjang, 'pending', $keranjang1]);
+        return view('admin\dashboard\index',['pelanggan' => $pelanggan, 'produk' => $produk, 'keranjang' =>$keranjang, 'pending' => $keranjang1]);
     }
 
     public function user(){
@@ -84,6 +85,15 @@ class DashboardController extends Controller
         $nomor = Keranjang::where(['nomor_transaksi' => $id])->update([
             'status' => 'gagal',
         ]);
+        $userid = Keranjang::where(['nomor_transaksi' => $id])->get()[0]->user_id;
+        $user = User::find($userid)->email;
+        
+        $detail = [
+            'title' => 'Pesanan Gagal',
+            'body' => 'Pesanan Anda sudah dibatalkan oleh pihak bersangkutan'
+        ];
+        \Mail::to($user)->send(new TestMail($detail));
+        
         return redirect()->route('pesanan.gagal');
     }
 }

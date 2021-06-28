@@ -47,8 +47,8 @@
                       </svg>
                 </div>
                 <div class="media-body align-self-center">
-                    <h4 class="text-primary mb-2">{{ $keranjang->count() }}</h4>
-                    <p>Pesanan Menunggu</p>
+                    <h4 class="text-primary mb-2">{{ $pending->count() }}</h4>
+                    <p>Pesanan perlu diproses</p>
                 </div>
             </div>
         </div>
